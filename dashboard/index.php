@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['login'])){
+	header("Location: login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -288,14 +297,12 @@
 									<div class="pro-head">
 										<img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
 										<span>John Doe</span>
-										<a href="auth-signin.html" class="dud-logout" title="Logout">
-											<i class="feather icon-log-out"></i>
-										</a>
 									</div>
 									<ul class="pro-body">
 										<li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
 										<li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
 										<li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+										<li><a href="app/logout.php" class="dropdown-item"><i class="feather icon-log-out"></i> Cerrar sesión</a></li>
 									</ul>
 								</div>
 							</div>

@@ -12,8 +12,6 @@ class Conexion{
             echo "Fail to connect MySQL:" . $this->conexion_db->connect_error;
             return;
         }
-
-        $this->conexion_db->set_charset(DB_CHARSET);
     }
 }
 
