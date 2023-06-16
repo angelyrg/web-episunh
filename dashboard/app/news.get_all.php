@@ -1,6 +1,6 @@
 <?php
 
-require("../model/News.php");
+require("../../model/News.php");
 
 $new = new News();
 $all_data = $new->get_all();

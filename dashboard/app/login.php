@@ -1,6 +1,6 @@
 <?php
 
-require("../model/Auth.php");
+require("../../model/Auth.php");
 
 $username = $_POST['username'];
 $password = $_POST['password'];
