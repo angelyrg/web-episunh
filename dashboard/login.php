@@ -56,7 +56,6 @@ if (isset($_SESSION['login'])){
 <!-- [ auth-signin ] end -->
 
 
-
 <!-- Required Js -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="assets/js/vendor-all.min.js"></script>
@@ -70,20 +69,18 @@ if (isset($_SESSION['login'])){
 
 		$.ajax({
 			type: "POST",
-			url: "app/login.php",
+			url: "app/auth.login.php",
 			data: $("#login-form").serialize(),
 			success: function(resp){
 				let result = parseInt(resp)
-				
-				console.log(result);
-
 				if (result == 1){
 					$("#message").html("");
 					window.location.href="index.php";
 				}else if (result == 0){
 					$("#message").html("Usuario y/o contraseña incorrecto.");
+				}else{
+					console.log(resp);
 				}
-
 			}
 		});
 

@@ -28,7 +28,7 @@ include_once("layouts/head.php");
 				<div class="card-header">
 					<div class="row d-flex justify-content-between align-items-center mx-2">
 						<h5>Noticias</h5>
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_new_news" data-whatever="@getbootstrap">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_create_news" data-whatever="@getbootstrap">
 							<i class="feather icon-plus-circle"></i> Nuevo
 						</button>
 					</div>
@@ -59,14 +59,14 @@ include_once("layouts/head.php");
 
 
 <!-- MODAL: NUEVA NOTICIA -->
-<div class="modal fade" id="modal_new_news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="modal_create_news" tabindex="-1" role="dialog" aria-labelledby="createModal" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Nueva noticia</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
 			</div>
-			<form  method="POST" id="form_news_new" enctype="multipart/form-data">
+			<form  method="POST" id="form_create_news" enctype="multipart/form-data">
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="news_name" class="col-form-label">Título:</label>
@@ -78,10 +78,8 @@ include_once("layouts/head.php");
 					</div>
 					<div class="form-group">
 						<label for="news_link" class="col-form-label">Link:</label>
-						<input type="text" class="form-control" name="news_link" id="news_link" placeholder="link">
+						<input type="text" class="form-control" name="news_link" id="news_link" placeholder="Link (opcional)">
 					</div>
-					
-					
 
 				</div>
 				<div class="modal-footer">
@@ -94,12 +92,40 @@ include_once("layouts/head.php");
 </div>
 
 
+<!-- MODAL: ELIMINAR NOTICIA -->
+<div class="modal fade" id="modal_delete_news" tabindex="-1" role="dialog" aria-labelledby="deleteModal" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Eliminar noticia</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+			</div>
+			<form method="POST" id="form_delete_news" >
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="">¿Estás seguro de eliminar la noticia <span id="news_name-delete" class="text-info"></span>?</label>
+						<input type="hidden" class="form-control" name="news_id-delete" id="news_id-delete" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-danger">Eliminar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
 <script>
+	//Carga la lista de registros al cargar la página
 	$( document ).ready(function() {
 		getAllData();
 	});
 	
-	$("#form_news_new").submit(function(e) {
+	//Guardar registro de nuevo anuncio (CREATE)
+	$("#form_create_news").submit(function(e) {
 		e.preventDefault();    
 		
 		const formData = new FormData(this);
@@ -115,8 +141,8 @@ include_once("layouts/head.php");
 				let result = parseInt(resp)
 
 				if (result=1){
-					$("#form_news_new")[0].reset();
-					$('#modal_new_news').modal('hide');
+					$("#form_create_news")[0].reset();
+					$('#modal_create_news').modal('hide');
 					getAllData();
 
 				}else if(result = 0){
@@ -131,6 +157,33 @@ include_once("layouts/head.php");
 		});
 	});
 
+	//Eliminar registro (DELETE)
+	$("#form_delete_news").submit(function(e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: "app/news.delete.php",
+			type: 'POST',
+			data: $("#form_delete_news").serialize(),
+			success: function (resp) {
+				console.log(resp);
+				let result = parseInt(resp)
+				if (result=1){
+					$('#modal_delete_news').modal('hide');
+					getAllData();
+				}else if(result = 0){
+					console.log("No se pudo eliminar la noticia");
+				}else{
+					console.log(resp);
+				}
+			}
+		});
+	});
+
+
+	// ====FUNCIONES==== //
+
+	// Obtener todos los registros de los anuncios (READ)
 	function getAllData(){
 		$.ajax({
 			url: "app/news.get_all.php",
@@ -146,8 +199,7 @@ include_once("layouts/head.php");
 								"<td>" + data[i].link + "</td>" +
 								"<td>" + data[i].created_at + "</td>" +
 								"<td>" + 
-									'<a href="#" class="btn btn-sm btn-warning"><i class="feather icon-edit"></i></a> ' + 
-									'<a href="#" class="btn btn-sm btn-danger"><i class="feather icon-trash-2"></i></a>'+
+									'<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].name + '\')" data-toggle="modal" data-target="#modal_delete_news" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
 								"</td>" + 
 						"</tr>";
 					$("#news_table_body").append(tr);
@@ -156,8 +208,13 @@ include_once("layouts/head.php");
 		});
 	}
 
-</script>
+	//Actualiza la info del registro en el modal para eliminar
+	function updateDeleteModal(id, new_name){
+		$("#news_id-delete").val(id);
+		$("#news_name-delete").html(new_name);
+	}
 
+</script>
 
 
 <?php 

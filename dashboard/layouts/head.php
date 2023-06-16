@@ -127,7 +127,7 @@ if (!isset($_SESSION['login'])){
                             <ul class="pro-body">
                                 <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Perfil</a></li>
                                 <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-settings"></i> Configuración</a></li>
-                                <li><a href="app/logout.php" class="dropdown-item"><i class="feather icon-log-out"></i> Cerrar sesión</a></li>
+                                <li><a href="app/auth.logout.php" class="dropdown-item"><i class="feather icon-log-out"></i> Cerrar sesión</a></li>
                             </ul>
                         </div>
                     </div>

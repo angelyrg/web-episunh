@@ -20,16 +20,21 @@ class News extends Conexion
     // READ
     public function get_all()
     {
-        // TODO: TERMINAR
         $result = $this->conexion_db->query("SELECT * FROM news");
-        $news = $result->fetch_all(MYSQLI_ASSOC);
-
-        return $news;
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    
+    public function get_by_id($id)
+    {
+        $result = $this->conexion_db->query("SELECT * FROM news WHERE id='$id' LIMIT 1");
+        return $result->fetch_all(MYSQLI_ASSOC)[0];
+    }
 
-    
+
+    // DELETE
+    public function delete($id){
+        return $this->conexion_db->query("DELETE FROM news WHERE id='$id'");
+    }
 
 }
 
