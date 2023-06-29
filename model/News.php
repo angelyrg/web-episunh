@@ -20,7 +20,7 @@ class News extends Conexion
     // READ
     public function get_all()
     {
-        $result = $this->conexion_db->query("SELECT * FROM news");
+        $result = $this->conexion_db->query("SELECT * FROM news WHERE disabled=0");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -30,6 +30,10 @@ class News extends Conexion
         return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
 
+    // DISABLE
+    public function disable($id){
+        return $this->conexion_db->query("UPDATE news SET disabled=1, disabled_at=NOW() WHERE id='$id'");
+    }
 
     // DELETE
     public function delete($id){
