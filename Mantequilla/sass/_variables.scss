@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+
+
+$color: black;
+$titulo: 'Jura', sans-serif;
+$font-family: 'Jura', sans-serif;
+
+
+@mixin PageElements($color){
+    height: 70%;
+    background: $color;
+}
+
+@mixin Centrear(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    padding: 0;
+    margin: 0 ;
+    font-family: 'Jura', sans-serif;
+}
+
+.ctn-principal::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.ctn-principal::-webkit-scrollbar-thumb {
+    background: #5d5d5d;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.ctn-principal::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.ctn-principal::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.ctn-principal{
+    display: grid;
+    grid-template:  
+                        "main"  350%
+                        "footer" 300px;
+    .ctn-main{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        background:linear-gradient(#181825,#1b1252);
+    }
+    .ctn-footer{
+        grid-area: footer;
+        background: blue;
+    }
+
+}
+

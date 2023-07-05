@@ -1,0 +1,145 @@
+$color: black;
+$headerColor:transparent;
+$color_letter:#8e8e8e;
+
+
+@mixin PageElements($color){
+    height: 60%;
+    /*background-color: $color;*/
+}
+
+@mixin Centrear($justificy){
+    display: flex;
+    justify-content: $justificy;
+    align-items:center;
+}
+
+
+html{
+    height: 100%;
+}
+body {
+    min-height: 150%;
+}
+
+.style-linkAll-solid{
+    padding-bottom: 3px;
+    border-bottom: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.style-linkAll{
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+    color: #b0b0b0;
+    /*border: solid red;*/
+}
+.style-linkAll::after{
+    content: "";
+    position: absolute;
+    color: $color_letter;
+    background:$color_letter;
+    width: 100%;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+}
+.style-linkAll:hover:after{
+    color: white;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.4s ease-in-out;
+}
+.style-linkAll:hover{
+    transition: 0.75s;
+    color: white;
+}
+
+.ctn-header{
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+    z-index: 99;
+    background: $headerColor;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 3% 57% 37% 3%;
+    .space2{
+      /* border: solid #0055ff; */
+    }
+    &-logo{
+        /*border: solid $color;*/
+        .ctn-header-logo-item-1{
+            @include Centrear(left);
+            height: 100%;
+            font-size: 25px;
+            .span-epis{
+                color: blue;
+            }
+            .span-unh{
+                color: white;
+            }
+        }
+    }
+    &-items{
+        /*border: solid $color;*/
+        display: grid;
+        grid-template-columns: 15% 25% 15% 22% 23%;
+        @for $i from 1 through 5{
+            &-#{$i}{
+                /*border: solid white;*/
+                
+                @include Centrear(right);
+                .link-item-1{
+                    text-decoration: none;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                }
+
+                @if($i==5){
+                    button{
+                        background: linear-gradient(90deg,blue,purple);
+                        border-radius: 50px;
+                        border: none;
+                        padding: 10px;
+                    }
+                    .link-item-1{
+                        color:white;
+                        
+
+                    }
+                }
+                @if($i==2){
+                    .ctn-header-options{
+                        background-color: white;
+                        width: 150px;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        margin-top: 235px;
+                        margin-left: 70px;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        border-radius:15px;
+                        span{
+                            background: #0055ff;
+                            padding: 5px;
+                            margin: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
