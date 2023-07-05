@@ -1,0 +1,23 @@
+@use 'variables';
+@use 'navbar';
+
+.ctn-principal{
+    display: grid;
+    grid-template: 
+                        "main"  140%
+                        "footer" 300px;
+    
+    .ctn-main{ 
+        background: black;
+        &-page-contacto{
+            @include variables.PageElements(#00fff2);
+        }
+        &-page-maps{
+            @include variables.PageElements(#cd3f8b);
+        }
+    }
+    .ctn-footer{
+        background: black;
+    }
+
+}
