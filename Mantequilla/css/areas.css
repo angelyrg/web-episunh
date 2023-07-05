@@ -129,8 +129,7 @@ body {
 }
 .ctn-header-items {
   /*border: solid $color;*/
-  display: grid;
-  grid-template-columns: 15% 25% 15% 22% 23%;
+  display: flex;
 }
 .ctn-header-items-1 {
   /*border: solid white;*/
@@ -142,6 +141,8 @@ body {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .ctn-header-items-2 {
   /*border: solid white;*/
@@ -153,6 +154,8 @@ body {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .ctn-header-items-2 .ctn-header-options {
   background-color: white;
@@ -183,6 +186,8 @@ body {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .ctn-header-items-4 {
   /*border: solid white;*/
@@ -194,6 +199,8 @@ body {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .ctn-header-items-5 {
   /*border: solid white;*/
@@ -205,6 +212,8 @@ body {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .ctn-header-items-5 button {
   background: linear-gradient(90deg, blue, purple);
@@ -214,6 +223,19 @@ body {
 }
 .ctn-header-items-5 .link-item-1 {
   color: white;
+}
+.ctn-header-items .navbar .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .ctn-header-items .navbar .icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px 16px;
+    color: #fff;
+  }
 }
 
 /*# sourceMappingURL=areas.css.map */

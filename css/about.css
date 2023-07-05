@@ -1,0 +1,66 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased; }
+  
+  body {
+    font-family: "Lora", serif; }
+  
+  h1 {
+    font-size: 54px; }
+  
+  h2 {
+    font-size: 35px; }
+  
+  h3 {
+    font-size: 24px; }
+  
+  h4 {
+    font-size: 20px; }
+  
+  p {
+    font-size: 17px; }
+  
+  a {
+    color: #cbb58b;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    a:hover {
+      text-decoration: none;
+      color: #2d2d2d; }
+  
+  .btn {
+    font-family: "Lora", serif;
+    cursor: pointer; }
+
+/* ==============================================================
+   ABOUT WELCOME
+   ============================================================== */
+   .welcome_about {
+    padding: 98px 0; }
+    .welcome_about h2 {
+      font-weight: 600;
+      color: #2d2d2d;
+      margin: 0 0 28px; }
+    .welcome_about p {
+      color: #2d2d2d;
+      line-height: 1.8; }
+    .welcome_about img {
+      width: 100%; }
+  
+  .btn-about {
+    background: none;
+    border: 3px solid #cbb58b;
+    border-radius: 2px;
+    padding: 14px 20px;
+    color: #cbb58b;
+    font-size: 15px;
+    margin: 16px 0 0; }
+  
+  @media (max-width: 992px) {
+    .welcome_about {
+      padding: 58px 0; }
+    .btn-about {
+      margin: 0px 0 32px; } }
+  
+    

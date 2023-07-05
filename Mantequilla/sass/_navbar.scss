@@ -92,8 +92,10 @@ body {
     }
     &-items{
         /*border: solid $color;*/
-        display: grid;
-        grid-template-columns: 15% 25% 15% 22% 23%;
+        display: flex;
+        
+          
+          
         @for $i from 1 through 5{
             &-#{$i}{
                 /*border: solid white;*/
@@ -103,6 +105,8 @@ body {
                     text-decoration: none;
                     font-size: 14px;
                     text-transform: capitalize;
+                    margin-left:20px;
+                    margin-right: 20px;
                 }
 
                 @if($i==5){
@@ -141,5 +145,20 @@ body {
                 }
             }
         }
+        .navbar .icon {
+            display: none;
+          }
+          
+          @media screen and (max-width: 600px) {
+            .navbar .icon {
+              display: block;
+              position: absolute;
+              right: 0;
+              top: 0;
+              padding: 14px 16px;
+              color: #fff;
+            }
+          }
     }
+    
 }
