@@ -1,66 +1,147 @@
-html {
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased; }
-  
-  body {
-    font-family: "Lora", serif; }
-  
-  h1 {
-    font-size: 54px; }
-  
-  h2 {
-    font-size: 35px; }
-  
-  h3 {
-    font-size: 24px; }
-  
-  h4 {
-    font-size: 20px; }
-  
-  p {
-    font-size: 17px; }
-  
-  a {
-    color: #cbb58b;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-    a:hover {
-      text-decoration: none;
-      color: #2d2d2d; }
-  
-  .btn {
-    font-family: "Lora", serif;
-    cursor: pointer; }
+@import url("https://fonts.googleapis.com/css2?family=Jura&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Jura", sans-serif;
+  background-color: #1A1442;
+}
+
+
+/* ==============================================================
+   NAV BAR
+   ============================================================== */
+
+.ctn-header {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  background-color: #1A1442;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  margin-right: 50px;
+  align-items: center;
+}
+
+header nav a {
+  color: #AAA;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+header nav a:hover {
+  text-decoration: none;
+  /* color: #2d2d2d; */
+}
+
+header nav a:hover,
+header nav a.activo {
+  color: #FFF;
+}
+
+.ctn-header-logo .ctn-header-logo-item-1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.ctn-header-logo .ctn-header-logo-item-1 .span-epis {
+  color: blue;
+}
+
+.ctn-header-logo .ctn-header-logo-item-1 .span-unh {
+  color: white;
+}
 
 /* ==============================================================
    ABOUT WELCOME
    ============================================================== */
-   .welcome_about {
-    padding: 98px 0; }
-    .welcome_about h2 {
-      font-weight: 600;
-      color: #2d2d2d;
-      margin: 0 0 28px; }
-    .welcome_about p {
-      color: #2d2d2d;
-      line-height: 1.8; }
-    .welcome_about img {
-      width: 100%; }
-  
+.welcome_about {
+  padding: 98px 0;
+}
+
+.welcome_about h2 {
+  font-weight: 600;
+  color: #dcd6d6;
+  margin: 0 0 28px;
+}
+.welcome_about p, .welcome_about {
+  text-align: justify;
+}
+.welcome_about p, .welcome_about ul{
+  color: #dcd6d6;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-top: 0px;
+}
+.welcome_about .text-about{
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 10px; 
+  transition: box-shadow 500ms ease-in;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 50%;
+}
+.welcome_about .text-about-rigth{
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 10px; 
+  margin-left:50px;
+  transition: box-shadow 500ms ease-in;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.welcome_about .text-about:hover,
+.welcome_about .text-about-rigth:hover {
+  box-shadow: 0px 0px 8px 10px rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+li {
+  font-size: 14px;
+}
+
+.welcome_about img {
+  width: 100%;
+  margin-top: 30px; 
+}
+
+.welcome_about .ctn-img-rigth{
+  margin-left:50px;
+}
+
+.btn-about {
+  background: none;
+  border: 3px solid #cbb58b;
+  border-radius: 2px;
+  padding: 14px 20px;
+  color: #cbb58b;
+  font-size: 15px;
+  margin: 16px 0 0;
+}
+
+
+@media (max-width: 992px) {
+  .welcome_about {
+    padding: 58px 0;
+  }
+
   .btn-about {
-    background: none;
-    border: 3px solid #cbb58b;
-    border-radius: 2px;
-    padding: 14px 20px;
-    color: #cbb58b;
-    font-size: 15px;
-    margin: 16px 0 0; }
-  
-  @media (max-width: 992px) {
-    .welcome_about {
-      padding: 58px 0; }
-    .btn-about {
-      margin: 0px 0 32px; } }
-  
-    
+    margin: 0px 0 32px;
+  }
+}

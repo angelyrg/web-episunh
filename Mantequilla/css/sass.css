@@ -61,8 +61,7 @@ body {
   z-index: 99;
   background: transparent;
   grid-area: header;
-  display: grid;
-  grid-template-columns: 3% 57% 37% 3%;
+  display: flex;
 }
 .ctn-header .space2 {
   /* border: solid #0055ff; */
@@ -224,8 +223,7 @@ body {
 }
 
 .ctn-principal {
-  display: grid;
-  grid-template: "main" 350% "footer" 300px;
+  display: flex;
 }
 .ctn-principal .ctn-main {
   grid-area: main;
