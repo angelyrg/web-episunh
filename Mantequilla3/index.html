@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/sass.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./css/sass2.css">
     <title>UNHEPIS</title>
 </head>
 <body class="ctn-principal">
         <header class="ctn-header">
-            <div class="space2"></div>
             <div class="ctn-header-logo">
                 <div class="ctn-header-logo-item-1">
                     <span class="span-epis">EPIS
@@ -18,7 +18,7 @@
             </div>
             <nav class="ctn-header-items">
                 <div class="ctn-header-items-1">
-                    <a href="/" id="button1" class=" style-linkAll-solid">Inicio</a>
+                    <a href="#" id="button1" class=" style-linkAll-solid">Inicio</a>
                 </div>
                 <div class="ctn-header-items-2">
                     <a href="./page/documentos.html" id="button2" class="link-item-1 style-linkAll">Documentos</a>
@@ -32,36 +32,59 @@
                 <div class="ctn-header-items-5">
                     <button id="button"><a class="link-item-1">Contacto</a></button>
                 </div> 
+                <div class="ctn-header-menu">
+                    <span class="material-symbols-outlined span-bar">drag_handle </span>
+                </div>
             </nav>
-            <div class="space2"></div>
         </header>
+        
         <main class="ctn-main">
             <section class="ctn-main-page-welcome">
-                <div class="ctn-main-page-welcome-text"></div>
-                <div class="ctn-main-page-welcome-image"></div>
+                <div class="ctn-main-page-welcome-text">
+                    <div class="ctn-main-page-welcome-text-title">
+                        <span class="title">
+                            UNIVERSIDAD NACIONALIDAD
+                            <br>
+                            DE HUANCAVELICA
+                            <br>
+                            ESCUELA PROFESIONAL
+                            <br>
+                            INGENIERIA DE
+                            <br>
+                            SISTEMAS :)
+                        </span>
+                        <br>
+                        <span class="text-link">Descargar <a href="/Descargar" class="style-linkAll"> Proyecccion 2023</a></span>
+                        <br>
+                        <br>
+                        <span class="text-description">
+                            Aunque la industria de la computación aún es joven en <br>
+                            comparación con otras industrias (como la automotriz<br>
+                            y la aeronáutica), ha progresado espectacularmente en poco<br>
+                            tiempo. Durante las dos primeras décadas de su existencia, <br> 
+                            los sistemas de computación estaban altamente centralizados, <br>
+                            por lo general, una sala grande e independiente.<br>
+
+                        </span>
+                        
+                    </div>
+                    
+                    
+                </div>
+                <div class="ctn-main-page-welcome-image">
+
+                </div>
             </section>
             <section class="ctn-main-page-information">
-                <div class="ctn-main-page-information-title"></div>
-                <div class="ctn-main-page-information-text"></div>
-                <div class="ctn-main-page-information-image"></div>
             </section>
             <section class="ctn-main-page-target">
-                <div class="ctn-main-page-target-title"></div>
-                <div class="ctn-main-page-target-target1"></div>
-                <div class="ctn-main-page-target-target2"></div>
-                <div class="ctn-main-page-target-target3"></div>
             </section>
             <section class="ctn-main-page-abouti">
-                <div class="ctn-main-page-abouti-title"></div>
-                <div class="ctn-main-page-abouti-target1"></div>
-                <div class="ctn-main-page-abouti-target2"></div>
-            
             </section>
             <section class="ctn-main-page-linea">
-                <div class="ctn-main-page-linea-title"></div>
-                <div class="ctn-main-page-linea-circles"></div>
             </section>
         </main>
+
         <footer class="ctn-footer">
             <div class="ctn-footer-title">
                 <h1 style="color: white;">UNH EPIS</h1>
@@ -77,7 +100,7 @@
     cont = 0;
 
     function sound(propery){
-        $(propery).addEventListener("mouseover",()=>{
+        $(propery).addEventListener("click",()=>{
         console.log("REPRODUCIENDO")
         if(cont == 0){
             let etiquetaAudio = document.createElement("audio")

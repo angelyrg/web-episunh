@@ -1,7 +1,10 @@
 $color: black;
 $headerColor:transparent;
 $color_letter:#8e8e8e;
+$padding-items:20px;
+$padding-lateral:40px;
 
+$colorSpan:white;
 
 @mixin PageElements($color){
     height: 60%;
@@ -13,19 +16,21 @@ $color_letter:#8e8e8e;
     justify-content: $justificy;
     align-items:center;
 }
-
-
 html{
     height: 100%;
 }
+/*
 body {
     min-height: 150%;
-}
+}*/
+
+
+@mixin StyleLink($color,$static){
 
 .style-linkAll-solid{
     padding-bottom: 3px;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid $color;
+    color: $color;
     text-decoration: none;
     font-size: 14px;
     text-transform: capitalize;
@@ -35,14 +40,14 @@ body {
     text-decoration: none;
     position: relative;
     padding-bottom: 3px;
-    color: #b0b0b0;
+    color: $static;
     /*border: solid red;*/
 }
 .style-linkAll::after{
     content: "";
     position: absolute;
-    color: $color_letter;
-    background:$color_letter;
+    color: $color;
+    background: $color;
     width: 100%;
     height: 1px;
     right: 0;
@@ -53,68 +58,85 @@ body {
     transition: transform 0.4s ease-in-out;
 }
 .style-linkAll:hover:after{
-    color: white;
     transform-origin: left;
     transform: scaleX(1);
     transition: transform 0.4s ease-in-out;
 }
 .style-linkAll:hover{
     transition: 0.75s;
-    color: white;
+    color: $color;
 }
+}
+@include StyleLink(white,#bababa);
 
 .ctn-header{
     position: fixed;
     width: 100%;
-    height: 40px;
-    margin-top: 40px;
+    min-height: 40px;
     z-index: 99;
     background: $headerColor;
+    /*background: red;*/
+    margin-top: 35px;
     grid-area: header;
-    display: grid;
-    grid-template-columns: 3% 57% 37% 3%;
-    .space2{
-      /* border: solid #0055ff; */
+    display: flex;
+    justify-content: space-between;
+
+    &-menu{
+        display: none;
     }
     &-logo{
         /*border: solid $color;*/
-        .ctn-header-logo-item-1{
+        @include Centrear(center);
+        margin-left:$padding-lateral;
+        &-item-1{
             @include Centrear(left);
-            height: 100%;
+            height: 70%;
             font-size: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            background-color: rgb(24, 41, 49);
             .span-epis{
-                color: blue;
+                color: #3131fe;
             }
             .span-unh{
-                color: white;
+                color: #a8a8a8;
             }
         }
     }
     &-items{
-        /*border: solid $color;*/
+        margin-right: $padding-lateral;
+        /*border: solid  green;*/
         display: flex;
         
-          
-          
         @for $i from 1 through 5{
             &-#{$i}{
                 /*border: solid white;*/
-                
-                @include Centrear(right);
+                padding-left: $padding-items;
+                padding-right: $padding-items;
+                padding-top:  10px;
+                padding-bottom: 10px;
+                @include Centrear(center);
+
                 .link-item-1{
                     text-decoration: none;
                     font-size: 14px;
                     text-transform: capitalize;
-                    margin-left:20px;
-                    margin-right: 20px;
                 }
 
                 @if($i==5){
                     button{
-                        background: linear-gradient(90deg,blue,purple);
+                        background: linear-gradient(90deg,#1c1c9a,#f318f0);
                         border-radius: 50px;
                         border: none;
                         padding: 10px;
+                    }
+                    button:hover{
+                        transition: 1s;
+                        background: linear-gradient(90deg,purple,blue);   
+                    }
+                    button:active{
+                        opacity: 0.5;
                     }
                     .link-item-1{
                         color:white;
@@ -145,20 +167,35 @@ body {
                 }
             }
         }
-        .navbar .icon {
-            display: none;
-          }
-          
-          @media screen and (max-width: 600px) {
-            .navbar .icon {
-              display: block;
-              position: absolute;
-              right: 0;
-              top: 0;
-              padding: 14px 16px;
-              color: #fff;
-            }
-          }
     }
-    
+}
+
+
+@media (max-width:780px) {
+    .ctn-header{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        &-logo-item-1{
+            font-size: 20px;
+
+        }
+        &-menu{
+            display: flex;
+            @include Centrear(center);
+            .span-bar{
+                color: white;
+                font-size: 30px;
+            }
+        }
+        &-menu:hover{
+            opacity: 0.5;
+        }
+        @for $i from 1 through 5{
+            &-items-#{$i}{
+                display: none
+            }
+        }
+        
+    }
 }

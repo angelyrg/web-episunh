@@ -45,22 +45,3 @@ $font-family: 'Jura', sans-serif;
 .ctn-principal::-webkit-scrollbar-thumb:active {
     background-color: #999999;
 }
-
-.ctn-principal{
-    display: grid;
-    grid-template:  
-                        "main"  350%
-                        "footer" 300px;
-    .ctn-main{
-        grid-area: main;
-        display: flex;
-        flex-direction: column;
-        background:linear-gradient(#181825,#1b1252);
-    }
-    .ctn-footer{
-        grid-area: footer;
-        background: blue;
-    }
-
-}
-

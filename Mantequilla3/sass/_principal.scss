@@ -1,0 +1,17 @@
+
+@mixin Principal($page,$tam){
+.ctn-principal{
+    background:#051015;
+    height: 100%;
+    .ctn-main{
+        display: grid;
+        grid-template-rows: repeat($tam,1fr);
+        height: $page; /* PAGINAS * 100% */
+        
+    }
+    .ctn-footer{
+        background: black;
+        height: 400px;
+    }
+}
+}
