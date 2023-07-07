@@ -30,29 +30,14 @@
   background-color: #999999;
 }
 
-.ctn-principal {
-  display: grid;
-  grid-template: "main" 350% "footer" 300px;
-}
-.ctn-principal .ctn-main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(#181825, #1b1252);
-}
-.ctn-principal .ctn-footer {
-  grid-area: footer;
-  background: blue;
-}
-
 html {
   height: 100%;
 }
 
+/*
 body {
-  min-height: 150%;
-}
-
+    min-height: 150%;
+}*/
 .style-linkAll-solid {
   padding-bottom: 3px;
   border-bottom: 1px solid white;
@@ -66,15 +51,15 @@ body {
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
-  color: #b0b0b0;
+  color: #bababa;
   /*border: solid red;*/
 }
 
 .style-linkAll::after {
   content: "";
   position: absolute;
-  color: #8e8e8e;
-  background: #8e8e8e;
+  color: white;
+  background: white;
   width: 100%;
   height: 1px;
   right: 0;
@@ -86,7 +71,6 @@ body {
 }
 
 .style-linkAll:hover:after {
-  color: white;
   transform-origin: left;
   transform: scaleX(1);
   transition: transform 0.4s ease-in-out;
@@ -100,62 +84,76 @@ body {
 .ctn-header {
   position: fixed;
   width: 100%;
-  height: 40px;
-  margin-top: 40px;
+  min-height: 40px;
   z-index: 99;
   background: transparent;
+  /*background: red;*/
+  margin-top: 35px;
   grid-area: header;
-  display: grid;
-  grid-template-columns: 3% 57% 37% 3%;
+  display: flex;
+  justify-content: space-between;
 }
-.ctn-header .space2 {
-  /* border: solid #0055ff; */
+.ctn-header-menu {
+  display: none;
 }
 .ctn-header-logo {
   /*border: solid $color;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
 }
-.ctn-header-logo .ctn-header-logo-item-1 {
+.ctn-header-logo-item-1 {
   display: flex;
   justify-content: left;
   align-items: center;
-  height: 100%;
+  height: 70%;
   font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  background-color: rgb(24, 41, 49);
 }
-.ctn-header-logo .ctn-header-logo-item-1 .span-epis {
-  color: blue;
+.ctn-header-logo-item-1 .span-epis {
+  color: #3131fe;
 }
-.ctn-header-logo .ctn-header-logo-item-1 .span-unh {
-  color: white;
+.ctn-header-logo-item-1 .span-unh {
+  color: #a8a8a8;
 }
 .ctn-header-items {
-  /*border: solid $color;*/
+  margin-right: 40px;
+  /*border: solid  green;*/
   display: flex;
 }
 .ctn-header-items-1 {
   /*border: solid white;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .ctn-header-items-1 .link-item-1 {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .ctn-header-items-2 {
   /*border: solid white;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .ctn-header-items-2 .link-item-1 {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .ctn-header-items-2 .ctn-header-options {
   background-color: white;
@@ -178,64 +176,138 @@ body {
 }
 .ctn-header-items-3 {
   /*border: solid white;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .ctn-header-items-3 .link-item-1 {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .ctn-header-items-4 {
   /*border: solid white;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .ctn-header-items-4 .link-item-1 {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .ctn-header-items-5 {
   /*border: solid white;*/
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 .ctn-header-items-5 .link-item-1 {
   text-decoration: none;
   font-size: 14px;
   text-transform: capitalize;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 .ctn-header-items-5 button {
-  background: linear-gradient(90deg, blue, purple);
+  background: linear-gradient(90deg, #1c1c9a, #f318f0);
   border-radius: 50px;
   border: none;
   padding: 10px;
 }
+.ctn-header-items-5 button:hover {
+  transition: 1s;
+  background: linear-gradient(90deg, purple, blue);
+}
+.ctn-header-items-5 button:active {
+  opacity: 0.5;
+}
 .ctn-header-items-5 .link-item-1 {
   color: white;
 }
-.ctn-header-items .navbar .icon {
-  display: none;
-}
-@media screen and (max-width: 600px) {
-  .ctn-header-items .navbar .icon {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 14px 16px;
-    color: #fff;
+
+@media (max-width: 780px) {
+  .ctn-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .ctn-header-logo-item-1 {
+    font-size: 20px;
+  }
+  .ctn-header-menu {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ctn-header-menu .span-bar {
+    color: white;
+    font-size: 30px;
+  }
+  .ctn-header-menu:hover {
+    opacity: 0.5;
+  }
+  .ctn-header-items-1 {
+    display: none;
+  }
+  .ctn-header-items-2 {
+    display: none;
+  }
+  .ctn-header-items-3 {
+    display: none;
+  }
+  .ctn-header-items-4 {
+    display: none;
+  }
+  .ctn-header-items-5 {
+    display: none;
   }
 }
+.ctn-principal {
+  background: #051015;
+  height: 100%;
+}
+.ctn-principal .ctn-main {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  height: 600%; /* PAGINAS * 100% */
+}
+.ctn-principal .ctn-footer {
+  background: black;
+  height: 400px;
+}
 
-/*# sourceMappingURL=areas.css.map */
+.ctn-principal .ctn-main-page-gestion {
+  border: solid #f10505;
+}
+.ctn-principal .ctn-main-page-reglamento {
+  border: solid salmon;
+}
+.ctn-principal .ctn-main-page-formato {
+  border: solid #f10505;
+}
+.ctn-principal .ctn-main-page-mor {
+  border: solid salmon;
+}
+.ctn-principal .ctn-main-page-bienestar {
+  border: solid rgb(145, 29, 203);
+}
+.ctn-principal .ctn-main-page-otros {
+  border: solid salmon;
+}
+.ctn-principal .ctn-footer {
+  background: black;
+}
+
+/*# sourceMappingURL=documentos.css.map */
