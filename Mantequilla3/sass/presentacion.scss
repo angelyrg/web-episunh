@@ -1,0 +1,145 @@
+@use 'variables';
+@use 'navbar2';
+@use 'principal';
+
+
+
+.ctn-principal{
+
+    .ctn-main{
+        grid-template-rows: 100% 100% 100% 100% 50%;   
+        &-link{
+            /*border: solid red;*/
+            background: #151320;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        &-presentacion{
+            /*border: solid red;*/
+            border-bottom:1px solid #1a1828;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            &-titulo{
+                /*border: solid orange;*/
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .numero_grande{
+                    font-size: 60px;
+                }
+                .titulo_grande{
+                    font-size: 30px;
+                }
+                .descripcion_grande{
+                    font-size: 13px;
+                }
+                &-content{
+                    /*border: solid green;*/
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin: 1em;
+                }
+
+            }
+            &-content{
+                /*border: solid orange;*/
+                color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                &-text{
+                    width: 70%;
+                    font-size: 15px;
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .ctn-principal{
+        .ctn-main{  
+            &-link{
+                border: solid red;
+                background: #151320;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            &-presentacion{
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                grid-template-areas: "text"
+                                     "text"
+                                     "titulo";
+                &-titulo{
+                    width: 100%;
+                    grid-area: titulo;
+                    /*border: solid orange;*/
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                    &-content{
+                        /*border: solid green;*/
+                        display: flex;
+                        justify-items: center;
+                        align-items: left;
+                        flex-direction: column;
+                        margin: 1em;
+
+                    }
+                    
+                    .numero_grande{
+                        font-size: 25px;
+                        
+                    }
+                    .titulo_grande{
+                        font-size: 20px;
+                    }
+                    .descripcion_grande{
+                        font-size: 9px;
+                    }
+    
+                }
+                &-content{
+                    width: 100%;
+                    grid-area: text;
+                    /*border: solid orange;*/
+                    color: white;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: right;
+                    align-items: center;
+                    
+    
+                    &-text{
+                        margin: 2em;
+                        width: 70%;
+                        font-size: 9px;
+                        text-align: right;
+
+                    }
+    
+    
+                }
+            }
+        }
+    }
+}

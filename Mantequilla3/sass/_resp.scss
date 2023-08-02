@@ -1,0 +1,176 @@
+@use 'navbar2';
+@use 'variables';
+@use 'principal';
+
+@media (max-width: 1000px){
+    
+    .ctn-principal{
+        display: grid;
+        grid-template-rows: 100%;
+
+        .ctn-main{
+            grid-template-rows: 100% 100% auto auto auto 50%;
+        &-page-welcome{
+
+        grid-template-columns: 100% 0%;
+            &-text-title{
+                margin-bottom: 2em;
+                margin-left: 1em;
+                span{
+                    color: white;
+                }
+            .text-link{
+                font-size: 9px;
+                color: #d5d5d5;
+                @include navbar2.StyleLink(#3f3fff,#937cdf);
+                .text-button{
+                    
+                }
+            }
+
+            .title{
+                font-size: 23px;
+                font-weight: 300;
+            }
+            .text-description{
+                display: inline-block; 
+                vertical-align: top;
+                font-size: 9px;
+                line-height: 1.1em;
+                margin-bottom: 14px;
+            }
+            }
+        }
+        &-page-information{
+            height: 100%;
+            /*border: solid red;*/
+            background:linear-gradient(#081419,#0f1e24);
+            display: grid;
+            grid-template-columns: 0% 100%;
+            /*div{
+                border: solid white;
+            }*/
+            &-text{
+                /*border: solid green;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &-text{
+                    width: 80%;
+                    
+                    color: white;
+                    /*border: solid red;*/
+                    .information-bienvenido{
+                        font-size: 18px;
+                        letter-spacing: 3px;
+                    }
+                    span{
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-top: 3px;
+                        font-size: 9px;
+                        line-height: 1.1em;
+                        /*border: solid;*/
+                    }
+                    .span-encuentranos{
+                        color: white;
+                        font-size: 9px;
+                    }
+                    @include navbar2.Button2();
+
+
+                    
+                    .Faccebok{
+                        padding: 0.8em 1em;
+                        font-size: 7px;
+                        &:hover{
+                            background-color: #2323c4;
+                            box-shadow: 0px 15px 20px #4d2ee566;
+                        } 
+                    }
+                    .Instagram{
+                        padding: 0.8em 1em;
+                        font-size: 7px;
+                        &:hover{
+                            background-color: #8623c4;
+                            box-shadow: 0px 15px 20px #a52ee566;
+                        } 
+                    }
+                    .Youtube{
+                        padding: 0.8em 1em;
+                        font-size: 7px;
+                        &:hover{
+                            background-color: #c42323;
+                            box-shadow: 0px 15px 20px #e52e2e66;
+                        } 
+                    }
+                    .Whatsapp{
+                        padding: 0.8em 1em;
+                        font-size: 7px;
+                         
+                    }
+                    .Linkedin{
+                        display: none;
+                    }
+                }
+
+            }
+               
+        }
+
+        &-page-target{
+            border: solid red;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(6,1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+        &-grande{
+                
+            /*@include card-page3(2rem);  */
+            /*margin-top: 1em;
+            margin-bottom: 0em;
+            margin-left: 1em;
+            margin-right: 4em;*/
+ 
+        }
+        &-mediano{
+            margin-top: 0em;
+            margin-bottom: 0em;
+            margin-left: 1em;
+            margin-right: 4em;
+            @include card-page3(2rem);  
+
+        }
+        &-pequeno{
+            @include card-page3(2rem);  
+
+        }
+        .target-text-tittle{
+            font-size: 15px;
+            letter-spacing: 6px;
+            color:#cfcfcf;      
+        }
+        span{
+            font-size: 10px;
+            color: #cfcfcf;
+            display: inline-block;
+            vertical-align: top;  
+        }
+        }
+        &-page-abouti{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+
+        }
+
+
+    }
+}

@@ -341,16 +341,67 @@ body {
 }
 
 .ctn-principal .ctn-main {
-  grid-template-rows: 100% 50%;
+  grid-template-rows: 100% 100% 100% 50%;
 }
-.ctn-principal .ctn-main-link {
+.ctn-principal .ctn-main-visionmision {
   /*border: solid red;*/
-  background: #151320;
+  border-bottom: 3px solid #1a1828;
+  color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.ctn-principal .ctn-main-visionmision-image {
+  /*border: solid green;*/
+}
+.ctn-principal .ctn-main-visionmision-text {
+  /*border: solid;*/
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+.ctn-principal .ctn-main-visionmision-text-content {
+  width: 70%;
+  /*border: solid greenyellow;*/
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
+}
+.ctn-principal .ctn-main-visionmision-text-content .title_grande {
+  font-size: 40px;
+  font-weight: 300;
+  color: bisque;
+  text-transform: uppercase;
+}
+.ctn-principal .ctn-main-visionmision-text-content .title_sub {
+  font-size: 13px;
+  color: #858c91;
+}
+.ctn-principal .ctn-main-visionmision-text-content .texto_grande {
+  font-size: 16px;
+  color: white;
 }
 
-/*# sourceMappingURL=nosotros.css.map */
+@media (max-width: 1000px) {
+  .ctn-principal .ctn-main {
+    background-image: red;
+  }
+  .ctn-principal .ctn-main-visionmision {
+    display: grid;
+    grid-template-columns: 0% 100%;
+  }
+  .ctn-principal .ctn-main-visionmision-text-content .title_grande {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .ctn-principal .ctn-main-visionmision-text-content .title_sub {
+    font-size: 9px;
+    color: #858c91;
+  }
+  .ctn-principal .ctn-main-visionmision-text-content .texto_grande {
+    font-size: 11px;
+    color: white;
+  }
+}
+
+/*# sourceMappingURL=visionymision.css.map */

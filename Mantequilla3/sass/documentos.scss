@@ -1,32 +1,121 @@
 @use 'variables';
 @use 'navbar2';
-@use 'principal';
-
-@include principal.Principal(600%,6);
-
+@use 'principal'; 
+.text_title{
+    font-size: 27px;
+    margin-left: 0.70em;
+    margin-right: 0.70em;
+}
+.text_subtitle{
+    font-size: 13px;
+    color: #b7aaaa;
+}
 .ctn-principal{
-    .ctn-main{
-        &-page-gestion{
-            border: solid #f10505;
-        }
-        &-page-reglamento{
-            border: solid salmon;
-        }
-        &-page-formato{
-            border: solid #f10505;
-        }
-        &-page-mor{
-            border: solid salmon;
-        }
-        &-page-bienestar{
-            border: solid rgb(145, 29, 203);
-        }
-        &-page-otros{
-            border: solid salmon;
-        }
-    }
-    .ctn-footer{
-        background: black;
-    }
 
+    .ctn-main{
+        grid-template-rows:auto auto auto auto auto 50%;   
+        &-box{
+            margin-top: 100px;
+            /*border: solid red;*/
+            background: #12181c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-ctn{
+                /*border: solid green;*/
+                margin-top: 2em;
+                margin-bottom: 3em;
+                &-part1{
+                    /*border: solid blue;*/
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                }
+                &-part2{
+                    margin-top: 25px;
+                    /*border: solid blue;*/
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    .items{
+                        background: black;
+                        width: 250px;
+                        height: 250px;
+                        margin: 1em;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-end;
+                        flex-direction: column;
+
+                        color: white;
+                        &-image{
+                            width: 150px;
+                            height: 150px; 
+                            border-radius: 150px;
+                            align-self: center;
+                            background-position: center;
+                            
+                        }
+                        &-text{
+                            margin: 1em;
+                            /*border: solid white;*/
+                            display: flex;
+                            justify-self: end;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            width: 80%;
+                            
+                            &-a{
+                                display: flex;
+                                justify-self: end;
+                                flex-direction: column;
+                                /*border: solid red;*/
+                                &-title{
+                                    font-size: 15px;
+                                    text-transform: uppercase;
+                                }
+                                &-subtitle{
+                                    font-size: 10px;
+                                    text-transform: capitalize;
+                                }
+
+                            }
+
+                            &-b{
+                                /*border: solid green;*/
+                               margin: 5px;
+                            }
+                            a{
+                                text-decoration: none;
+                                cursor:default;
+                                /*border: solid red;*/
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white; 
+                                background: #00ffad;  
+                                &:hover{
+                                    opacity: 0.2;   
+                                }
+                                &:active{
+                                    background: #515151;
+                                    transition: 0.5s;
+                                }
+                            }
+                        }
+                        
+                        &:active{
+                            transition: 0.5s;
+                            opacity: 0.2;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

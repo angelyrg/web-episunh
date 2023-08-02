@@ -6,22 +6,11 @@ $color: black;
 $titulo: 'Jura', sans-serif;
 $font-family: 'Jura', sans-serif;
 
-
-@mixin PageElements($color){
-    height: 70%;
-    background: $color;
-}
-
-@mixin Centrear(){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 *{
     padding: 0;
     margin: 0 ;
     font-family: 'Jura', sans-serif;
+    user-select: none;
 }
 
 .ctn-principal::-webkit-scrollbar {

@@ -343,14 +343,110 @@ body {
 .ctn-principal .ctn-main {
   grid-template-rows: 100% 50%;
 }
-.ctn-principal .ctn-main-link {
+.ctn-principal .ctn-main-historia {
   /*border: solid red;*/
-  background: #151320;
-  display: flex;
-  flex-direction: column;
+  background-image: url("../img/fondo.avif");
+  background-position: center;
+  background-size: cover;
+}
+.ctn-principal .ctn-main-historia-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  /*border: solid red;*/
+  background: rgba(28, 28, 42, 0.8156862745);
+  display: none;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+.ctn-principal .ctn-main-historia-panel-video {
+  /*border: solid gold;*/
+  width: 80%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.ctn-principal .ctn-main-historia-panel-exit {
+  /*border: solid green;*/
+  align-self: flex-start;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  margin-right: 2em;
+  margin-top: 1em;
+  font-size: 28px;
+}
+.ctn-principal .ctn-main-historia-panel-exit .button_text {
+  border: none;
+  background: black;
+  color: white;
+  padding: 0.8em 1.2em 0.8em 1.2em;
+  border-radius: 50px;
+}
+.ctn-principal .ctn-main-historia-panel-exit .button_text:hover {
+  opacity: 0.5;
+}
+.ctn-principal .ctn-main-historia-fondo {
+  /*border: solid green;*/
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+}
+.ctn-principal .ctn-main-historia-fondo-controlers {
+  /*border: solid gold;*/
+  background: rgba(0, 0, 0, 0.6235294118);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.ctn-principal .ctn-main-historia-fondo-controlers .titulo_grande {
+  /*border: solid;*/
+  font-size: 20px;
+  margin-left: 3em;
+  text-transform: uppercase;
+}
+.ctn-principal .ctn-main-historia-fondo-controlers .play_grande {
+  border-radius: 50px;
+  margin-right: 3em;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ctn-principal .ctn-main-historia-fondo-controlers .play_grande:hover {
+  transition: 0.75s;
+  cursor: pointer;
+  background: #1c1c2a;
+}
+.ctn-principal .ctn-main-historia-fondo-controlers .play_grande:active {
+  opacity: 0;
+}
+.ctn-principal .ctn-main-historia-fondo-puntos {
+  position: absolute;
+  /*border: solid orange;*/
+  width: 50px;
+  height: 100%;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.ctn-principal .ctn-main-historia-fondo-puntos .punto {
+  background: white;
+  border-radius: 10px;
+  width: 5px;
+  height: 5px;
 }
 
-/*# sourceMappingURL=nosotros.css.map */
+/*# sourceMappingURL=historia.css.map */

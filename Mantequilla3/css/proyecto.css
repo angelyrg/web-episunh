@@ -340,17 +340,181 @@ body {
   font-size: 10px;
 }
 
-.ctn-principal .ctn-main {
-  grid-template-rows: 100% 50%;
-}
-.ctn-principal .ctn-main-link {
-  /*border: solid red;*/
-  background: #151320;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.span-titulo {
+  font-size: 16px;
+  margin-top: 15px;
 }
 
-/*# sourceMappingURL=nosotros.css.map */
+.span-description {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #937cdf;
+}
+
+.button-ver {
+  border: 1px solid white;
+  color: #00ffad;
+  background-color: transparent;
+  padding: 2px 5px 2px 5px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.button-ver:hover {
+  background: white;
+  color: black;
+  font-weight: 700;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.list-integrantes {
+  font-size: 12px;
+  margin-left: 30px;
+  color: white;
+}
+
+.ctn-principal .ctn-main {
+  grid-template-rows: auto auto 50%;
+}
+.ctn-principal .ctn-main-proyectos {
+  /*border: solid green;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ctn-principal .ctn-main-proyectos-part1 {
+  width: 50%;
+  /*border: solid red;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ctn-principal .ctn-main-proyectos-part1-img {
+  /*border: solid #0e0;*/
+  margin: 3em;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+.ctn-principal .ctn-main-proyectos-part1-img img {
+  width: 100%;
+  height: auto;
+  /*border: solid;*/
+  opacity: 0.4;
+  filter: saturate(180%);
+}
+.ctn-principal .ctn-main-proyectos-part1-img img:hover {
+  transition: 0.7;
+  transform: rotate(8deg);
+  opacity: 10;
+  cursor: grab;
+}
+.ctn-principal .ctn-main-proyectos-part2 {
+  width: 50%;
+  height: auto;
+  background: #051015;
+  /*border: solid green;*/
+}
+.ctn-principal .ctn-main-proyectos-part2-ctn {
+  /*border: solid blue;*/
+  border-top: 1px solid #5e5a5a;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+.ctn-principal .ctn-main-proyectos-part2-ctn-text {
+  /*border: solid;*/
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: #cdcbdd;
+}
+
+@media (max-width: 780px) {
+  .span-titulo {
+    font-size: 10px;
+    margin-top: 15px;
+  }
+  .span-description {
+    font-size: 9px;
+  }
+  .button-ver {
+    font-size: 7px;
+  }
+  .button-ver:hover {
+    background: white;
+    color: black;
+    font-weight: 700;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .list-integrantes {
+    margin-left: 30px;
+    color: white;
+    font-size: 8px;
+  }
+  .ctn-principal .ctn-main-proyectos {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: "text" "img";
+  }
+  .ctn-principal .ctn-main-proyectos-part1 {
+    margin-top: 10px;
+    grid-area: img;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ctn-principal .ctn-main-proyectos-part1-img {
+    margin: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .ctn-principal .ctn-main-proyectos-part1-img img {
+    width: 100%;
+    height: auto;
+    opacity: 0.4;
+    filter: saturate(180%);
+  }
+  .ctn-principal .ctn-main-proyectos-part1-img img:hover {
+    transition: 0.7;
+    transform: rotate(8deg);
+    opacity: 10;
+    cursor: grab;
+  }
+  .ctn-principal .ctn-main-proyectos-part2 {
+    grid-area: text;
+    width: 100%;
+  }
+  .ctn-principal .ctn-main-proyectos-part2-ctn {
+    top: 50px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+  .ctn-principal .ctn-main-proyectos-part2-ctn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 8px;
+    color: #cdcbdd;
+  }
+}
+
+/*# sourceMappingURL=proyecto.css.map */
