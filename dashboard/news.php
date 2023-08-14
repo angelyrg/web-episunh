@@ -162,7 +162,7 @@ include_once("layouts/head.php");
 		e.preventDefault();
 
 		$.ajax({
-			url: "app/news.delete.php",
+			url: "app/news.disable.php",
 			type: 'POST',
 			data: $("#form_delete_news").serialize(),
 			success: function (resp) {

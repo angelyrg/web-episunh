@@ -1,0 +1,87 @@
+@use 'variables';
+@use 'navbar2';
+@use 'principal';
+
+
+
+.ctn-principal{
+    .ctn-main{
+        grid-template-rows:100% 100% 100% 50%;   
+        &-visionmision{
+            /*border: solid red;*/
+            border-bottom: 3px solid #1a1828;
+            color: white;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            &-image{
+                /*border: solid green;*/
+            }
+            &-text{
+                /*border: solid;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &-content{
+                    width: 70%;
+                    /*border: solid greenyellow;*/
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 5px;
+                    .title_grande{
+                        font-size: 40px;
+                        font-weight: 300;
+                        color: bisque;
+                        text-transform: uppercase;
+                    }
+                    .title_sub{
+                        font-size: 13px;
+                        color: #858c91;
+                    }
+                    .texto_grande{
+                        font-size: 16px;
+                        color: white;
+                        
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .ctn-principal{
+    .ctn-main{ 
+        background-image: red;
+        &-visionmision{
+            display: grid;
+            grid-template-columns: 0% 100%;
+            &-image{
+            }
+            &-text{
+                &-content{
+                    
+                    .title_grande{
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                    .title_sub{
+                        font-size: 9px;
+                        color: #858c91;
+                    }
+                    .texto_grande{
+                        font-size: 11px;
+                        color: white;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+
+}

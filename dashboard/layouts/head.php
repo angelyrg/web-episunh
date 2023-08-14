@@ -57,7 +57,7 @@ if (!isset($_SESSION['login'])){
 					</li>
 
                     <li class="nav-item">
-					    <a href="#" class="nav-link ">
+					    <a href="authority.php" class="nav-link ">
                             <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span><span class="pcoded-mtext">Autoridades</span>
                         </a>
 					</li>
