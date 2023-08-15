@@ -66,7 +66,7 @@ if (!isset($_SESSION['login'])){
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Dependencias</span></a>
 					    <ul class="pcoded-submenu">
-					        <li><a href="#" target="_blank">Extensión cultural y Proyección Social</a></li>
+					        <li><a href="projects.php" >Extensión cultural y Proyección Social</a></li>
 					        <li><a href="#" target="_blank">Tutoría</a></li>
 					        <li><a href="#" target="_blank">Investigación</a></li>
 					        <li><a href="#" target="_blank">Calidad Académica y Acreditación </a></li>
