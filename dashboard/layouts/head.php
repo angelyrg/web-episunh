@@ -84,7 +84,7 @@ if (!isset($_SESSION['login'])){
 					</li>
 
                     <li class="nav-item">
-					    <a href="" class="nav-link ">
+					    <a href="contact.php" class="nav-link ">
                             <span class="pcoded-micon"><i class="feather icon-phone-outgoing"></i></span><span class="pcoded-mtext">Contacto</span>
                         </a>
 					</li>

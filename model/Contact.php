@@ -18,7 +18,7 @@ class Contact extends Conexion
     // READ
     public function get_all()
     {
-        $result = $this->conexion_db->query("SELECT * FROM contact");
+        $result = $this->conexion_db->query("SELECT * FROM contact WHERE disabled=0");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -29,10 +29,12 @@ class Contact extends Conexion
     }
 
     //UPDATE
-    public function update($id, $address, $phone, $email){
-        return $this->conexion_db->query("UPDATE contact SET address='$address', phone='$phone', email='$email' WHERE id='$id'");
+    // public function disable($id, $address, $phone, $email){
+    //     return $this->conexion_db->query("UPDATE contact SET address='$address', phone='$phone', email='$email' WHERE id='$id'");
+    // }
+    public function disable($id){
+        return $this->conexion_db->query("UPDATE contact SET disabled=1, disabled_at=NOW() WHERE id='$id'");
     }
-
 
     // DELETE
     public function delete($id){
