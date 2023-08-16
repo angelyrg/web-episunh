@@ -1,0 +1,97 @@
+@use 'variables';
+@use 'navbar3';
+@use 'principal';
+
+.ctn-principal{
+    .ctn-main{
+        grid-template-rows: 100% 100% 100% 50%; 
+        &-autoridades{
+            /*border: solid red;*/
+            border-bottom: solid #1a1828;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-image{
+                /*border:solid green;*/
+                background-image: url('../img/imagen.webp');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 600px;
+                height: 400px;
+                position: relative;
+            }
+
+            &-text{
+                position: absolute;
+                background: black;
+                width: 300px;
+                height: 150px;
+                margin:auto;
+                bottom: -30px;
+                right: -30px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                &-content{
+                    /*border: solid ;*/
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    margin: 8px;
+                    .titulo_grande{
+                        font-size: 25px;
+                    }
+                    .texto_grande{
+                        font-size: 14px;
+                        color: #74726f;
+                    }
+                    
+                }
+            }
+
+        }  
+        
+    }
+}
+
+@media (max-width: 780px){
+    .ctn-principal{
+        .ctn-main{
+
+            grid-template-rows:50% 40% 40% 40%; 
+            &-autoridades{
+                padding-bottom: 0px;
+                align-items: end;
+                &-image{
+                    width: 250px;
+                    height: 250px;
+                }
+                &-text{
+                    width: 130px;
+                    height: 70px;
+                    margin:auto;
+                    bottom: 10px;
+                    right: -30px;
+                    
+                    &-content{
+                        gap: 3px;
+                        .titulo_grande{
+                            font-size: 10px;
+                        }
+                        .texto_grande{
+                            font-size: 7px;
+                        }
+                        
+                    }
+                }
+    
+            }  
+            
+        }
+    }
+    
+}

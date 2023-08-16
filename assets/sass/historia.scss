@@ -1,0 +1,128 @@
+@use 'variables';
+@use 'navbar3';
+@use 'principal';
+
+.ctn-principal{
+    .ctn-main{
+        grid-template-rows:100% 50%; 
+        &-historia{
+            /*border: solid red;*/
+            background-image: url('../img/fondo.avif');
+            background-position: center;
+            background-size: cover  ;
+            &-panel{
+
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 99;
+                /*border: solid red;*/
+                background:#1c1c2ad0 ;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                &-video{
+                    /*border: solid gold;*/
+                    width: 80%;
+                    height: 80%;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    
+                }
+                &-exit{
+                     /*border: solid green;*/
+                    align-self: flex-start;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    display: flex;
+                    width: 100%;
+                    position: absolute;
+                    
+                    margin-right: 2em;
+                    margin-top: 1em;
+                    font-size: 28px;
+                    .button_text{
+                        border: none;
+                        background: black;
+                        color: white;
+                        padding: 0.8em 1.2em 0.8em 1.2em;
+                        border-radius: 50px;
+                        &:hover{
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+            &-fondo{
+                /*border: solid green;*/
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: stretch;
+                &-controlers{
+                    /*border: solid gold;*/
+                    background: #0000009f;
+                    height: 50px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: white;
+                    .titulo_grande{
+                        /*border: solid;*/
+                        font-size: 20px;
+                        margin-left: 3em;
+                        text-transform: uppercase;
+                    }
+                    .play_grande{
+                        border-radius: 50px;
+                        margin-right: 3em;
+                        height: 40px;
+                        width: 40px;
+                        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:hover{
+                            transition: 0.75s;
+                            cursor: pointer;
+                            background: #1c1c2a;
+                        }
+                        &:active{
+                            opacity: 0;
+
+                        }
+                    }
+
+                }
+                &-puntos{
+                    position: absolute;
+                    /*border: solid orange;*/
+                    width: 50px;
+                    height: 100%;
+                    align-self: flex-end;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    .punto{
+                        background: white;
+                        border-radius: 10px;
+                        width: 5px;
+                        height: 5px;
+
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+@media (max-width: 780px){
+    
+    
+}

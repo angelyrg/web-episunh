@@ -1,56 +1,521 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Document</title>
+    <!-- ICONO SACADO DE GOOGLE -->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
+    <link rel="stylesheet" href="assets/css/sass3.css">
+    <!---  SWEET ALERT -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>-->
+    <!-- Include a required theme -->
+    <meta name="theme-color" content="black">
+    <title>UNHEPIS</title>
 </head>
-<body>
 
-    <div class="container">
-        <h1 class="">Autoridades prueba</h1>    
-        <div class="row my-3" id="autoridades_container"></div>
+<body class="ctn-principal" id="body_ctn">
+    <div class="panel-menu-items" id="panel_menu_items">
+        <navbar class="nav-menu">
+            <ul class="ul-menu">
+                <li class="menu-option">
+                    <a href="#" class="menu-option-span menu-option-span-solid ">Inicio</a>
+                </li>
+                <li class="menu-option">
+                    <a href="./page/documentos.html" class="menu-option-span"> Documentos</a>
+                </li>
+                <li class="menu-option">
+                    <span class="menu-option-span" id="menu_option">
+                        <img src="assets/svg/expand_more_white_24dp.svg"> Areas
+                    </span>
+                    <ul class="menu-ctn-items" id="items_menu">
+                        <li class="menu-option-n1">
+                            <a href="./page/bienestar.html">Bienestar</a>
+                        </li>
+                        <li class="menu-option-n1">
+                            <a href="./page/calidad.html">Calidad</a>
+
+                        </li>
+                        <li class="menu-option-n1">
+                            <a href="./page/proyectos.html">Proyeccion Social</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-option">
+                    <span class="menu-option-span" id="menu_option1">
+                        <img src="assets/svg/expand_more_white_24dp.svg"> Nosotros
+                    </span>
+                    <ul class="menu-ctn-items" id="items_menu1">
+                        <li class="menu-option-n1">
+                            <a href="./page/presentacion.html">Presentacion</a>
+                        </li>
+                        <li class="menu-option-n1">
+                            <a href="./page/visionymision.html">Vision y Mision</a>
+                        </li>
+                        <li class="menu-option-n1">
+                            <a href="./page/autoridades.html">Autoridades</a>
+                        </li>
+                        <li class="menu-option-n1">
+                            <a href="./page/historia.html">Historia</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="menu-option">
+                    <a href="./page/contacto.html" class="menu-option-span">Contacto</a>
+
+                </li>
+
+            </ul>
+        </navbar>
     </div>
-    
+    <header id="body">
+        <div class="ctn-header-logo">
+            <div class="ctn-header-logo-item-1">
+                <span class="span-epis">EPIS
+                    <span class="span-unh">UNH</span>
+                </span>
+            </div>
+        </div>
+        <nav>
+            <ul class="content_hello">
+                <li class="content_hello-titulo">
+                    <a href="#">
+                        <span class="style-linkAll-solid">Inicio</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="content_hello">
+                <li class="content_hello-titulo">
+                    <a href="./page/documentos.html">
+                        <span class="style-linkAll">Documentos</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="content_hello">
+                <li class="content_hello-titulo">
+                    <span id="content">Areas</span>
+                </li>
+                <ul class="content_hello-items" id="show">
+                    <a href="./page/bienestar.html">
+                        <li class="content_hello-items1">
+                            Bienestar
+                        </li>
+                    </a>
+                    <a href="./page/calidad.html">
+                        <li class="content_hello-items1">
+                            Calidad
+                        </li>
+                    </a>
+                    <a href="./page/proyectos.html">
+                        <li class="content_hello-items1">
+                            Proyeccion<br>Social
+                        </li>
+                    </a>
+                </ul>
+            </ul>
+            <ul class="content_hello">
+                <li class="content_hello-titulo content_hello-titulo2">
+                    <span id="content1">Nosotros</span>
+                </li>
+                <ul class="content_hello-items" id="show1">
+                    <a href="./page/presentacion.html">
+                        <li class="content_hello-items1">
+                            Presentación
+                        </li>
+                    </a>
+                    <a href="./page/visionymision.html">
+                        <li class="content_hello-items1">
+                            Visión y Misión
+                        </li>
+                    </a>
+                    <a href="./page/autoridades.html">
+                        <li class="content_hello-items1">
+                            Autoridades
+                        </li>
+                    </a>
+                    <a href="./page/historia.html">
+                        <li class="content_hello-items1">
+                            Historia
+                        </li>
+                    </a>
+                </ul>
+            </ul>
+            <ul class="content_hello">
+                <a href="./page/contacto.html">
+                    <li class="centreado">
+                        <button class="button">Contacto</button>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+        <div class="content_menu" id="content_menu">
+            <span class="menu" id="menu"></span>
+            <span class="close" id="close"></span>
+        </div>
+    </header>
+    <main class="ctn-main">
+        <section class="ctn-main-page-welcome">
+            <div class="ctn-main-page-welcome-text">
+                <div class="ctn-main-page-welcome-text-title">
+                    <span class="title">
+                        UNIVERSIDAD NACIONAL
+                        <br>
+                        DE HUANCAVELICA
+                        <br>
+                        ESCUELA PROFESIONAL
+                        <br>
+                        INGENIERIA DE
+                        <br>
+                        SISTEMAS
+                    </span>
+                    <br>
+                    <span class="text-link"> Ver y Descargar
+                        <a href="https://drive.google.com/drive/folders/1ve7IFjfdFdKE07TGfaPUr7wJjdPFz0hD"
+                            target="_blank" onclick="descargar()" class="style-linkAll"> Proyecccion 2023
+                            <img width="9" height="9" src="assets/svg/file_download_white_18dp.svg">
+                        </a>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="text-description">
+                        Aunque la industria de la computación aún es joven
+                        en comparación con otras industrias (como la automotriz
+                        y la aeronáutica), ha progresado espectacularmente en poco
+                        tiempo. Durante las dos primeras décadas de su existencia,
+                        los sistemas de computación estaban altamente centralizados,
+                        por lo general, una sala grande e independiente.
+                    </span>
+                    <br>
+                    <a href="https://www.unh.edu.pe/" target="_blank">
+                        <button class="text-button">IR A UNH
+                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
+                        </button>
+                    </a>
+                    <a href="http://fies.unh.edu.pe/" target="_blank">
+                        <button class="text-button">IR A FACULTAD
+                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="ctn-main-page-welcome-image">
+            </div>
+        </section>
 
-    <script>
+        <section class="ctn-main-page-information">
+            <div class="ctn-main-page-information-image"></div>
+            <div class="ctn-main-page-information-text">
+                <div class="ctn-main-page-information-text-text">
+                    <span class="information-bienvenido">BIENVENIDOS</span>
+                    <br>
+                    <br>
+                    <span>
+                        <li>
+                            La Escuela Profesional de Ingeniería de Sistemas de la Universidad Nacional de Huancavelica,
+                            le da la bienvenida a esta Casa superior de estudios, deseando que su estancia y desarrollo
+                            perdure y que sea el punto de partida de un proceso de crecimiento y desarrollo profesional
+                            para cada uno de nuestros nuevos estudiantes.
+                        </li>
+                        <br>
+                        <li>
+                            Al darles esta bienvenida, lo hacemos con una combinación de orgullo y compromiso. Sentimos
+                            orgullo por el hecho de que cada uno de ustedes haya considerado que la Escuela Profesional
+                            de Ingeniería de Sistemas representa la mejor opción para el desarrollo de una carrera
+                            profesional. Sentimos compromiso, porque tal decisión nos obliga a trabajar duramente cada
+                            día para estar a la altura de las más altas expectativas y honrar continuamente la promesa
+                            de excelencia académica que hemos hecho ante ustedes.
+                        </li>
+                        <br>
+                        <li>
+                            La Escuela Profesional de Ingeniería de Sistemas no solamente es un lugar para el
+                            crecimiento profesional en el sentido estricto de la palabra, pues nuestra intención
+                            apreciados estudiantes, es que cada uno de ustedes disfrute la experiencia de vida
+                            Universitaria de una forma plena y amena, con responsabilidad social, ética profesional y
+                            preservando el medio ambiente.
+                        </li>
+                    </span>
+                    <br>
+                    <br>
+                    <span class="span-encuentranos">
+                        <span class="material-symbols-rounded">
+                            rocket_launch
+                        </span>
+                        &nbsp;Encuentranos en nuestras redes sociales : </span>
+                    <br>
+                    <br>
 
-        document.addEventListener('DOMContentLoaded', function(e){            
-            obtenerNoticias();
-        });
+                    <button class="Faccebok styleB ">Faccebok</button>
+                    <button class="Whatsapp styleB">Whatsapp</button>
+                    <button class="Instagram styleB">Instagram</button>
+                    <button class="Youtube styleB">Youtube</button>
+                    <button class="Faccebok Linkedin  styleB">TWITTER</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctn-main-page-target">
+            <div class="ctn-main-page-target-grande">
+                <div class="ctn-main-page-target-grande-text ">
+
+                    <span class="target-text-tittle">Habilidades</span>
+                    <span>
+                        1. Creatividad y capacidad de ser original, innovador, descubridor e inventor.
+                        <br>
+                        <br>
+                        2. Capacidad de comunicación y facilidad para contactarse con los demás de una forma eficiente
+                        ya sea de forma escrita, oral o gráfica.
+                        <br>
+                        <br>
+                        3. Pensamiento que le permita al estudiante de esta carrera tener una integración focalizada de
+                        sus conocimientos para el establecimiento de prioridades adecuadas a la hora de tomar
+                        decisiones.
+                        <br>
+                        <br>
+                        4. Capacidad para implementar más de una solución correcta a un problema determinado.
+                        <br>
+                        <br>
+                        5. Pensamiento analítico y habilidad de poder descomponer un problema en sus partes
+                        constitutivas, extrayendo las variables principales que intervienen y relacionando los síntomas
+                        con sus causas; a la vez, capacidad para construir, con esta información, algoritmos y modelos
+                        de la vida real.
+                        <br>
+                        <br>
+                        6. Diseño conceptual que permita identificar y diseñar especificaciones generales y detalladas
+                        de los sistemas, cualquiera que estos sean, así como implementar y mantener los sistemas de
+                        información desarrollados.
+
+                    </span>
+                </div>
+            </div>
+            <div class="ctn-main-page-target-mediano">
+                <div class="ctn-main-page-target-mediano-text ">
+
+                    <span class="target-text-tittle">Conocimiento</span>
+
+                    <span>
+                        1. Debe de poseer conocimientos sólidos, tanto de matemáticas, física y conocimientos generales
+                        de química, así como conocimientos básicos tanto de software como de hardware, y de
+                        comunicaciones que le permiten responder a las diversas necesidades que se presentan en el campo
+                        de trabajo de la Ingeniería en Sistemas.
+                        <br>
+                        <br>
+                        2. Además, debe tener aptitud para el razonamiento lógico-matemático y para la operación de
+                        computadoras.
+                        <br>
+                        <br>
+                        3. Conocimiento de un idioma técnico: este deberá ser, al menos, el idioma inglés.
+                    </span>
+                </div>
 
 
-        async function obtenerNoticias() { 
-            const response = await fetch("http://192.168.224.44:1000/api/autoridades.php");
-            const noticias = await response.json();
-            
-            if (noticias.code != 200){
-                return;
-            }
-            
-            let autoridades = '';
-            noticias.data.forEach(element => {
-                const card_temp = `<div class="col-3">
-                        <div class="card shadow" >
-                            <img src="http://${element.url_foto}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${element.cargo}</h5>
-                                <p class="card-text">${element.nombre_completo}</p>                            
-                            </div>
-                        </div>
-                    </div>`;
+            </div>
+            <div class="ctn-main-page-target-pequeno">
+                <div class="ctn-main-page-target-pequeno-text">
 
-                autoridades += card_temp;
-            });
+                    <span class="target-text-tittle">Actitudes</span>
+                    <br>
+                    <span>
+                        Responsabilidad y constante búsqueda de respuestas mediante la investigación y el
+                        autoaprendizaje.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctn-main-page-abouti">
+            <div class="ctn-main-page-abouti-items-2">
+                <div class="ctn-main-page-abouti-items-2-perspectivas">
+                    <span class="abouti-title">PERSPECTIVAS OCUPACIONALES</span>
+                    <span>
+                        1. Gerente de tecnologías de información (GTI): Planifica y gestiona todas las tecnologías
+                        utilizadas en el manejo de la información de una organización.
+                        <br>
+                        2. Jefe de Proyectos: Gestiona, planifica, dirige, monitorea y controla proyectos de Tecnologías
+                        de Información y Comunicación.
+                        <br>
+                        3. Arquitecto de Tecnología: Diseña, desarrolla, evalúa e integra aplicaciones de negocios, y
+                        redes de computadoras.
+                        <br>
+                        4. Analistas de sistemas: Responsable de la traducción de los requerimientos funcionales en
+                        diseños de sistemas, diseña e implementa la arquitectura de la información de una determinada
+                        organización.
+                        <br>
+                        5. Analista de procesos: Análisis, identificación de oportunidades para la optimización de
+                        procesos, diseño de propuestas de mejoras, realizar análisis de impacto de negocio por la
+                        introducción de cambios.
+                        <br>
+                        6. Analista de seguridad informática: Diseña e implementa políticas de seguridad para proteger
+                        la información en las organizaciones.
+                        <br>
+                        7. Desarrolla el Software: Se encarga de desarrollar el software de calidad para dar solución a
+                        problemas organizacionales.
+                        <br>
+                        8. Gestionador de Base de Datos: Responsable de la construcción, verificación, instalación y
+                        gestión de las bases de datos de las organizaciones.
+                        <br>
+                        9. Auditor de Sistemas: Encargado de asegurar que aspectos de un sistema de información estén
+                        funcionando de acuerdo a las especificaciones y requerimientos de la organización.
+                        <br>
+                        10. Docente en Universidades e Institutos Superiores.
+                    </span>
+                </div>
+            </div>
+            <div class="ctn-main-page-abouti-items-1">
+                <div class="ctn-main-page-abouti-items-1-perfil">
+                    <span class="abouti-title">PERFIL PROFESIONAL</span>
+                    <span>
+                        Profesional dedicado a la aplicación del enfoque de sistemas en la solución de problemas
+                        organizacionales y sociales, mediante el diseño, implementación y gestión de tecnologías de
+                        información y comunicación generando competitividad en las organizaciones; además de diseñar e
+                        implementar sistemas de gestión por procesos, generando sistemas de gestión de calidad en las
+                        organizaciones con una visión innovadora, emprendedora, humanista, científica, orientado al
+                        desarrollo, bienestar de la sociedad y el medio ambiente.
+                    </span>
+                </div>
+
+            </div>
+        </section>
+        <section class="ctn-main-page-linea">
+            <div class="ctn-main-page-linea-content">
+                <div class="ctn-main-page-linea-content-items">
+                    <span class="items-title">Grado Academico</span>
+                    <br>
+                    <span class="items-text">Bachiller en Ingeniería de Sistemas</span>
+                </div>
+                <div class="ctn-main-page-linea-content-items">
+                    <span class="items-title">Título Profesional</span>
+                    <br>
+                    <span class="items-text">Ingeniero de Sistemas</span>
+                </div>
+                <div class="ctn-main-page-linea-content-items">
+                    <span class="items-title">Duracion</span>
+                    <br>
+                    <span class="items-text">5 años</span>
+                </div>
+                <div class="ctn-main-page-linea-content-items">
+                    <span class="items-title">Grado Academico</span>
+                    <br>
+                    <span class="items-text">Bachiller en Ingeniería de Sistemas</span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="ctn-footer">
+            <div class="ctn-footer-content">
+                <div class="ctn-footer-content-items">
+                    <h1>EPIS UNH</h1>
+                    <br>
+                    <span>
+                        Email: ep.sistemas@unh.edu.pe - Teléfono: +51 952 850 467
+                        <br>
+                        Av. Perú S/N - Daniel Hernández
+                    </span>
+
+                    <div class="ctn-footer-content-social">
+                        <div class="item-social"></div>
+                        <div class="item-social"></div>
+                        <div class="item-social"></div>
+                        <div class="item-social"></div>
+                        <div class="item-social"></div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <div class="ctn-copyright">
+            <span>Copyright ©2023, EPIS UNH - Todos los derechos reservados</span>
+        </div>
+
+    </main>
+</body>
+<script>
 
 
-            let contenedor_autoridades = document.getElementById("autoridades_container");
-            contenedor_autoridades.innerHTML =  autoridades;
+    $ = ev => document.getElementById(ev);
 
+    /**
+     *! import gatos :D
+     *?You can see my code
+     ***/
+
+    $("body").addEventListener("mouseleave", () => {
+        $("show").style.display = "none";
+        $("show1").style.display = "none";
+    })
+
+    $("show").addEventListener("mouseleave", () => {
+        $("show").style.display = "none";
+    })
+    function eventoU(content, show, show2) {
+        $(content).addEventListener("mouseover", () => {
+            $(show).style.display = "flex";
+            $(show2).style.display = "none";
+            $(show).style.flexDirection = "column";
+
+        })
+
+    }
+    eventoU("content", "show", "show1");
+    eventoU("content1", "show1", "show");
+
+    /* RESPONSIVE :V ***/
+
+    conteo = 0;
+    conteo0 = 0;
+    conteo1 = 0;
+
+    $("content_menu").addEventListener("click", () => {
+        if (conteo1 == 0) {
+            $("panel_menu_items").style.marginLeft = "0px";
+            $("panel_menu_items").style.transition = "0.3s";
+            $("body_ctn").style.overflow = "hidden";
+
+            $("close").style.display = "flex";
+            $("menu").style.display = "none";
+            conteo1 = 1;
+        }
+        else if (conteo1 == 1) {
+            $("body_ctn").style.overflow = "scroll ";
+            $("panel_menu_items").style.marginLeft = "-2000px";
+            $("panel_menu_items").style.transition = "0.8s";
+            $("close").style.display = "none";
+            $("menu").style.display = "flex";
+            conteo1 = 0;
 
         }
+    })
+    $("menu_option").addEventListener("click", () => {
+        if (conteo == 0) {
+            $("items_menu").style.display = "flex";
+            $("menu_option").innerHTML = "<img src='assets/svg/expand_less_white_24dp.svg'> Areas";
+            $("menu_option").style.color = "white";
+            conteo = 1;
+        }
+        else if (conteo == 1) {
+            $("items_menu").style.display = "none";
+            $("menu_option").innerHTML = "<img src='assets/svg/expand_more_white_24dp.svg'> Areas";
+            $("menu_option").style.color = "#6f6a6a";
+            conteo = 0;
+        }
+    })
+    $("menu_option1").addEventListener("click", () => {
+        if (conteo0 == 0) {
+            $("items_menu1").style.display = "flex";
+            $("menu_option1").innerHTML = "<img src='assets/svg/expand_less_white_24dp.svg'> Nosotros";
+            $("menu_option1").style.color = "white";
+            conteo0 = 1;
+        }
+        else if (conteo0 == 1) {
+            $("items_menu1").style.display = "none";
+            $("menu_option1").innerHTML = "<img src='assets/svg/expand_more_white_24dp.svg'> Nosotros";
+            $("menu_option1").style.color = "#6f6a6a";
+            conteo0 = 0;
+        }
+    })
 
-    </script>
-</body>
+</script>
+
 </html>
