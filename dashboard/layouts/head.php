@@ -114,8 +114,8 @@ if (!isset($_SESSION['login'])){
             <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
             <a href="#!" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="assets/images/logo-epis.png" alt="logo" height="100%" width="100%" class="logo">
-                <img src="assets/images/logo-icon.png" alt="" class="logo-thumb">
+                <img src="assets/images/logo.png" alt="logo" class="img-fluid logo">
+                <img src="assets/images/logo-icon.png" alt="" class=" logo-thumb">
             </a>
             <a href="#!" class="mob-toggler">
                 <i class="feather icon-more-vertical"></i>

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 15, 2023 at 08:09 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 19-08-2023 a las 08:44:46
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `web_sistemasunh`
+-- Base de datos: `web_sistemasunh`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about`
+-- Estructura de tabla para la tabla `about`
 --
 
 CREATE TABLE `about` (
@@ -38,7 +38,7 @@ CREATE TABLE `about` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `authority`
+-- Estructura de tabla para la tabla `authority`
 --
 
 CREATE TABLE `authority` (
@@ -56,7 +56,7 @@ CREATE TABLE `authority` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Estructura de tabla para la tabla `contact`
 --
 
 CREATE TABLE `contact` (
@@ -64,13 +64,52 @@ CREATE TABLE `contact` (
   `address` varchar(100) NOT NULL,
   `phone` varchar(12) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `disabled` tinyint(3) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `disabled_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Estructura de tabla para la tabla `document`
+--
+
+CREATE TABLE `document` (
+  `id` int(11) NOT NULL,
+  `cat_id` int(11) DEFAULT NULL,
+  `name_doc` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `disabled` tinyint(3) NOT NULL,
+  `disabled_at` datetime NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `document_categories`
+--
+
+CREATE TABLE `document_categories` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(100) NOT NULL,
+  `cat_description` varchar(200) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `document_categories`
+--
+
+INSERT INTO `document_categories` (`id`, `category_name`, `cat_description`, `updated_at`) VALUES
+(1, 'Documentos de Gestión', 'Nuestros documentos de Gestión', '2023-08-19 06:30:40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `news`
 --
 
 CREATE TABLE `news` (
@@ -86,7 +125,7 @@ CREATE TABLE `news` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project`
+-- Estructura de tabla para la tabla `project`
 --
 
 CREATE TABLE `project` (
@@ -107,7 +146,7 @@ CREATE TABLE `project` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -119,91 +158,126 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `rol`, `status`) VALUES
 (1, 'admin', '$2y$10$V.ylUG43iNE6ubyCZnFYcORVj3GGkZoDjQcBUTaAAPDEQz.KeTtcK', 'admin', 'activo');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `about`
+-- Indices de la tabla `about`
 --
 ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `authority`
+-- Indices de la tabla `authority`
 --
 ALTER TABLE `authority`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact`
+-- Indices de la tabla `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
+-- Indices de la tabla `document`
+--
+ALTER TABLE `document`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cat_id` (`cat_id`);
+
+--
+-- Indices de la tabla `document_categories`
+--
+ALTER TABLE `document_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `project`
+-- Indices de la tabla `project`
 --
 ALTER TABLE `project`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `about`
+-- AUTO_INCREMENT de la tabla `about`
 --
 ALTER TABLE `about`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `authority`
+-- AUTO_INCREMENT de la tabla `authority`
 --
 ALTER TABLE `authority`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT de la tabla `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `news`
+-- AUTO_INCREMENT de la tabla `document`
+--
+ALTER TABLE `document`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `document_categories`
+--
+ALTER TABLE `document_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `project`
+-- AUTO_INCREMENT de la tabla `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `document`
+--
+ALTER TABLE `document`
+  ADD CONSTRAINT `document_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `document_categories` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

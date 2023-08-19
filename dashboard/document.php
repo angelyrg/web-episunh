@@ -40,8 +40,7 @@ include_once("layouts/head.php");
                                     <th>Nombre del Documento</th>
                                     <th>Descripción</th>
                                     <th>Tipo de Documento</th>
-                                    <th>Link</th>
-                                    <th>Fecha de Aprobación</th>
+                                    <th>Archivo</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
@@ -67,31 +66,25 @@ include_once("layouts/head.php");
             <form method="POST" id="form_create_documents" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="documents_name" class="col-form-label">Nombre del Documento:</label>
-                        <input type="text" class="form-control" name="documents_name" id="documents_name" placeholder="Ingrese Nombre del Documento" required>
+                        <label for="document_name" class="col-form-label">Nombre del Documento:</label>
+                        <input type="text" class="form-control" name="document_name" id="document_name" placeholder="Reglamento Académico" required>
                     </div>
                     <div class="form-group">
                         <label for="description" class="col-form-label">Descripción:</label>
-                        <input type="text" class="form-control" name="description" id="description" placeholder="Ingrese Descripción del Documento" required>
+                        <input type="text" class="form-control" name="description" id="description" placeholder="Resolución N° 088-2019-R-UNH">
                     </div>
                     <div class="form-group">
                         <label for="type_document" class="col-form-label">Tipo del Documento:</label>
-                        <select class="form-control" onchange="saveDoc()" name="type_document" id="type_document" required>
-                            <option value="" >Ingrese el Tipo de Documento</option>
-                            <option value="gestion">Documento de Gestión</option>
-                            <option value="regulation_formats">Reglamentos y Formatos</option>
-                            <option value="mof_rof">MOF / ROF</option>
-                            <option value="bienestar">Reglamento de Bienestar Universitario</option>
-                            <option value="otros">Otros Documentos</option>
+                        <select class="form-control" name="type_document" id="type_document" required>
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="1">Documento de Gestión</option>
                         </select>
+
                         <div class="form-group">
-                            <label for="link" class="col-form-label">Link:</label>
-                            <input type="file" class="form-control" name="link" id="link" accept=".pdf" required>
+                            <label for="document_file" class="col-form-label">Archivo (.pdf):</label>
+                            <input type="file" class="form-control" name="document_file" id="document_file" accept=".pdf" required>
                         </div>
-                        <div class="form-group">
-                            <label for="date" class="col-form-label">Fecha de Aprobación</label>
-                            <input type="Date" class="form-control" name="date" id="date" placeholder="Nombre del Documento" required>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -103,14 +96,105 @@ include_once("layouts/head.php");
 </div>
 
 <script>
-function saveDoc() {
-  // Get the country from the select element
-  var country = document.getElementById('type_document').value;
+    //Carga la lista de dcumentos  al cargar la página
+    $(document).ready(function() {
+        getAllDocuments();
+    });
 
-  // Save the country to the database
-  // ...
-}
+    //Guardar registro (CREATE)
+    $("#form_create_documents").submit(function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        $.ajax({
+            url: "app/document.create.php",
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(resp) {
+                console.log(resp);
+                let result = parseInt(resp)
+
+                if (result = 1) {
+                    $("#form_create_documents")[0].reset();
+                    $('#modal_create_documents').modal('hide');
+                    getAllDocuments();
+
+                } else if (result = 0) {
+                    console.log("No se pudo guardar el registro");
+
+                } else {
+                    console.log("Ocurrió otro error");
+                    console.log(resp);
+                }
+
+            }
+        });
+    });
+
+    //Eliminar registro (DELETE)
+    $("#form_delete_authority").submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: "app/authority.disable.php",
+            type: 'POST',
+            data: $("#form_delete_authority").serialize(),
+
+            success: function(resp) {
+                console.log(resp);
+
+                let result = parseInt(resp)
+                if (result = 1) {
+                    $('#modal_delete_authority').modal('hide');
+                    getAllDocuments();
+                } else if (result = 0) {
+                    console.log("No se pudo eliminar la noticia");
+                } else {
+                    console.log(resp);
+                }
+            }
+        });
+    });
+
+
+    // ====FUNCIONES==== //
+
+    // Obtener todos los registros de los anuncios (READ)
+    function getAllDocuments() {
+        $.ajax({
+            url: "app/document.get_all.php",
+            success: function(resp) {
+                $("#documents_table_body").html("");
+
+                const data = JSON.parse(resp);
+
+                for (let i in data) {
+                    const tr = "<tr>" +
+                        "<td>" + data[i].name_doc + "</td>" +
+                        "<td>" + data[i].description + "</td>" +
+                        "<td>" + data[i].cat_id + "</td>" +
+                        "<td>" + data[i].file + "</td>" +
+                        "<td>" +
+                        '<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].name_doc + '\')" data-toggle="modal" data-target="#modal_delete_authority" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
+                    "</td>" +
+                    "</tr>";
+                    $("#documents_table_body").append(tr);
+                }
+            }
+        });
+    }
+
+    //Actualiza la info del registro en el modal para eliminar
+    function updateDeleteModal(id, new_name) {
+        $("#authority_id-delete").val(id);
+        $("#authority_name-delete").html(new_name);
+    }
 </script>
+
 
 <?php
 include_once("layouts/footer.php");
