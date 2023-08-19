@@ -10,7 +10,7 @@ $colorpage2: linear-gradient(90deg,#081419,#0f1e24);
 $colorpage3:#10222a;
 $colorpage4:#080e11;
 
-$colorPage:white;
+$colorPage: #ffff;
 
 
 @include navbar3.Button();
@@ -64,16 +64,18 @@ li{
 .ctn-principal{
     .ctn-main{
         grid-template-rows: 100% 100% 95% 100% auto 50%;
+        background-image: url('../img/unh.png');
         &-page-welcome{
             display: grid;
             grid-template-columns: 60% 40%;
             &-text{
-                /*border: solid red ;*/
+                // border: solid red ;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 justify-content: flex-end;
                 align-content: flex-start;
+                // background-color: red;
                 &-title{
                     /*border: solid;*/
                     margin-left: 5em;
@@ -92,18 +94,18 @@ li{
                     }
                     .title{
                     
-                        font-size: 29px;
-                        font-weight: 400;
-                        color: #ffffff;
+                        font-size: 45px;
+                        font-weight: 800;
+                        color: #bfc7d2;
                     }
                     .text-description{
                         display: inline-block;
-                        font-size: 12px;
-                        color: #a8a7be;
+                        font-size: 20px;
+                        color: #808c9c;
                         margin-bottom: 20px;
                         margin-top: -15px;
                         /*border: solid red;*/
-                        width: 385px;
+                        width: 630px;
 
                     }
 
@@ -113,12 +115,12 @@ li{
                     }
                     .text-button:hover{
                         color: black;
-                        font-weight: 800;
+                        font-weight: 800;                        
                     }
                 }
             }
             &-image{
-                /*border: solid;*/
+                // border: solid;
                 color: $colorPage;
                 
             }

@@ -11,7 +11,7 @@ if (!isset($_SESSION['login'])){
 <html lang="es">
 
 <head>
-    <title>Flat AbleS</title>
+    <title>Intranet Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,7 @@ if (!isset($_SESSION['login'])){
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/admin-web.png" type="image/x-icon">
 
     <!-- vendor css -->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -47,18 +47,28 @@ if (!isset($_SESSION['login'])){
 						<label>Menú</label>
 					</li>
 					<li class="nav-item">
-					    <a href="index.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+					    <a href="index.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home">
+
+                        </i></span><span class="pcoded-mtext">Dashboard</span></a>
 					</li>
 					
                     <li class="nav-item">
 					    <a href="news.php" class="nav-link ">
-                            <span class="pcoded-micon"><i class="feather icon-message-square"></i></span><span class="pcoded-mtext">Noticias</span>
+                            <span class="pcoded-micon"><i class="feather icon-message-square"></i>
+                        </span><span class="pcoded-mtext">Noticias</span>
+                        </a>
+					</li>
+                    <li class="nav-item">
+					    <a href="document.php" class="nav-link ">
+                            <span class="pcoded-micon"><i class="feather icon-file-text"></i>
+                        </span><span class="pcoded-mtext">Documentos</span>
                         </a>
 					</li>
 
                     <li class="nav-item">
 					    <a href="authority.php" class="nav-link ">
-                            <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span><span class="pcoded-mtext">Autoridades</span>
+                            <span class="pcoded-micon"><i class="feather icon-briefcase"></i>
+                        </span><span class="pcoded-mtext">Autoridades</span>
                         </a>
 					</li>
 
@@ -104,7 +114,7 @@ if (!isset($_SESSION['login'])){
             <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
             <a href="#!" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="assets/images/logo.png" alt="" class="logo">
+                <img src="assets/images/logo-epis.png" alt="logo" height="100%" width="100%" class="logo">
                 <img src="assets/images/logo-icon.png" alt="" class="logo-thumb">
             </a>
             <a href="#!" class="mob-toggler">

@@ -14,7 +14,8 @@ class News extends Conexion
 
     // CREATE
     public function create($name, $picture, $link){
-        return $this->conexion_db->query("INSERT INTO news (name, picture, link) VALUES ('$name', '$picture', '$link' )");
+        return $this->conexion_db->query("INSERT INTO news (name, picture, link) 
+        VALUES ('$name', '$picture', '$link' )");
     }
 
     // READ

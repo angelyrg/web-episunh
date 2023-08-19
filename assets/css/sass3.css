@@ -448,13 +448,13 @@ li {
 
 .ctn-principal .ctn-main {
   grid-template-rows: 100% 100% 95% 100% auto 50%;
+  background-image: url("../img/unh.png");
 }
 .ctn-principal .ctn-main-page-welcome {
   display: grid;
   grid-template-columns: 60% 40%;
 }
 .ctn-principal .ctn-main-page-welcome-text {
-  /*border: solid red ;*/
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -517,18 +517,18 @@ li {
   color: #3f3fff;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .title {
-  font-size: 29px;
-  font-weight: 400;
-  color: #ffffff;
+  font-size: 45px;
+  font-weight: 800;
+  color: #bfc7d2;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .text-description {
   display: inline-block;
-  font-size: 12px;
-  color: #a8a7be;
+  font-size: 20px;
+  color: #808c9c;
   margin-bottom: 20px;
   margin-top: -15px;
   /*border: solid red;*/
-  width: 385px;
+  width: 630px;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .text-button {
   text-decoration: none;
@@ -538,7 +538,6 @@ li {
   font-weight: 800;
 }
 .ctn-principal .ctn-main-page-welcome-image {
-  /*border: solid;*/
   color: white;
 }
 .ctn-principal .ctn-main-page-information {
