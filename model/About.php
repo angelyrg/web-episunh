@@ -21,6 +21,11 @@ class About extends Conexion
         $result = $this->conexion_db->query("SELECT * FROM about");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function get_last()
+    {
+        $result = $this->conexion_db->query("SELECT * FROM about ORDER BY id DESC LIMIT 1");
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function get_by_id($id)
     {

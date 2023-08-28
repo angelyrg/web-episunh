@@ -40,11 +40,8 @@ include_once("layouts/head.php");
 								<tr>
 									<th>Proyecto</th>
 									<th>Grupo</th>
-									<th>Resolución</th>
-									<th>Informe</th>
 									<th>Descripción</th>
-									<th>Carátula</th>
-									<th>Fotos</th>
+									<th>Fecha</th>
 									<th>Acción</th>
 								</tr>
 							</thead>
@@ -148,7 +145,61 @@ include_once("layouts/head.php");
 	</div>
 </div>
 
+<!-- MODAL: VER PROYECTO -->
+<div class="modal fade" id="modal_show_project" tabindex="-1" role="dialog" aria-labelledby="createModal" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ver proyecto</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+			</div>
+			<div class="modal-body">
+				<div class="rounded-4 border p-1">
+					<h5 id="project_name_show"></h5>
+				</div>
+				<br>
+				<b id="project_groupname_show"></b>
+				<br>
+				<a href="" target="_blank" id="link_show_resolucion" rel="noopener noreferrer">Ver Resolución</a>
+				<br>
+				<a href="" target="_blank" id="link_show_informe" rel="noopener noreferrer">Ver Informe</a>
+				<br>
 
+				<label for=""><b>Descripción:</b></label>
+				<p id="project_description_show">description</p>
+
+
+				<br>
+				<label for="">Fotos:</label>
+				<div class="row mb-3">
+
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_photo1_show" src="" alt="">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_photo2_show" src="" alt="">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_photo3_show" src="" alt="">
+					</div>
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_photo4_show" src="" alt="">
+					</div>
+				</div>
+				<br>
+				<label for="">Carátula</label>
+				<div class="row">
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_cover_show" src="" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn  btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script>
 	//Carga la lista de registros al cargar la página
@@ -229,20 +280,46 @@ include_once("layouts/head.php");
 
 				for (let i in data) {
 					const tr = "<tr>" +
-						"<td>" + data[i].project_name + "</td>" +
-						"<td>" + data[i].group_name + "</td>" +
-						"<td>" + data[i].resolution_file + "</td>" +
-						"<td>" + data[i].inform_file + "</td>" +
-						"<td>" + data[i].description + "</td>" +
-						"<td>" + data[i].cover_picture + "</td>" +
-
-						"<td>" + data[i].picture1 + "</td>" +
+						"<td>" + data[i].project_name.substring(0, 25)  + "..." + "</td>" +
+						"<td>" + data[i].group_name.substring(0, 40)  + "..." + "</td>" +
+						"<td>" + data[i].description.substring(0, 25)  + "..." + "</td>" +
+						"<td>" + data[i].created_at + "</td>" +
 						"<td>" +
-						'<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal_delete_projects" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
+						'<button type="button" class="btn btn-sm btn-primary mx-1" onclick="updateShowModal(' + data[i].id + ')" ><i class="feather icon-eye"></i></button>' +
+						'<button type="button" class="btn btn-sm btn-danger mx-1" data-toggle="modal" data-target="#modal_delete_projects" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
 					"</td>" +
 					"</tr>";
 					$("#projects_table_body").append(tr);
 				}
+			}
+		});
+	}
+
+	function updateShowModal(id){
+		$.ajax({
+			method: "POST",
+			url: "app/projects.get_one.php",
+			data: {project_id: id},
+			dataType: 'json',
+			success: function(resp) {
+				console.log(resp);
+
+				$("#project_name_show").text(resp.project_name);
+				$("#project_groupname_show").text(resp.group_name);
+				$("#project_description_show").text(resp.description);				
+				$("#project_description_show").text(resp.description);
+
+				$("#link_show_resolucion").attr("href", "../upload/docs/" + resp.resolution_file);
+				$("#link_show_informe").attr("href", "../upload/docs/" + resp.inform_file);
+				
+				$("#project_photo1_show").attr("src", "../upload/images/"+resp.picture1);
+				$("#project_photo2_show").attr("src", "../upload/images/"+resp.picture2);
+				$("#project_photo3_show").attr("src", "../upload/images/"+resp.picture3);
+				$("#project_photo4_show").attr("src", "../upload/images/"+resp.picture4);
+				$("#project_cover_show").attr("src", "../upload/images/"+resp.cover_picture);
+
+				$('#modal_show_project').modal('show'); 
+
 			}
 		});
 	}
