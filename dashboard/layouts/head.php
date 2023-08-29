@@ -77,20 +77,15 @@ if (!isset($_SESSION['login'])){
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Dependencias</span></a>
 					    <ul class="pcoded-submenu">
 					        <li><a href="projects.php" >Extensión cultural y Proyección Social</a></li>
-					        <li><a href="#" target="_blank">Tutoría</a></li>
-					        <li><a href="#" target="_blank">Investigación</a></li>
-					        <li><a href="#" target="_blank">Calidad Académica y Acreditación </a></li>
-					        <li><a href="#" target="_blank">Prácticas Pre Profesionales </a></li>
-					        <li><a href="#" target="_blank">Etc...</a></li>
+					        <li><a href="#" target="_blank">Otro..</a></li>
 					    </ul>
 					</li>
 
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-left"></i></span><span class="pcoded-mtext">Nosotros</span></a>
-					    <ul class="pcoded-submenu">
-					        <li><a href="#" target="_blank">Presentación</a></li>
-					        <li><a href="#" target="_blank">Misión y Visión</a></li>
-					    </ul>
+                    <li class="nav-item">
+					    <a href="about.php" class="nav-link ">
+                            <span class="pcoded-micon"><i class="feather icon-align-left"></i>
+                        </span><span class="pcoded-mtext">Nosotros</span>
+                        </a>
 					</li>
 
                     <li class="nav-item">

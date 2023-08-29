@@ -14,7 +14,7 @@ class Project extends Conexion
     // CREATE
     public function create($project_name, $group_name, $resolution_file, $inform_file, $description, $cover_picture, $picture1, $picture2, $picture3, $picture4){
         return $this->conexion_db->query("INSERT INTO project (project_name, group_name, resolution_file, inform_file, description, cover_picture, picture1, picture2, picture3, picture4) 
-        VALUES ('$project_name', '$group_name', '$resolution_file', '$inform_file', '$description', '$cover_picture', '$picture1', '$$picture2', '$$picture3', '$$picture4' )");
+        VALUES ('$project_name', '$group_name', '$resolution_file', '$inform_file', '$description', '$cover_picture', '$picture1', '$picture2', '$picture3', '$picture4' )");
     }
 
     // READ
