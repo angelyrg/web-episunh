@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ICONO SACADO DE GOOGLE -->
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
+    <link rel="shortcut icon" href="./assets/icon/epislogo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/sass3.css">
     <!---  SWEET ALERT -->
     <!--<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>-->
     <!-- Include a required theme -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <meta name="theme-color" content="black">
     <title>UNHEPIS</title>
 </head>
 
 <body class="ctn-principal" id="body_ctn">
+    <div class="panel-black" id="panel_black"></div>
     <div class="panel-menu-items" id="panel_menu_items">
         <navbar class="nav-menu">
             <ul class="ul-menu">
@@ -70,9 +76,9 @@
             </ul>
         </navbar>
     </div>
-    <header id="body">
-        <div class="ctn-header-logo">
-            <div class="ctn-header-logo-item-1">
+    <header id="body" class="header">
+        <div  class="ctn-header-logo">
+            <div class="ctn-header-logo-item-1" id="aparece">
                 <span class="span-epis">EPIS
                     <span class="span-unh">UNH</span>
                 </span>
@@ -82,13 +88,15 @@
             <ul class="content_hello">
                 <li class="content_hello-titulo">
                     <a href="#">
-                        <span class="style-linkAll-solid">Inicio</span>
+                        <span class="style-linkAll-solid ">
+                            <h6 class="style-linkAll-solid  animate__animated animate__flash">Inicio</h6>
+                        </span>
                     </a>
                 </li>
             </ul>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a href="./page/documentos.html">
+                    <a  onclick="documentos()">
                         <span class="style-linkAll">Documentos</span>
                     </a>
                 </li>
@@ -155,37 +163,40 @@
             <span class="close" id="close"></span>
         </div>
     </header>
-    <main class="ctn-main">
-        <section class="ctn-main-page-welcome">
+    <main class="ctn-main" id="movi">
+        <section class="ctn-main-page-welcome" id="page_welcome">
+            <div class="ctn_bg">
+                <div class="bg"></div>
+            </div>
             <div class="ctn-main-page-welcome-text">
                 <div class="ctn-main-page-welcome-text-title">
-                    <span class="title">
-                        UNIVERSIDAD NACIONAL
-                        <br>
-                        DE HUANCAVELICA
-                        <br>
-                        ESCUELA PROFESIONAL
-                        <br>
-                        INGENIERIA DE
-                        <br>
-                        SISTEMAS
+                    <span>
+                        <h1  id="letter2" class="letter2 animate__animated animate__fadeInUp">
+                            UNIVERSIDAD NACIONAL DE HUANCAVELICA
+                        </h1>
+                        <h1 class="title animate__animated animate__fadeInUp">
+                            <span id="blure1" class="blure1">ESCUELA&nbsp;</span><span class="blure2" id="blure2">PROFESIONAL</span>
+                        </h1>
+                        <h1 class=" title animate__animated animate__fadeInUp">
+                            <span id="blure4" class="blure2">INGENIERIA&nbsp;</span><span class="blure1" id="blure3">DE</span>
+                        </h1>
+                        <h1 class=" title animate__animated animate__fadeInUp">
+                            <span id="blure5" class="blure1">SISTEMAS</span>
+                        </h1>
                     </span>
-                    <br>
-                    <span class="text-link"> Ver y Descargar
+                    
+                    <!---<span class="text-link"> Ver y Descargar
                         <a href="https://drive.google.com/drive/folders/1ve7IFjfdFdKE07TGfaPUr7wJjdPFz0hD"
                             target="_blank" onclick="descargar()" class="style-linkAll"> Proyecccion 2023
                             <img width="9" height="9" src="assets/svg/file_download_white_18dp.svg">
                         </a>
-                    </span>
+                    </span>-->
+
                     <br>
-                    <br>
-                    <span class="text-description">
-                        Aunque la industria de la computación aún es joven
-                        en comparación con otras industrias (como la automotriz
-                        y la aeronáutica), ha progresado espectacularmente en poco
-                        tiempo. Durante las dos primeras décadas de su existencia,
-                        los sistemas de computación estaban altamente centralizados,
-                        por lo general, una sala grande e independiente.
+                    <span class="animate__animated animate__fadeInUp animate__fadeIn">
+                        <h5 class="text-description animate__animated animate__fadeInUp animate__fadeIn">
+                            "Forjando innovadores en el mundo digital: Tu futuro comienza aquí, en nuestra Universidad de Sistemas."
+                        </h5>
                     </span>
                     <br>
                     <a href="https://www.unh.edu.pe/" target="_blank">
@@ -201,25 +212,30 @@
                 </div>
             </div>
             <div class="ctn-main-page-welcome-image">
+                
             </div>
         </section>
 
-        <section class="ctn-main-page-information">
+        <section class="ctn-main-page-information" id="page_information">
             <div class="ctn-main-page-information-image"></div>
             <div class="ctn-main-page-information-text">
                 <div class="ctn-main-page-information-text-text">
-                    <span class="information-bienvenido">BIENVENIDOS</span>
+                    <div class="content">
+                        <div class="typewriter">
+                            <h1 class="information-bienvenido" id="bienvenido_id">BIENVENIDOS</h1>
+                        </div>
+                    </div>
                     <br>
                     <br>
                     <span>
-                        <li>
+                        <li id="cambia1">
                             La Escuela Profesional de Ingeniería de Sistemas de la Universidad Nacional de Huancavelica,
                             le da la bienvenida a esta Casa superior de estudios, deseando que su estancia y desarrollo
                             perdure y que sea el punto de partida de un proceso de crecimiento y desarrollo profesional
                             para cada uno de nuestros nuevos estudiantes.
                         </li>
                         <br>
-                        <li>
+                        <li id="cambia2">
                             Al darles esta bienvenida, lo hacemos con una combinación de orgullo y compromiso. Sentimos
                             orgullo por el hecho de que cada uno de ustedes haya considerado que la Escuela Profesional
                             de Ingeniería de Sistemas representa la mejor opción para el desarrollo de una carrera
@@ -228,7 +244,7 @@
                             de excelencia académica que hemos hecho ante ustedes.
                         </li>
                         <br>
-                        <li>
+                        <li  id="cambia3" >
                             La Escuela Profesional de Ingeniería de Sistemas no solamente es un lugar para el
                             crecimiento profesional en el sentido estricto de la palabra, pues nuestra intención
                             apreciados estudiantes, es que cada uno de ustedes disfrute la experiencia de vida
@@ -255,7 +271,7 @@
             </div>
         </section>
 
-        <section class="ctn-main-page-target">
+        <section class="ctn-main-page-target" id="page_target">
             <div class="ctn-main-page-target-grande">
                 <div class="ctn-main-page-target-grande-text ">
 
@@ -324,10 +340,12 @@
             </div>
         </section>
 
-        <section class="ctn-main-page-abouti">
+        <section class="ctn-main-page-abouti" id="page_abouti">
             <div class="ctn-main-page-abouti-items-2">
                 <div class="ctn-main-page-abouti-items-2-perspectivas">
                     <span class="abouti-title">PERSPECTIVAS OCUPACIONALES</span>
+                   <br>
+                   <br>
                     <span>
                         1. Gerente de tecnologías de información (GTI): Planifica y gestiona todas las tecnologías
                         utilizadas en el manejo de la información de una organización.
@@ -377,33 +395,32 @@
 
             </div>
         </section>
-        <section class="ctn-main-page-linea">
+        <section class="ctn-main-page-linea" id="page_linea">
             <div class="ctn-main-page-linea-content">
                 <div class="ctn-main-page-linea-content-items">
                     <span class="items-title">Grado Academico</span>
-                    <br>
                     <span class="items-text">Bachiller en Ingeniería de Sistemas</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items">
+                <div class="ctn-main-page-linea-content-items titulo_img">
                     <span class="items-title">Título Profesional</span>
-                    <br>
                     <span class="items-text">Ingeniero de Sistemas</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items">
-                    <span class="items-title">Duracion</span>
-                    <br>
+                <div class="ctn-main-page-linea-content-items estudiantes_img">
+                    <span class="items-title ">Duracion</span>
                     <span class="items-text">5 años</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items">
-                    <span class="items-title">Grado Academico</span>
-                    <br>
-                    <span class="items-text">Bachiller en Ingeniería de Sistemas</span>
+                <div class="ctn-main-page-linea-content-items sede_img">
+                    <span class="items-title">Sede</span>
+                    <span class="items-text">Daniel Hernández</span>
                 </div>
 
             </div>
         </section>
 
         <footer class="ctn-footer">
+            <div class="ctn_bg2">
+                <div class="bg"></div>
+            </div>
             <div class="ctn-footer-content">
                 <div class="ctn-footer-content-items">
                     <h1>EPIS UNH</h1>
@@ -430,7 +447,39 @@
         </div>
 
     </main>
+    <script>
+        $ = (ev) => document.getElementById(ev)
+    conteo = 0; 
+    document.addEventListener("scroll", function() {
+    const section = document.getElementById("page_information");
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Calculamos la posición vertical de la tercera parte de la sección
+    const sectionThird = sectionTop + (sectionHeight / 4) * 2;
+
+    // Verificamos si el scroll está en la tercera parte de la sección
+    if (scrollPosition > sectionThird - windowHeight &&
+        scrollPosition < sectionThird) {
+        console.log("El usuario está en la tercera parte de la sección.");
+        bi = $("bienvenido_id")
+        $("cambia1").classList.add("animate__animated","animate__fadeInDown")
+        $("cambia2").classList.add("animate__animated","animate__fadeInDown")
+        $("cambia3").classList.add("animate__animated","animate__fadeInDown")
+        bi.style.color="#00ffad"
+        bi.classList.add("text");
+    }
+    });
+
+
+
+
+
+    </script>
 </body>
+
 <script>
 
 
@@ -516,6 +565,41 @@
         }
     })
 
+
+    function documentos(){
+        //alert("krvb")
+        // href="./page/documentos.html"
+        $("panel_black").style.marginTop="0%"
+        $("panel_black").style.transition="1s"
+        setTimeout(()=>{
+            location.href="./page/documentos.html"
+
+        },1000)
+    }
+
+
+
+
+    setTimeout(()=>{
+        $("letter2").style.display="flex"
+    },200)
+
+    function setTim(ev,tiempo){
+    setTimeout(()=>{
+        var edith = document.querySelector('#'+ev)
+        edith.style.transition="0.75s";
+        edith.style.opacity=1;
+        edith.style.filter= "blur(0px)";
+    },tiempo)
+    }
+    const primary = 500;
+    const second = 600;
+    setTim("blure2",second)
+    setTim("blure1",primary)
+    setTim("aparece",100)
+    setTim("blure3",primary)
+    setTim("blure4",second)
+    setTim("blure5",1000)
 </script>
 
 </html>

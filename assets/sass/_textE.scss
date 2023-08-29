@@ -1,0 +1,32 @@
+.content{
+    font-family: Arial, sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+
+}
+.typewriter .text {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: bold;
+    border-right: 10px solid #10a475;
+    width: 0;
+    animation: typing 2s steps(20) forwards, blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color:  #134233;
+    }
+}

@@ -21,9 +21,9 @@
         });
 
 
-        async function obtenerNoticias() { 
-            const response = await fetch("http://192.168.224.44:1000/api/autoridades.php");
-            const noticias = await response.json();
+        function obtenerNoticias() { 
+            const response =  fetch("http://192.168.224.44:1000/api/autoridades.php");
+            const noticias =  response.json();
             
             if (noticias.code != 200){
                 return;

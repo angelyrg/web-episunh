@@ -1,7 +1,7 @@
 @use 'variables';
 @use 'navbar3';
 @use 'principal';
-
+ 
 .panel{
     position: fixed;
     width: 100%;
@@ -71,10 +71,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            .Biblioteca_img{
+                background: url("../img/bienestar1.webp");
+                background-repeat: no-repeat;
+                background-position:center;
+                background-size:cover;
+
+            }
             &-ctn{
                 margin-top: 50px;
-               /*border: solid green;*/
-                background: #09171d;
+                border: solid green;
                 color: gray;
                 width: 80%;
                 height: 80%;

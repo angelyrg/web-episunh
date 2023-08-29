@@ -1,7 +1,7 @@
 
 @use 'variables';
 
-    $colornavbar:  transparent;
+    $colornavbar: #0e151963;
     $letra:white;
     $paddindDefect:40px;
     *{
@@ -13,7 +13,8 @@
     }
 
     header{
-        margin-top: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         position: fixed;
         z-index: 20;
         display: flex;
@@ -28,7 +29,6 @@
            
     }
     nav{
-        background:  $colornavbar;
         height: 50px;
         display: flex;
         flex-direction: row;
@@ -39,17 +39,19 @@
     }
     
 
-    
-    
     .button{
-        background: linear-gradient(#1c1c9a,#f318f0);
-        border-radius: 50px;
+        background: black;
+        color:white;
+        border-radius: 7px;
         border: none;
         padding: 10px;
         color:$letra;
         &:hover{
             transition: 1s;
-            background: linear-gradient(90deg,purple,blue);  
+            background: white;
+            color:black; 
+            font-weight: 800;
+            cursor:pointer;
         }
         &:active{
             opacity: 0.5;
@@ -65,6 +67,9 @@
 
     a{
         text-decoration: none;
+    }
+    h6{
+        font-weight: 100;
     }
 
     @mixin StyleLink($color,$static){
@@ -123,7 +128,6 @@
             text-transform: capitalize;
             font-size: 11px;
             font-weight: 400;
-        
         }
         .text-button::after {
             content: "";
@@ -192,7 +196,8 @@
             border-radius: 5px;
             background-color: #182931;
             /*border:solid green;*/
-            display: flex;
+            opacity: 0;
+            filter: blur(4px);
             align-items:center;
             .span-epis{
                 color: #3131fe;
@@ -218,8 +223,6 @@
         }
         
         &-titulo{
-            /*padding-right: 1em;
-            height: 50px;*/
             align-items: center;
             text-align: center;
             justify-content: center;
@@ -229,6 +232,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
             padding-right: 10px;
+
         }
         &-titulo2{
             padding-right: 50px;

@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../assets/css/documentos.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Documentos</title>
 </head>
 <body class="ctn-principal" id="ctn_body">
+    <div class="panel-black2" id="panel_black"></div>
+
     <div class="panel-menu-items" id="panel_menu_items">
         <navbar class="nav-menu">
             <ul class="ul-menu">
@@ -64,7 +70,7 @@
     </div>
     <header id="body">
         <div class="ctn-header-logo">
-            <div class="ctn-header-logo-item-1">
+            <div class="ctn-header-logo-item-1" id="aparece">
                 <span class="span-epis">EPIS
                     <span class="span-unh">UNH</span>
                 </span>
@@ -81,7 +87,9 @@
             <ul class="content_hello">
                 <li class="content_hello-titulo">
                     <a href="#">
-                        <span class=" style-linkAll-solid">Documentos</span>  
+                        <span class=" style-linkAll-solid">
+                            <h6 class="style-linkAll-solid  animate__animated animate__flash">Documentos</h6>
+                        </span>  
                     </a>
                 </li>
             </ul>
@@ -598,6 +606,14 @@ Toast.fire({
 
     $ = ev => document.getElementById(ev); 
 
+    setTimeout(()=>{
+        $("panel_black").style.marginTop="-100%"
+        $("panel_black").style.transition="1s"
+
+
+    },1000)
+
+
     /**
      * !import gatos :D
      * ?You can see my code
@@ -679,6 +695,14 @@ Toast.fire({
         conteo0 = 0;
         }
     })
+
+    
+        var edith = document.querySelector('#aparece')
+        
+        edith.style.opacity=1;
+        edith.style.filter= "blur(0px)";
+    
+    
 
 </script>
 </html>

@@ -1,9 +1,11 @@
 @use 'navbar3';
 @use 'variables';
 @use 'principal';
+@use 'color_tv';
+@use 'textE';
 
 
-$fontstan:12px;
+$fontstan:14px;
 $fontstanres:11.5px;
 $colorpage1:transparent;
 $colorpage2: linear-gradient(90deg,#081419,#0f1e24);
@@ -25,7 +27,7 @@ $colorPage: #ffff;
         }  
         span{
             margin: 0.3rem;
-            font-size: $fontstan;
+            font-size: $fontstan - 1;
             color: #a7a7a7;
             display: inline-block;
             vertical-align: top;
@@ -45,7 +47,7 @@ $colorPage: #ffff;
     }
     span{
         margin: 0.4rem;
-        font-size: $fontstan+1;
+        font-size: $fontstan - 1;
         color: #9a9797;
         display: inline-block;
         vertical-align: top;
@@ -61,11 +63,25 @@ a{
 li{
     list-style: none;
 }
+
+
+    /****** STYLES OF JAVASCRIPT*******************/
+    .letter2{
+        display: none;
+    }
+    h5{
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    /******************************/  
+
 .ctn-principal{
     .ctn-main{
-        grid-template-rows: 100% 100% 95% 100% auto 50%;
-        background-image: url('../img/unh.png');
+        grid-template-rows: 100% auto auto auto auto 50%;
+        /*background-image: url('../img/unh.png');*/
         &-page-welcome{
+            /*border:solid red;*/
             display: grid;
             grid-template-columns: 60% 40%;
             &-text{
@@ -75,12 +91,13 @@ li{
                 flex-wrap: wrap;
                 justify-content: flex-end;
                 align-content: flex-start;
-                // background-color: red;
                 &-title{
                     /*border: solid;*/
                     margin-left: 5em;
                     margin-bottom: 5em;
+
                     .text-link{
+
                         font-size: 12px;
                         color: #d5d5d5;
                         @include navbar3.StyleLink(#3f3fff,#937cdf);
@@ -93,29 +110,40 @@ li{
                         }
                     }
                     .title{
-                    
-                        font-size: 45px;
-                        font-weight: 800;
-                        color: #bfc7d2;
+                        color: #bfc7d2;  
+                        font-size: 39px;
+                        .blure1{
+                            opacity: 0.5;
+                            filter: blur(5px);
+                        }
+                        .blure2{
+                            opacity: 0.5;
+                            filter: blur(10px);
+                        }
+                    }
+                    .letter2{
+                        font-size: 15px;
+                        color: #cbddf6; 
+                        letter-spacing: 3px; 
                     }
                     .text-description{
                         display: inline-block;
-                        font-size: 20px;
+                        font-size: ($fontstan - 1);
                         color: #808c9c;
                         margin-bottom: 20px;
                         margin-top: -15px;
-                        /*border: solid red;*/
-                        width: 630px;
-
+                        width: 385px;
                     }
 
                     .text-button{
-                        text-decoration: none;
-                        
+                        text-decoration: none;   
                     }
                     .text-button:hover{
                         color: black;
                         font-weight: 800;                        
+                    }
+                    h1{
+                        font-weight: 100;
                     }
                 }
             }
@@ -126,31 +154,34 @@ li{
             }
         }
         &-page-information{
+            z-index: 99;
             height: 100%;
             width: 100%;
             /*background:linear-gradient(180deg,#0e1519,#0f1424,$colorpage3);*/
             background:$colorpage2;
             display: grid;
-            grid-template-columns: 30% 70%;
+            grid-template-columns: 40% 60%;
             &-text{
                 /*border: solid green;*/
+                border-radius:60px 20px 0px 0px; 
+                background:#0f1e24;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 &-text{
-                    width: 60%;
-                    color: white;
+                    color: #cfcfcf;
                     /*border: solid red;*/
+                    margin-top: 3em;
+                    margin-bottom: 3em;
+                    margin-right: 4em;
+                    margin-left: 4em;
+                    text-align: right;
                     .information-bienvenido{
-                        /*border: solid red;*/
-                        font-size: 25px;
-                        color: white;
+                        font-size: 30px;
                         font-weight: 100;
-                        text-transform: uppercase;
                     }
                     span{
-                        font-size: $fontstan+1;
-                        color: #c9c9dc;
+                        font-size: $fontstan - 1;
                     }
                     
                     .span-encuentranos{
@@ -183,10 +214,9 @@ li{
             background: $colorpage3;
             /*border: solid red;*/
             grid-template-columns: repeat(2,1fr);
-            grid-template-rows: repeat(4,1fr);
+            grid-template-rows: repeat(3,1fr);
             display: grid;
             grid-template-areas: "grande mediano"
-                                 "grande mediano"
                                  "grande mediano"
                                  "grande pequeno";
 
@@ -205,7 +235,7 @@ li{
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                @include card-page3(2rem);
+                @include card-page3(1rem);
                 &:active{
                     opacity: 0.5;
                 }
@@ -228,7 +258,7 @@ li{
                 align-items: center;
                 display: flex;
                 
-                @include card-page3(2rem);
+                @include card-page3(1em);
                 &:active{
                     opacity: 0.5;
                 }
@@ -250,7 +280,7 @@ li{
                 display: flex;
                 flex-wrap: wrap;
 
-                @include card-page3(2rem);
+                @include card-page3(1em);
                 &:active{
                     opacity: 0.5;
                 }
@@ -259,10 +289,12 @@ li{
 
             }            
         }
-        &-page-abouti{   
-            display: flex;
-            flex-direction: row;
-            gap: 3px;
+        &-page-abouti{ 
+            width: 99.7%;
+            height: 100%; 
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-gap: 4px;
             &-items-1{
                 /*border: solid red;*/
                 background: #081419;
@@ -277,21 +309,18 @@ li{
                     
                     /*border: solid green;*/
                     @include about-item();
-                }
-                
+                }    
             }
             &-items-2{
-                /*border: solid red;*/
-                background: #081419;
-                align-items: flex-end;
-                display: flex;
-                justify-content:left;
+                /*border: solid rgb(46, 15, 157);*/
+                background: #081419; 
                 &-perspectivas{
                     /*border: solid green;*/
-                    margin-top: 4em;
                     margin-left: 4em;
-                    margin-bottom: 3em;
                     margin-right: 2em;
+                    margin-top: 2em;
+                    margin-bottom: 2em;
+                    color:#a7a7a7;
                     @include about-item();
 
                 }
@@ -314,7 +343,31 @@ li{
                 flex-direction: row;
                 margin-top: 5em;
                 margin-bottom: 5em;
-            
+                .titulo_img{
+                    background-image:url("../img/titulo2.jpg");
+                    background-position:center;
+                    background-size:cover;
+                    &:hover{
+                        transition: 1s;  
+                    }
+                }
+                .estudiantes_img{
+                    
+                    background-image:url("../img/estudiantes.jpg");
+                    background-position:center;
+                    background-size:cover;
+                   
+                    &:hover{
+                        transition: 1s;  
+                        filter: contrast(20px);
+                    }
+
+                }
+                .sede_img{
+                    background-image:url("../img/sede.jpg");
+                    background-position:center;
+                    background-size:cover;
+                }
                 &-items{
                     transition: 0.90s;
                     /*border: solid blue;*/
@@ -334,15 +387,18 @@ li{
                     .items-title{
                         font-size: 18px;
                         text-transform: capitalize;
+                        color: #000000;
+                        font-weight: 800;
+                        
                     }
                     .items-text{
                         font-size: 13px;
-                        color: #bebaba;
+                        color: #ffffff;
+                        font-weight: 800;
                     }
                     &:hover{
                         transition: 0.5s;
-                        background: #0b1519;
-                        color: #7568da;
+                        color: #aea6e6;
                         border-radius: 0px;
                         opacity: 10;
                     }
@@ -378,9 +434,15 @@ li{
                 }
     
                 .title{
-                    font-size: 23px;
-                    font-weight: 300;
+                    color: #bfc7d2;  
+                    font-size: 29px;
                 }
+                .letter2{
+                    font-size: 12px;
+                    color: #cbddf6; 
+                    letter-spacing: 2px; 
+                }
+
                 .text-description{
                     display: inline-block; 
                     vertical-align: top;
@@ -483,7 +545,8 @@ li{
             &-grande{
                 margin-left: 1em;
                 margin-right: 1em;  
-                margin-bottom: 0em;  
+                margin-bottom: 0em;
+  
                 &-text{
                     margin: 1.5em;
                 }
@@ -504,6 +567,7 @@ li{
                 margin-right: 1em;  
                 margin-bottom: 0.5em;  
                 margin-top: 1em;  
+                width: 100%;
                 &-text{
                     margin: 1.5em;
                 }

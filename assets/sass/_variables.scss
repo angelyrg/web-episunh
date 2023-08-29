@@ -11,15 +11,18 @@ $font-family: 'Jura', sans-serif;
     font-family: 'Jura', sans-serif;
     user-select: none;
 }
+.ctn-principal{
+    overflow-x: hidden;
+}
 
 .ctn-principal::-webkit-scrollbar {
     width: 8px;     /* Tamaño del scroll en vertical */
     height: 8px;    /* Tamaño del scroll en horizontal */
-    display: none;  /* Ocultar scroll */
+    /* Ocultar scroll */
 }
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
 .ctn-principal::-webkit-scrollbar-thumb {
-    background: #5d5d5d;
+    background: #253945;
     border-radius: 4px;
 }
 
