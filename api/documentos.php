@@ -25,7 +25,7 @@ foreach ($all_data as $value) {
         'nombre' => $value['name_doc'],
         'tategoria' => $value['cat_id'],
         'descripcion'=>$value['description'],
-        'archivo'=>$_SERVER['HTTP_HOST']."/upload/doc/".$value['file'],
+        'archivo'=>$_SERVER['HTTP_HOST']."/upload/docs/".$value['file'],
     ];
     array_push($data_response, $temp);
 }
@@ -34,6 +34,7 @@ foreach ($all_data as $value) {
 $response = array(
     'code' => '200',
     'message' => 'Ok',
+    'total_items' => count($all_data),
     'data' => $data_response,
 );
 

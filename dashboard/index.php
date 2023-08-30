@@ -1,5 +1,5 @@
 <?php
-include_once("layouts/head.php"); 
+include_once("layouts/head.php");
 ?>
 
 <div class="pcoded-content">
@@ -9,11 +9,11 @@ include_once("layouts/head.php");
 			<div class="row align-items-center">
 				<div class="col-md-12">
 					<div class="page-header-title">
-						<h5 class="m-b-10">Sample Page</h5>
+						<h5 class="m-b-10">Bienvenido 🤗</h5>
 					</div>
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-						<li class="breadcrumb-item"><a href="#!">Sample Page</a></li>
+						<li class="breadcrumb-item"><a href="#!">Welcome Page</a></li>
 					</ul>
 				</div>
 			</div>
@@ -27,25 +27,24 @@ include_once("layouts/head.php");
 			<div class="card">
 
 				<div class="card-header">
-					<h5>Hello card</h5>
+					<h5>Panel de adminitración de la página web - Sistemas UNH</h5>
 					<div class="card-header-right">
 						<div class="btn-group card-option">
 							<button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="feather icon-more-horizontal"></i>
 							</button>
 							<ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-								<li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
-								<li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
-								<li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
-								<li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+								<li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Maximizar</span><span style="display:none"><i class="feather icon-minimize"></i> Restablecer</span></a></li>
+								<li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Colapsar</span><span style="display:none"><i class="feather icon-plus"></i> Expandir</span></a></li>
+								<li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Recargar</a></li>
+								<li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Quitar</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="card-body">
-					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-						officia deserunt mollit anim id est laborum."
+					<p>
+						Administra el contenido de la página web de la Escuela Profesional de Ingeniería de Sistemas, de la Universidad Nacional de Huancavelica
 					</p>
 				</div>
 			</div>
@@ -55,6 +54,6 @@ include_once("layouts/head.php");
 	<!-- [ Main Content ] end -->
 </div>
 
-<?php 
+<?php
 include_once("layouts/footer.php");
 ?>

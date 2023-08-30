@@ -109,7 +109,7 @@ if (!isset($_SESSION['login'])){
             <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
             <a href="#!" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="assets/images/logo.png" alt="logo" class="img-fluid logo">
+                <img src="assets/images/episunh_logo.png" alt="logo" width="50px" class="img-fluid logo">
                 <img src="assets/images/logo-icon.png" alt="" class=" logo-thumb">
             </a>
             <a href="#!" class="mob-toggler">
@@ -130,8 +130,8 @@ if (!isset($_SESSION['login'])){
                                 <span>Usuario</span>
                             </div>
                             <ul class="pro-body">
-                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Perfil</a></li>
-                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-settings"></i> Configuración</a></li>
+                                <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> Perfil</a></li>
+                                <li><a href="#" class="dropdown-item"><i class="feather icon-settings"></i> Configuración</a></li>
                                 <li><a href="app/auth.logout.php" class="dropdown-item"><i class="feather icon-log-out"></i> Cerrar sesión</a></li>
                             </ul>
                         </div>

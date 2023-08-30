@@ -11,7 +11,7 @@ if (isset($_SESSION['login'])){
 <html lang="es">
 
 <head>
-	<title>Login Screen</title>
+	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,7 +34,8 @@ if (isset($_SESSION['login'])){
 				<div class="col-md-12">
 					<div class="card-body">
 						<form method="post" id="login-form">
-							<h4 class="mb-3 f-w-400">Iniciar sesión</h4>
+							<img src="./assets/images/episunh_logo.png" width="100px" class="img-fluid" alt="Sistemas UNH Logo" srcset="">
+							<h5 class="mb-3 mt-2 f-w-400"></h4>
 							<hr>
 							<div class="form-group mb-3">
 								<input type="text" class="form-control" name="username" id="username" placeholder="Usuario" required autofocus>

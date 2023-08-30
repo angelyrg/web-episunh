@@ -33,6 +33,7 @@ foreach ($all_data as $value) {
 $response = array(
     'code' => '200',
     'message' => 'Ok',
+    'total_items' => count($all_data),
     'data' => $data_response,
 );
 
