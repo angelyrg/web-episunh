@@ -4,24 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ICONO SACADO DE GOOGLE -->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
     <link rel="shortcut icon" href="./assets/icon/epislogo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/sass3.css">
-    <!---  SWEET ALERT -->
-    <!--<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>-->
-    <!-- Include a required theme -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <meta name="theme-color" content="black">
     <title>UNHEPIS</title>
 </head>
 
 <body class="ctn-principal" id="body_ctn">
     <div class="panel-black" id="panel_black"></div>
+
     <div class="panel-menu-items" id="panel_menu_items">
         <navbar class="nav-menu">
             <ul class="ul-menu">
@@ -77,7 +69,7 @@
         </navbar>
     </div>
     <header id="body" class="header">
-        <div  class="ctn-header-logo">
+        <div class="ctn-header-logo">
             <div class="ctn-header-logo-item-1" id="aparece">
                 <span class="span-epis">EPIS
                     <span class="span-unh">UNH</span>
@@ -87,7 +79,7 @@
         <nav>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a href="#">
+                    <a>
                         <span class="style-linkAll-solid ">
                             <h6 class="style-linkAll-solid  animate__animated animate__flash">Inicio</h6>
                         </span>
@@ -96,7 +88,7 @@
             </ul>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a  onclick="documentos()">
+                    <a onclick="documentos('./page/documentos.html')">
                         <span class="style-linkAll">Documentos</span>
                     </a>
                 </li>
@@ -106,17 +98,17 @@
                     <span id="content">Areas</span>
                 </li>
                 <ul class="content_hello-items" id="show">
-                    <a href="./page/bienestar.html">
+                    <a onclick="documentos('./page/bienestar.html')">
                         <li class="content_hello-items1">
                             Bienestar
                         </li>
                     </a>
-                    <a href="./page/calidad.html">
+                    <a onclick="documentos('./page/calidad.html')">
                         <li class="content_hello-items1">
                             Calidad
                         </li>
                     </a>
-                    <a href="./page/proyectos.html">
+                    <a onclick="documentos('./page/proyectos.html')">
                         <li class="content_hello-items1">
                             Proyeccion<br>Social
                         </li>
@@ -128,22 +120,22 @@
                     <span id="content1">Nosotros</span>
                 </li>
                 <ul class="content_hello-items" id="show1">
-                    <a href="./page/presentacion.html">
+                    <a onclick="documentos('./page/presentacion.html')">
                         <li class="content_hello-items1">
                             Presentación
                         </li>
                     </a>
-                    <a href="./page/visionymision.html">
+                    <a onclick="documentos('./page/visionymision.html')">
                         <li class="content_hello-items1">
                             Visión y Misión
                         </li>
                     </a>
-                    <a href="./page/autoridades.html">
+                    <a onclick="documentos('./page/autoridades.html')">
                         <li class="content_hello-items1">
                             Autoridades
                         </li>
                     </a>
-                    <a href="./page/historia.html">
+                    <a onclick="documentos('./page/historia.html')">
                         <li class="content_hello-items1">
                             Historia
                         </li>
@@ -151,7 +143,7 @@
                 </ul>
             </ul>
             <ul class="content_hello">
-                <a href="./page/contacto.html">
+                <a onclick="documentos('./page/contacto.html')">
                     <li class="centreado">
                         <button class="button">Contacto</button>
                     </li>
@@ -171,20 +163,22 @@
             <div class="ctn-main-page-welcome-text">
                 <div class="ctn-main-page-welcome-text-title">
                     <span>
-                        <h1  id="letter2" class="letter2 animate__animated animate__fadeInUp">
+                        <h1 id="letter2" class="letter2 animate__animated animate__fadeInUp">
                             UNIVERSIDAD NACIONAL DE HUANCAVELICA
                         </h1>
                         <h1 class="title animate__animated animate__fadeInUp">
-                            <span id="blure1" class="blure1">ESCUELA&nbsp;</span><span class="blure2" id="blure2">PROFESIONAL</span>
+                            <span id="blure1" class="blure1">ESCUELA&nbsp;</span><span class="blure2"
+                                id="blure2">PROFESIONAL</span>
                         </h1>
                         <h1 class=" title animate__animated animate__fadeInUp">
-                            <span id="blure4" class="blure2">INGENIERIA&nbsp;</span><span class="blure1" id="blure3">DE</span>
+                            <span id="blure4" class="blure2">INGENIERIA&nbsp;</span><span class="blure1"
+                                id="blure3">DE</span>
                         </h1>
                         <h1 class=" title animate__animated animate__fadeInUp">
                             <span id="blure5" class="blure1">SISTEMAS</span>
                         </h1>
                     </span>
-                    
+
                     <!---<span class="text-link"> Ver y Descargar
                         <a href="https://drive.google.com/drive/folders/1ve7IFjfdFdKE07TGfaPUr7wJjdPFz0hD"
                             target="_blank" onclick="descargar()" class="style-linkAll"> Proyecccion 2023
@@ -195,7 +189,8 @@
                     <br>
                     <span class="animate__animated animate__fadeInUp animate__fadeIn">
                         <h5 class="text-description animate__animated animate__fadeInUp animate__fadeIn">
-                            "Forjando innovadores en el mundo digital: Tu futuro comienza aquí, en nuestra Universidad de Sistemas."
+                            "Forjando innovadores en el mundo digital: Tu futuro comienza aquí, en nuestra Universidad
+                            de Sistemas."
                         </h5>
                     </span>
                     <br>
@@ -212,52 +207,83 @@
                 </div>
             </div>
             <div class="ctn-main-page-welcome-image">
-                
+
             </div>
         </section>
 
         <section class="ctn-main-page-information" id="page_information">
-            <div class="ctn-main-page-information-image"></div>
             <div class="ctn-main-page-information-text">
                 <div class="ctn-main-page-information-text-text">
                     <div class="content">
-                        <div class="typewriter">
+                        <div class="animate__animated animate__fadeInUp">
                             <h1 class="information-bienvenido" id="bienvenido_id">BIENVENIDOS</h1>
                         </div>
                     </div>
                     <br>
                     <br>
                     <span>
-                        <li id="cambia1">
-                            La Escuela Profesional de Ingeniería de Sistemas de la Universidad Nacional de Huancavelica,
-                            le da la bienvenida a esta Casa superior de estudios, deseando que su estancia y desarrollo
-                            perdure y que sea el punto de partida de un proceso de crecimiento y desarrollo profesional
-                            para cada uno de nuestros nuevos estudiantes.
-                        </li>
+                        <div id="cambia1" class="cambia1">
+                        <div class="ctn_message">
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id1">
+                                    La Escuela Profesional de Ingeniería de Sistemas
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id2">
+                                    de la Universidad Nacional de Huancavelica,
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id3">
+                                    le da la bienvenida a esta Casa superior de estudios,
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id4">
+                                    deseando que su estancia y desarrollo
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id5">
+                                    perdure y que sea el punto de partida de 
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id6">
+                                    un proceso de crecimiento y desarrollo profesional
+                                </h1>
+                            </div>
+                            <br>
+                            <div class="typewriter">
+                                <h1 class="text-muestra" id="bienvenido_id7">
+                                    para cada uno de nuestros nuevos estudiantes.
+                                </h1>
+                            </div>
+                        </div>
                         <br>
-                        <li id="cambia2">
+                        <!--<li id="cambia2">
                             Al darles esta bienvenida, lo hacemos con una combinación de orgullo y compromiso. Sentimos
                             orgullo por el hecho de que cada uno de ustedes haya considerado que la Escuela Profesional
                             de Ingeniería de Sistemas representa la mejor opción para el desarrollo de una carrera
                             profesional. Sentimos compromiso, porque tal decisión nos obliga a trabajar duramente cada
                             día para estar a la altura de las más altas expectativas y honrar continuamente la promesa
                             de excelencia académica que hemos hecho ante ustedes.
-                        </li>
-                        <br>
-                        <li  id="cambia3" >
+                        </li>-->
+                        <!--<li id="cambia3">
                             La Escuela Profesional de Ingeniería de Sistemas no solamente es un lugar para el
                             crecimiento profesional en el sentido estricto de la palabra, pues nuestra intención
                             apreciados estudiantes, es que cada uno de ustedes disfrute la experiencia de vida
                             Universitaria de una forma plena y amena, con responsabilidad social, ética profesional y
                             preservando el medio ambiente.
-                        </li>
+                        </li>-->
                     </span>
-                    <br>
-                    <br>
                     <span class="span-encuentranos">
-                        <span class="material-symbols-rounded">
-                            rocket_launch
-                        </span>
                         &nbsp;Encuentranos en nuestras redes sociales : </span>
                     <br>
                     <br>
@@ -270,9 +296,11 @@
                 </div>
             </div>
         </section>
+        
+        
 
         <section class="ctn-main-page-target" id="page_target">
-            <div class="ctn-main-page-target-grande">
+            <div class="ctn-main-page-target-grande" id="an1">
                 <div class="ctn-main-page-target-grande-text ">
 
                     <span class="target-text-tittle">Habilidades</span>
@@ -305,7 +333,7 @@
                     </span>
                 </div>
             </div>
-            <div class="ctn-main-page-target-mediano">
+            <div class="ctn-main-page-target-mediano" id="an2">
                 <div class="ctn-main-page-target-mediano-text ">
 
                     <span class="target-text-tittle">Conocimiento</span>
@@ -327,7 +355,7 @@
 
 
             </div>
-            <div class="ctn-main-page-target-pequeno">
+            <div class="ctn-main-page-target-pequeno" id="an3">
                 <div class="ctn-main-page-target-pequeno-text">
 
                     <span class="target-text-tittle">Actitudes</span>
@@ -344,8 +372,8 @@
             <div class="ctn-main-page-abouti-items-2">
                 <div class="ctn-main-page-abouti-items-2-perspectivas">
                     <span class="abouti-title">PERSPECTIVAS OCUPACIONALES</span>
-                   <br>
-                   <br>
+                    <br>
+                    <br>
                     <span>
                         1. Gerente de tecnologías de información (GTI): Planifica y gestiona todas las tecnologías
                         utilizadas en el manejo de la información de una organización.
@@ -397,19 +425,19 @@
         </section>
         <section class="ctn-main-page-linea" id="page_linea">
             <div class="ctn-main-page-linea-content">
-                <div class="ctn-main-page-linea-content-items">
+                <div class="ctn-main-page-linea-content-items grado_img" id="line_img1" >
                     <span class="items-title">Grado Academico</span>
                     <span class="items-text">Bachiller en Ingeniería de Sistemas</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items titulo_img">
+                <div class="ctn-main-page-linea-content-items titulo_img" id="line_img2">
                     <span class="items-title">Título Profesional</span>
                     <span class="items-text">Ingeniero de Sistemas</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items estudiantes_img">
+                <div class="ctn-main-page-linea-content-items estudiantes_img" id="line_img3">
                     <span class="items-title ">Duracion</span>
                     <span class="items-text">5 años</span>
                 </div>
-                <div class="ctn-main-page-linea-content-items sede_img">
+                <div class="ctn-main-page-linea-content-items sede_img" id="line_img4">
                     <span class="items-title">Sede</span>
                     <span class="items-text">Daniel Hernández</span>
                 </div>
@@ -447,159 +475,8 @@
         </div>
 
     </main>
-    <script>
-        $ = (ev) => document.getElementById(ev)
-    conteo = 0; 
-    document.addEventListener("scroll", function() {
-    const section = document.getElementById("page_information");
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    // Calculamos la posición vertical de la tercera parte de la sección
-    const sectionThird = sectionTop + (sectionHeight / 4) * 2;
-
-    // Verificamos si el scroll está en la tercera parte de la sección
-    if (scrollPosition > sectionThird - windowHeight &&
-        scrollPosition < sectionThird) {
-        console.log("El usuario está en la tercera parte de la sección.");
-        bi = $("bienvenido_id")
-        $("cambia1").classList.add("animate__animated","animate__fadeInDown")
-        $("cambia2").classList.add("animate__animated","animate__fadeInDown")
-        $("cambia3").classList.add("animate__animated","animate__fadeInDown")
-        bi.style.color="#00ffad"
-        bi.classList.add("text");
-    }
-    });
-
-
-
-
-
-    </script>
 </body>
-
-<script>
-
-
-    $ = ev => document.getElementById(ev);
-
-    /**
-     *! import gatos :D
-     *?You can see my code
-     ***/
-
-    $("body").addEventListener("mouseleave", () => {
-        $("show").style.display = "none";
-        $("show1").style.display = "none";
-    })
-
-    $("show").addEventListener("mouseleave", () => {
-        $("show").style.display = "none";
-    })
-    function eventoU(content, show, show2) {
-        $(content).addEventListener("mouseover", () => {
-            $(show).style.display = "flex";
-            $(show2).style.display = "none";
-            $(show).style.flexDirection = "column";
-
-        })
-
-    }
-    eventoU("content", "show", "show1");
-    eventoU("content1", "show1", "show");
-
-    /* RESPONSIVE :V ***/
-
-    conteo = 0;
-    conteo0 = 0;
-    conteo1 = 0;
-
-    $("content_menu").addEventListener("click", () => {
-        if (conteo1 == 0) {
-            $("panel_menu_items").style.marginLeft = "0px";
-            $("panel_menu_items").style.transition = "0.3s";
-            $("body_ctn").style.overflow = "hidden";
-
-            $("close").style.display = "flex";
-            $("menu").style.display = "none";
-            conteo1 = 1;
-        }
-        else if (conteo1 == 1) {
-            $("body_ctn").style.overflow = "scroll ";
-            $("panel_menu_items").style.marginLeft = "-2000px";
-            $("panel_menu_items").style.transition = "0.8s";
-            $("close").style.display = "none";
-            $("menu").style.display = "flex";
-            conteo1 = 0;
-
-        }
-    })
-    $("menu_option").addEventListener("click", () => {
-        if (conteo == 0) {
-            $("items_menu").style.display = "flex";
-            $("menu_option").innerHTML = "<img src='assets/svg/expand_less_white_24dp.svg'> Areas";
-            $("menu_option").style.color = "white";
-            conteo = 1;
-        }
-        else if (conteo == 1) {
-            $("items_menu").style.display = "none";
-            $("menu_option").innerHTML = "<img src='assets/svg/expand_more_white_24dp.svg'> Areas";
-            $("menu_option").style.color = "#6f6a6a";
-            conteo = 0;
-        }
-    })
-    $("menu_option1").addEventListener("click", () => {
-        if (conteo0 == 0) {
-            $("items_menu1").style.display = "flex";
-            $("menu_option1").innerHTML = "<img src='assets/svg/expand_less_white_24dp.svg'> Nosotros";
-            $("menu_option1").style.color = "white";
-            conteo0 = 1;
-        }
-        else if (conteo0 == 1) {
-            $("items_menu1").style.display = "none";
-            $("menu_option1").innerHTML = "<img src='assets/svg/expand_more_white_24dp.svg'> Nosotros";
-            $("menu_option1").style.color = "#6f6a6a";
-            conteo0 = 0;
-        }
-    })
-
-
-    function documentos(){
-        //alert("krvb")
-        // href="./page/documentos.html"
-        $("panel_black").style.marginTop="0%"
-        $("panel_black").style.transition="1s"
-        setTimeout(()=>{
-            location.href="./page/documentos.html"
-
-        },1000)
-    }
-
-
-
-
-    setTimeout(()=>{
-        $("letter2").style.display="flex"
-    },200)
-
-    function setTim(ev,tiempo){
-    setTimeout(()=>{
-        var edith = document.querySelector('#'+ev)
-        edith.style.transition="0.75s";
-        edith.style.opacity=1;
-        edith.style.filter= "blur(0px)";
-    },tiempo)
-    }
-    const primary = 500;
-    const second = 600;
-    setTim("blure2",second)
-    setTim("blure1",primary)
-    setTim("aparece",100)
-    setTim("blure3",primary)
-    setTim("blure4",second)
-    setTim("blure5",1000)
-</script>
-
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/index.js"></script>
+<script src="./assets/js/scroll.js"></script>
 </html>

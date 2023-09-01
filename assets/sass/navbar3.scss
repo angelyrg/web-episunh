@@ -1,7 +1,7 @@
 
 @use 'variables';
 
-    $colornavbar: #0e151963;
+    $colornavbar: #0e1519d2;
     $letra:white;
     $paddindDefect:40px;
     *{
@@ -155,6 +155,7 @@
           }
     }
     @mixin Button2(){
+        color:white;
         .styleB{
             margin: 2px;
             padding: 1em 1.5em;

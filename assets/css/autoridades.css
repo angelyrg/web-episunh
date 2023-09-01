@@ -50,7 +50,7 @@ header {
   z-index: 20;
   display: flex;
   justify-content: space-between;
-  background: rgba(14, 21, 25, 0.3882352941);
+  background: rgba(14, 21, 25, 0.8235294118);
   width: 100%;
   color: white;
 }
@@ -345,7 +345,7 @@ h6 {
   position: fixed;
   background: #051015;
   z-index: 19;
-  margin-top: -100%;
+  margin-top: -1000%;
   /*filter: blur(20px);*/
 }
 
@@ -386,6 +386,7 @@ h6 {
   justify-content: center;
 }
 .ctn-principal .ctn-footer-content {
+  position: absolute;
   flex-wrap: wrap;
   /*border: solid green;*/
   width: 80%;
@@ -396,18 +397,17 @@ h6 {
 }
 .ctn-principal .ctn-footer-content-social {
   margin: 1em;
-  /*border: solid orange;*/
   display: flex;
+  gap: 2px;
   flex-direction: row;
   justify-content: center;
-  gap: 5px;
-  /*justify-content: space-between;*/
+  gap: 8px;
+  font-size: 24px;
 }
-.ctn-principal .ctn-footer-content-social .item-social {
-  background: #1c2e37;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+.ctn-principal .ctn-footer-content-social .effect:hover {
+  opacity: 2px;
+  cursor: pointer;
+  font-size: 29px;
 }
 .ctn-principal .ctn-footer-content-items {
   /*border: solid blue;*/
@@ -442,6 +442,7 @@ h6 {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  filter: drop-shadow(16px 16px 20px red) invert(75%);
   width: 600px;
   height: 400px;
   position: relative;

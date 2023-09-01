@@ -8,7 +8,7 @@
 $fontstan:14px;
 $fontstanres:11.5px;
 $colorpage1:transparent;
-$colorpage2: linear-gradient(90deg,#081419,#0f1e24);
+$colorpage2: linear-gradient(90deg,#071115,#15252b);
 $colorpage3:#10222a;
 $colorpage4:#080e11;
 
@@ -35,6 +35,11 @@ $colorPage: #ffff;
 
 }
 @mixin card-page3($margin){
+    transition:0.6s;
+    &:hover{
+        background: #0f1e24 ;
+        transition: 0.6s;
+    }
     &-text{
         /*border: solid orange;*/
         margin: $margin;
@@ -78,10 +83,9 @@ li{
 
 .ctn-principal{
     .ctn-main{
-        grid-template-rows: 100% auto auto auto auto 50%;
+        grid-template-rows: 100% 100% auto auto auto 50%;
         /*background-image: url('../img/unh.png');*/
         &-page-welcome{
-            /*border:solid red;*/
             display: grid;
             grid-template-columns: 60% 40%;
             &-text{
@@ -157,32 +161,49 @@ li{
             z-index: 99;
             height: 100%;
             width: 100%;
-            /*background:linear-gradient(180deg,#0e1519,#0f1424,$colorpage3);*/
             background:$colorpage2;
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 100%;
             &-text{
-                /*border: solid green;*/
-                border-radius:60px 20px 0px 0px; 
-                background:#0f1e24;
+                
+                /*border:solid;*/
+                /*background:#0f1e24;*/
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                video{
+                    border: solid red;
+                    position: absolute;
+                    z-index: -10;
+                }
                 &-text{
+                    /*border:solid salmon;*/
                     color: #cfcfcf;
-                    /*border: solid red;*/
                     margin-top: 3em;
                     margin-bottom: 3em;
                     margin-right: 4em;
                     margin-left: 4em;
-                    text-align: right;
+                    text-align: center;
+                    .cambia1{
+                        text-align: center;
+                        /*.ctn_message{
+                            border: solid beige;
+                        }*/
+                    }
+                    
                     .information-bienvenido{
-                        font-size: 30px;
+                        font-size: 40px;
                         font-weight: 100;
                     }
                     span{
                         font-size: $fontstan - 1;
+                        h1{
+                            font-weight: 100;
+                            font-size: 14px;
+                        }
                     }
+
                     
                     .span-encuentranos{
                         color: #dbc3c3;
@@ -347,6 +368,7 @@ li{
                     background-image:url("../img/titulo2.jpg");
                     background-position:center;
                     background-size:cover;
+                    fil
                     &:hover{
                         transition: 1s;  
                     }
@@ -367,6 +389,20 @@ li{
                     background-image:url("../img/sede.jpg");
                     background-position:center;
                     background-size:cover;
+                    &:hover{
+                        transition: 1s;  
+                        filter: contrast(20px);
+                    }
+                }
+                .grado_img{
+                    background-image:url("../img/estudiantes.jpg");
+                    background-position:center;
+                    background-size:cover;
+                    &:hover{
+                        transition: 1s;  
+                        filter: contrast(20px);
+                    }
+
                 }
                 &-items{
                     transition: 0.90s;
@@ -374,7 +410,6 @@ li{
                     width: 250px;
                     height: 250px;
                     margin: 1em;
-                    background: #081419;
                     border-radius: 250px;
                     display: flex;
                     text-align: center;
@@ -385,21 +420,20 @@ li{
                     opacity: 0.7;
                     
                     .items-title{
-                        font-size: 18px;
+                        background:#000000ab;
+                        font-size: 20px;
                         text-transform: capitalize;
-                        color: #000000;
-                        font-weight: 800;
-                        
                     }
                     .items-text{
-                        font-size: 13px;
+                        font-size: 14px;
+                        background:#000000a1;
                         color: #ffffff;
-                        font-weight: 800;
+                        font-size: 100;
                     }
                     &:hover{
                         transition: 0.5s;
                         color: #aea6e6;
-                        border-radius: 0px;
+                        border-radius: 20px;
                         opacity: 10;
                     }
                 
@@ -454,81 +488,6 @@ li{
                     width: 280px;
                 }
                 }
-            }
-            &-page-information{
-                height: 100%;
-                /*border: solid red;*/
-                background:linear-gradient(#081419,#0f1e24);
-                display: grid;
-                grid-template-columns: 0% 100%;
-                /*div{
-                    border: solid white;
-                }*/
-                &-text{
-                    /*border: solid green;*/
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    &-text{
-                        width: 80%;
-                        
-                        color: white;
-                        /*border: solid red;*/
-                        margin-bottom: 2em;
-                        margin-top: 2em;
-                        .information-bienvenido{
-                            font-size: 18px;
-                        }
-                        span{
-                            display: inline-block;
-                            vertical-align: top;
-                            margin-top: 3px;
-                            font-size: $fontstanres;
-                            line-height: 1.1em;
-                            ////border: solid;*/
-                        
-                        }
-                        .span-encuentranos{
-                            color: white;
-                            font-size: $fontstanres - 2;
-                        }
-                        @include navbar3.Button2();
-                        .Faccebok{
-                            padding: 0.8em 1em;
-                            font-size: $fontstanres - 2;
-                            &:hover{
-                                background-color: #2323c4;
-                                box-shadow: 0px 15px 20px #4d2ee566;
-                            } 
-                        }
-                        .Instagram{
-                            padding: 0.8em 1em;
-                            font-size: $fontstanres - 2 ;
-                            &:hover{
-                                background-color: #8623c4;
-                                box-shadow: 0px 15px 20px #a52ee566;
-                            } 
-                        }
-                        .Youtube{
-                            padding: 0.8em 1em;
-                            font-size: $fontstanres - 2;
-                            &:hover{
-                                background-color: #c42323;
-                                box-shadow: 0px 15px 20px #e52e2e66;
-                            } 
-                        }
-                        .Whatsapp{
-                            padding: 0.8em 1em;
-                            font-size: $fontstanres - 2 ;
-                             
-                        }
-                        .Linkedin{
-                            display: none;
-                        }
-                    }
-    
-                }
-                   
             }
             &-page-target{
                 /*border: solid red;*/

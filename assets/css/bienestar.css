@@ -50,7 +50,7 @@ header {
   z-index: 20;
   display: flex;
   justify-content: space-between;
-  background: rgba(14, 21, 25, 0.3882352941);
+  background: rgba(14, 21, 25, 0.8235294118);
   width: 100%;
   color: white;
 }
@@ -345,7 +345,7 @@ h6 {
   position: fixed;
   background: #051015;
   z-index: 19;
-  margin-top: -100%;
+  margin-top: -1000%;
   /*filter: blur(20px);*/
 }
 
@@ -386,6 +386,7 @@ h6 {
   justify-content: center;
 }
 .ctn-principal .ctn-footer-content {
+  position: absolute;
   flex-wrap: wrap;
   /*border: solid green;*/
   width: 80%;
@@ -396,18 +397,17 @@ h6 {
 }
 .ctn-principal .ctn-footer-content-social {
   margin: 1em;
-  /*border: solid orange;*/
   display: flex;
+  gap: 2px;
   flex-direction: row;
   justify-content: center;
-  gap: 5px;
-  /*justify-content: space-between;*/
+  gap: 8px;
+  font-size: 24px;
 }
-.ctn-principal .ctn-footer-content-social .item-social {
-  background: #1c2e37;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+.ctn-principal .ctn-footer-content-social .effect:hover {
+  opacity: 2px;
+  cursor: pointer;
+  font-size: 29px;
 }
 .ctn-principal .ctn-footer-content-items {
   /*border: solid blue;*/
@@ -426,6 +426,69 @@ h6 {
   font-size: 10px;
 }
 
+.ctn_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ctn_bg2 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.bg {
+  border: solid green;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation 0.2s infinite;
+  opacity: 0.9;
+  visibility: visible;
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
+}
 .panel {
   position: fixed;
   width: 100%;
@@ -531,22 +594,53 @@ h6 {
   justify-content: center;
   align-items: center;
 }
-.ctn-principal .ctn-main-bienestar .Biblioteca_img {
-  background: url("../img/bienestar1.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 .ctn-principal .ctn-main-bienestar-ctn {
   margin-top: 50px;
-  border: solid green;
-  color: gray;
+  overflow: hidden;
+  color: white;
   width: 80%;
   height: 80%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s;
+  z-index: -3;
+  filter: blur(2px);
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img_dentro {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.576)), url("../img/bienestar1.webp");
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img_dentro2 {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.576)), url("../img/bienestar2.jpeg");
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img_dentro3 {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.576)), url("../img/bienestar3.webp");
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img_dentro4 {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.576)), url("../img/bienestar4.webp");
+}
+.ctn-principal .ctn-main-bienestar-ctn .ctn_img_dentro .img_dentroEffect {
+  padding: 80px;
+  margin-left: -80px;
+  margin-top: -80px;
+  transform: rotate(-7deg);
+  transition: 0.5s;
 }
 .ctn-principal .ctn-main-bienestar-ctn-titulo {
   /*border: solid green;*/
@@ -567,8 +661,7 @@ h6 {
   color: white;
 }
 .ctn-principal .ctn-main-bienestar-ctn-play-play-ctn {
-  /*border: solid red;*/
-  padding: 10px;
+  padding: 20px;
   background: #0c1e26;
 }
 .ctn-principal .ctn-main-bienestar-ctn-play-play-ctn:hover {

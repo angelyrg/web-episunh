@@ -5,6 +5,7 @@
 
 }
 .typewriter .text {
+    display: inline-flex;
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -12,7 +13,11 @@
     font-weight: bold;
     border-right: 10px solid #10a475;
     width: 0;
-    animation: typing 2s steps(20) forwards, blink-caret 0.5s step-end infinite;
+    animation: typing 3s steps(20) forwards, blink-caret 0.5s step-end infinite;
+}
+.typewriter{
+    display: inline-flex;
+
 }
 
 @keyframes typing {

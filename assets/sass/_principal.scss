@@ -7,7 +7,7 @@ $colorFoter:linear-gradient(180deg,#051015);
     position: fixed;
     background:#051015;
     z-index: 19;
-    margin-top: -100%;
+    margin-top: -1000%;
     
     /*filter: blur(20px);*/
 }
@@ -18,7 +18,6 @@ $colorFoter:linear-gradient(180deg,#051015);
     background:#051015;
     z-index: 19;
     margin-top: 0%;
-
 }
 
 .ctn-principal{
@@ -49,7 +48,7 @@ $colorFoter:linear-gradient(180deg,#051015);
         justify-content: center;
 
         &-content{
-            
+            position: absolute;  
             flex-wrap: wrap;
             /*border: solid green;*/
             width: 80%;
@@ -59,19 +58,17 @@ $colorFoter:linear-gradient(180deg,#051015);
             color: white;
             &-social{
                 margin: 1em;
-                /*border: solid orange;*/
                 display: flex;
+                gap: 2px;
                 flex-direction: row;
                 justify-content: center;
-                gap: 5px;
-                /*justify-content: space-between;*/
-                .item-social{
-                    background: #1c2e37;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50px;
+                gap: 8px;
+                font-size: 24px;
+                .effect:hover{
+                    opacity: 2px;
+                    cursor: pointer;
+                    font-size: 29px;
                 }
-
             }
 
             &-items{

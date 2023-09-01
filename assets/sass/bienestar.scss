@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'navbar3';
 @use 'principal';
+@use 'color_tv';
  
 .panel{
     position: fixed;
@@ -71,25 +72,75 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .Biblioteca_img{
-                background: url("../img/bienestar1.webp");
-                background-repeat: no-repeat;
-                background-position:center;
-                background-size:cover;
-
-            }
             &-ctn{
                 margin-top: 50px;
-                border: solid green;
-                color: gray;
+                overflow: hidden;
+                color: white;
                 width: 80%;
                 height: 80%;
                 border-radius: 20px;
                 display: flex;
-
                 flex-direction: column;
                 justify-content: space-between;
+                .ctn_img_dentro{
+                    width: 80%;
+                    height: 80%;
+                    position: absolute;
+                    overflow: hidden;
+                    z-index: -1;
                 
+                .img{
+                    background-repeat: no-repeat;
+                    background-position:center;
+                    background-size:cover;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    transition: 0.5s;
+                    z-index: -3;
+                    filter: blur(2px);
+                }
+                .img_dentro{
+                    background-image: 
+                    linear-gradient(90deg,
+                      rgba(0, 0, 0, 0.955),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/bienestar1.webp");
+                }
+                .img_dentro2{
+                    background-image: 
+                    linear-gradient(90deg,
+                      rgba(0, 0, 0, 0.955),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/bienestar2.jpeg");
+                }
+                .img_dentro3{
+                    background-image: 
+                    linear-gradient(90deg,
+                      rgba(0, 0, 0, 0.955),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/bienestar3.webp");
+                }
+                .img_dentro4{
+                    background-image: 
+                    linear-gradient(90deg,
+                      rgba(0, 0, 0, 0.955),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/bienestar4.webp");
+                }
+                .img_dentroEffect{
+                    padding: 80px;
+                    margin-left: -80px;
+                    margin-top: -80px;
+                    transform: rotate(-7deg);
+                    transition: 0.5s;
+                }
+
+                }
                 
                 &-titulo{
                     /*border: solid green;*/
@@ -109,8 +160,7 @@
                         align-items: flex-end;
                         color: white;
                         &-ctn{
-                            /*border: solid red;*/
-                            padding: 10px;
+                            padding: 20px;
                             background: #0c1e26;
                             &:hover{
                                 opacity: 0.5;
@@ -198,11 +248,6 @@
                         &-text{
                             font-size: 10px;
                             /*border: solid brown;*/
-                        }
-                        &-play{
-                            &-ctn{
-
-                            }
                         }
                     }
                 }
