@@ -1,7 +1,7 @@
 
 @use 'variables';
-
-    $colornavbar: #0e1519d2;
+    $colornavbar2:red;
+    $colornavbar: -webkit-gradient(linear,left bottom,left top,from(rgba(5, 16, 21, 0.775)),color-stop(80%,#051015dc));
     $letra:white;
     $paddindDefect:40px;
     *{
@@ -188,7 +188,6 @@
         margin-left:$paddindDefect;
         display: flex;
         align-items:center;
-        /*border: solid red;*/
         &-item-1{
             height: 70%;
             font-size: 25px;

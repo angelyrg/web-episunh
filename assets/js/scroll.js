@@ -18,8 +18,6 @@ document.addEventListener("scroll", function () {
         //$("cambia2").classList.add("animate__animated", "animate__fadeInDown")
         //$("cambia3").classList.add("animate__animated", "animate__fadeInDown")
         
-
-        bi.style.color = "#00ffad"
         bi.classList.add("text");
         $("bienvenido_id1").classList.add("text");
         $("bienvenido_id2").classList.add("text");
@@ -56,7 +54,7 @@ document.addEventListener("scroll", function () {
     const windowHeight2 = window.innerHeight;
 
     // Calculamos la posición vertical de la tercera parte de la sección
-    const sectionThird2 = sectionTop2 + (sectionHeight2 / 3) * 2;
+    const sectionThird2 = sectionTop2 + (sectionHeight2 / 6) * 2;
 
     // Verificamos si el scroll está en la tercera parte de la sección
     if (scrollPosition2 > sectionThird2 - windowHeight2 && scrollPosition2 < sectionThird2){

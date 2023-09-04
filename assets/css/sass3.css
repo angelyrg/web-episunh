@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Jura", sans-serif;
-  user-select: none;
+  /*user-select: none;*/
 }
 
 .ctn-principal {
@@ -50,7 +50,7 @@ header {
   z-index: 20;
   display: flex;
   justify-content: space-between;
-  background: rgba(14, 21, 25, 0.8235294118);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(5, 16, 21, 0.775)), color-stop(80%, rgba(5, 16, 21, 0.862745098)));
   width: 100%;
   color: white;
 }
@@ -152,7 +152,6 @@ h6 {
   margin-left: 40px;
   display: flex;
   align-items: center;
-  /*border: solid red;*/
 }
 .ctn-header-logo-item-1 {
   height: 70%;
@@ -402,7 +401,7 @@ h6 {
   flex-direction: row;
   justify-content: center;
   gap: 8px;
-  font-size: 24px;
+  font-size: 20px;
 }
 .ctn-principal .ctn-footer-content-social .effect:hover {
   opacity: 2px;
@@ -698,7 +697,7 @@ h5 {
   z-index: 99;
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, #071115, #15252b);
+  background: linear-gradient(90deg, #020506, #0b1215);
   display: grid;
   grid-template-columns: 100%;
 }
@@ -708,11 +707,6 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.ctn-principal .ctn-main-page-information-text video {
-  border: solid red;
-  position: absolute;
-  z-index: -10;
 }
 .ctn-principal .ctn-main-page-information-text-text {
   /*border:solid salmon;*/
@@ -726,11 +720,14 @@ h5 {
 }
 .ctn-principal .ctn-main-page-information-text-text .cambia1 {
   text-align: center;
+  font-family: "VT323", monospace, sans-serif;
+  color: #3f3;
   /*.ctn_message{
       border: solid beige;
   }*/
 }
 .ctn-principal .ctn-main-page-information-text-text .information-bienvenido {
+  color: white;
   font-size: 40px;
   font-weight: 100;
 }
@@ -908,6 +905,7 @@ h5 {
   opacity: 0.5;
 }
 .ctn-principal .ctn-main-page-abouti {
+  /*border:solid red;*/
   width: 99.7%;
   height: 100%;
   display: grid;
@@ -915,8 +913,10 @@ h5 {
   grid-gap: 4px;
 }
 .ctn-principal .ctn-main-page-abouti-items-1 {
-  /*border: solid red;*/
-  background: #081419;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.576)), url("../img/perfil.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   align-items: flex-end;
   display: flex;
   justify-content: left;
@@ -941,8 +941,11 @@ h5 {
   vertical-align: top;
 }
 .ctn-principal .ctn-main-page-abouti-items-2 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.972), rgba(0, 0, 0, 0.576)), url("../img/profesional.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   /*border: solid rgb(46, 15, 157);*/
-  background: #081419;
 }
 .ctn-principal .ctn-main-page-abouti-items-2-perspectivas {
   /*border: solid green;*/

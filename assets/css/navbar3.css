@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Jura", sans-serif;
-  user-select: none;
+  /*user-select: none;*/
 }
 
 .ctn-principal {
@@ -50,7 +50,7 @@ header {
   z-index: 20;
   display: flex;
   justify-content: space-between;
-  background: rgba(14, 21, 25, 0.8235294118);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(5, 16, 21, 0.775)), color-stop(80%, rgba(5, 16, 21, 0.862745098)));
   width: 100%;
   color: white;
 }
@@ -152,7 +152,6 @@ h6 {
   margin-left: 40px;
   display: flex;
   align-items: center;
-  /*border: solid red;*/
 }
 .ctn-header-logo-item-1 {
   height: 70%;

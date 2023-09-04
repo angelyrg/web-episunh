@@ -8,7 +8,7 @@
 $fontstan:14px;
 $fontstanres:11.5px;
 $colorpage1:transparent;
-$colorpage2: linear-gradient(90deg,#071115,#15252b);
+$colorpage2: linear-gradient(90deg,#020506,#0b1215);
 $colorpage3:#10222a;
 $colorpage4:#080e11;
 
@@ -171,12 +171,6 @@ li{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                video{
-                    border: solid red;
-                    position: absolute;
-                    z-index: -10;
-                }
                 &-text{
                     /*border:solid salmon;*/
                     color: #cfcfcf;
@@ -187,12 +181,15 @@ li{
                     text-align: center;
                     .cambia1{
                         text-align: center;
+                        font-family: 'VT323', monospace, sans-serif;
+                        color: #3f3;
                         /*.ctn_message{
                             border: solid beige;
                         }*/
                     }
                     
                     .information-bienvenido{
+                        color: white;
                         font-size: 40px;
                         font-weight: 100;
                     }
@@ -311,14 +308,22 @@ li{
             }            
         }
         &-page-abouti{ 
+            /*border:solid red;*/
             width: 99.7%;
             height: 100%; 
             display: grid;
             grid-template-columns: 40% 60%;
             grid-gap: 4px;
             &-items-1{
-                /*border: solid red;*/
-                background: #081419;
+                background-image: 
+                    linear-gradient(0deg,
+                      rgba(0, 0, 0, 0.955),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/perfil.webp");
+                background-repeat: no-repeat;
+                background-position:center;
+                background-size:cover;
                 align-items: flex-end;
                 display: flex;
                 justify-content: left;
@@ -333,8 +338,16 @@ li{
                 }    
             }
             &-items-2{
+                background-image: 
+                    linear-gradient(0deg,
+                      rgba(0, 0, 0, 0.972),
+                      rgba(0, 0, 0, 0.576)
+                    ),
+                    url("../img/profesional.webp");
+                    background-repeat:no-repeat;
+                    background-size:cover;
+                    background-position:center;
                 /*border: solid rgb(46, 15, 157);*/
-                background: #081419; 
                 &-perspectivas{
                     /*border: solid green;*/
                     margin-left: 4em;

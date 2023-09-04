@@ -1,6 +1,12 @@
 @use 'variables';
 @use 'navbar3';
 @use 'principal';
+@use 'color_tv';
+
+
+hr{
+    border: 1px solid #c7c1c1e3;
+}
 
 .ctn-principal{
     .ctn-main{
@@ -11,7 +17,34 @@
             color: white;
             display: grid;
             grid-template-columns: 40% 60%;
-            
+            .img{
+                
+                background-position:center;
+                background-size:cover;
+                background-repeat:repeat-x;
+
+            }
+            &-image1{
+                background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.791),
+                rgba(0, 0, 0, 0.744)
+              ),
+          url("../img/1vision.jpg");
+            }
+            &-image2{
+                background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.934),
+                rgba(0, 0, 0, 0.744)
+              ),
+          url("../img/2mision.jpg");
+            }
+            &-image3{
+                background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.934),
+                rgba(0, 0, 0, 0.744)
+              ),
+          url("../img/3objetivos.jpg");
+            }
             &-text{
                 /*border: solid;*/
                 display: flex;
@@ -25,19 +58,18 @@
                     flex-direction: column;
                     gap: 5px;
                     .title_grande{
-                        font-size: 40px;
-                        font-weight: 300;
+                        font-size: 35px;
+                        font-weight: 400;
                         color: bisque;
-                        text-transform: uppercase;
+                        text-transform: capitalize;
                     }
                     .title_sub{
-                        font-size: 13px;
-                        color: #858c91;
+                        font-size: 12px;
+                        color: #767778;
                     }
                     .texto_grande{
                         font-size: 16px;
-                        color: white;
-                        
+                        color: rgb(189, 189, 180);
                     }
                 }
 

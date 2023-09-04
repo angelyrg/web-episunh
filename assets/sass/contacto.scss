@@ -33,7 +33,7 @@
     }
 }
 .text_description{
-    font-size: 12px;
+    font-size: 13px;
     
 }
 .texto_modi{
@@ -58,6 +58,7 @@
                 display: flex;
                 align-items: center;
                 margin-right: 3em;
+                margin-top: 2em;
                 &-all{
                     margin-left: 5em;
                     /*border: solid green;*/
@@ -78,6 +79,11 @@
                             height: 50px;
                             border-radius: 50px;
                             margin: 5px;
+                            font-size: 17px;
+                            justify-content: center;
+                            align-items:center;
+                            display: flex;
+                           
                         }
                         .target-texto{
                             /*border: solid chocolate;*/
@@ -96,6 +102,7 @@
                 display: flex;
                 align-items: center;
                 &-all{
+                    margin-top: 3em;
                     /*border: solid  green;*/
                     margin-right: 5em;
                     display: flex;

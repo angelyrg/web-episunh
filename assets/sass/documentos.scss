@@ -10,7 +10,7 @@
 .text_subtitle{
     font-size: 13px;
     color: #b7aaaa;
-}
+} 
 .ctn-principal{
 
     .ctn-main{
@@ -51,8 +51,11 @@
                         align-items: flex-start;
                         justify-content: flex-end;
                         flex-direction: column;
-
                         color: white;
+                        &:hover{
+                            transition: 0.15s;
+                            background:#131212;
+                        }
                         &-image{
                             width: 150px;
                             height: 150px; 

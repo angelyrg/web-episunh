@@ -78,9 +78,11 @@
 
     var edith = document.querySelector('#aparece')
         
-    edith.style.opacity=1;
-    edith.style.filter= "blur(0px)";
-
+    setTimeout(()=>{
+        edith.style.opacity=1;
+        edith.style.filter= "blur(0px)";
+        edith.style.transition="0.75s";
+    },100)
 
     setTimeout(()=>{
         $("panel_black").style.marginTop="-100%"
