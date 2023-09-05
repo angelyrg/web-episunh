@@ -39,6 +39,10 @@
   margin: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   background: #0e1519;
 }
@@ -65,7 +69,7 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   margin-right: 40px;
-  font-size: 14px;
+  font-size: 1.5rem;
   /*border:solid green;*/
 }
 
@@ -109,8 +113,8 @@ h6 {
   border-bottom: 1px solid #dbdada;
   color: #dbdada;
   text-decoration: none;
-  font-size: 14px;
   text-transform: capitalize;
+  font-size: 1.5rem;
 }
 
 .style-linkAll {

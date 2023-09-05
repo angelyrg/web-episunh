@@ -4,9 +4,13 @@
     $colornavbar: -webkit-gradient(linear,left bottom,left top,from(rgba(5, 16, 21, 0.775)),color-stop(80%,#051015dc));
     $letra:white;
     $paddindDefect:40px;
+    $fontall: 1.5rem;
     *{
         padding: 0;
         margin: 0;
+    }
+    html{
+        font-size: 10px;
     }
     body{
         background: #0e1519;
@@ -34,7 +38,7 @@
         flex-direction: row;
         justify-content: space-evenly;
         margin-right: $paddindDefect;
-        font-size: 14px;
+        font-size: $fontall;
         /*border:solid green;*/
     }
     
@@ -79,8 +83,8 @@
             border-bottom: 1px solid $color;
             color: $color;
             text-decoration: none;
-            font-size: 14px;
             text-transform: capitalize;
+            font-size: $fontall;
         }
         
         .style-linkAll{
@@ -144,7 +148,7 @@
           }
           .text-button:hover:after{
             
-            background: white;
+            background: #b9b9cc;
             color: black;
             transform-origin: left;
             transform: scaleX(1);
@@ -346,12 +350,8 @@
                                 a{
                                     color:#ffffff;
                                     text-decoration:line-through;
-    
                                 }
-
                             }
-                            
-    
                         }
                     }
                 }

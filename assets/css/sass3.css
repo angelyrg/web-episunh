@@ -39,6 +39,10 @@
   margin: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   background: #0e1519;
 }
@@ -65,7 +69,7 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   margin-right: 40px;
-  font-size: 14px;
+  font-size: 1.5rem;
   /*border:solid green;*/
 }
 
@@ -109,8 +113,8 @@ h6 {
   border-bottom: 1px solid #dbdada;
   color: #dbdada;
   text-decoration: none;
-  font-size: 14px;
   text-transform: capitalize;
+  font-size: 1.5rem;
 }
 
 .style-linkAll {
@@ -337,24 +341,13 @@ h6 {
     font-size: 19px;
   }
 }
-.panel-black {
-  /*border: solid red;*/
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #051015;
-  z-index: 19;
-  margin-top: -1000%;
-  /*filter: blur(20px);*/
+html {
+  font-size: 10px;
 }
 
-.panel-black2 {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #051015;
-  z-index: 19;
-  margin-top: 0%;
+.ctn-main {
+  filter: blur(12px);
+  transition: 0.7s;
 }
 
 .ctn-principal {
@@ -551,7 +544,7 @@ h6 {
 }
 
 .text-button:hover:after {
-  background: white;
+  background: #b9b9cc;
   color: black;
   transform-origin: left;
   transform: scaleX(1);
@@ -601,63 +594,12 @@ h5 {
   align-content: flex-start;
 }
 .ctn-principal .ctn-main-page-welcome-text-title {
-  /*border: solid;*/
   margin-left: 5em;
   margin-bottom: 5em;
 }
-.ctn-principal .ctn-main-page-welcome-text-title .text-link {
-  font-size: 12px;
-  color: #d5d5d5;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll-solid {
-  padding-bottom: 3px;
-  border-bottom: 1px solid #3f3fff;
-  color: #3f3fff;
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: capitalize;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll {
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 3px;
-  color: #937cdf;
-  /*border: solid red;*/
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll::after {
-  content: "";
-  position: absolute;
-  color: #3f3fff;
-  background: #3f3fff;
-  width: 100%;
-  height: 1px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.4s ease-in-out;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll:hover:after {
-  transform-origin: left;
-  transform: scaleX(1);
-  transition: transform 0.4s ease-in-out;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll:hover {
-  transition: 0.75s;
-  color: #3f3fff;
-  cursor: pointer;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .arrow {
-  font-size: 10px;
-  color: #937cdf;
-}
-.ctn-principal .ctn-main-page-welcome-text-title .text-link .arrow:hover {
-  color: #3f3fff;
-}
 .ctn-principal .ctn-main-page-welcome-text-title .title {
   color: #bfc7d2;
-  font-size: 39px;
+  font-size: 4.3rem;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .title .blure1 {
   opacity: 0.5;
@@ -668,13 +610,13 @@ h5 {
   filter: blur(10px);
 }
 .ctn-principal .ctn-main-page-welcome-text-title .letter2 {
-  font-size: 15px;
-  color: #cbddf6;
+  font-size: 1.6rem;
+  color: #326ec1;
   letter-spacing: 3px;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .text-description {
   display: inline-block;
-  font-size: 13px;
+  font-size: 1.5rem;
   color: #808c9c;
   margin-bottom: 20px;
   margin-top: -15px;
@@ -682,6 +624,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-welcome-text-title .text-button {
   text-decoration: none;
+  font-size: 1.3rem;
 }
 .ctn-principal .ctn-main-page-welcome-text-title .text-button:hover {
   color: black;
@@ -697,50 +640,51 @@ h5 {
   z-index: 99;
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, #020506, #0b1215);
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 50% 50%;
+  background: #0f1e24;
+  display: inline-flex;
 }
 .ctn-principal .ctn-main-page-information-text {
-  /*border:solid;*/
-  /*background:#0f1e24;*/
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 .ctn-principal .ctn-main-page-information-text-text {
-  /*border:solid salmon;*/
+  background: #13141b;
+  width: 100%;
   color: #cfcfcf;
-  margin-top: 3em;
-  margin-bottom: 3em;
-  margin-right: 4em;
-  margin-left: 4em;
-  text-align: center;
+  margin-left: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   color: white;
 }
 .ctn-principal .ctn-main-page-information-text-text .cambia1 {
-  text-align: center;
+  margin-left: 5em;
+  padding-right: 5em;
+  text-align: left;
   font-family: "VT323", monospace, sans-serif;
-  color: #3f3;
-  /*.ctn_message{
-      border: solid beige;
-  }*/
+  color: rgb(213, 222, 213);
 }
 .ctn-principal .ctn-main-page-information-text-text .information-bienvenido {
+  margin-left: 1em;
+  padding-right: 1em;
   color: white;
-  font-size: 40px;
+  font-size: 3.5em;
   font-weight: 100;
-}
-.ctn-principal .ctn-main-page-information-text-text span {
-  font-size: 13px;
 }
 .ctn-principal .ctn-main-page-information-text-text span h1 {
   font-weight: 100;
-  font-size: 14px;
+  font-size: 1.6rem;
 }
 .ctn-principal .ctn-main-page-information-text-text .span-encuentranos {
-  color: #dbc3c3;
-  font-size: 14px;
+  color: #6173a7;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
 }
 .ctn-principal .ctn-main-page-information-text-text .styleB {
   margin: 2px;
@@ -793,7 +737,7 @@ h5 {
   margin-bottom: 3em;
   margin-left: 5em;
   margin-right: 1em;
-  border-radius: 20px;
+  border-radius: 10px;
   background: #081419;
   box-shadow: 20px 20px 60px #071115, -20px -20px 60px #09171d;
   justify-content: center;
@@ -807,7 +751,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-grande-text {
   /*border: solid orange;*/
-  margin: 1rem;
+  margin: 4em;
 }
 .ctn-principal .ctn-main-page-target-grande .target-text-tittle {
   font-size: 22px;
@@ -817,7 +761,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-grande span {
   margin: 0.4rem;
-  font-size: 13px;
+  font-size: 1.4rem;
   color: #9a9797;
   display: inline-block;
   vertical-align: top;
@@ -832,7 +776,7 @@ h5 {
   margin-bottom: 1em;
   margin-left: 1em;
   margin-right: 5em;
-  border-radius: 20px;
+  border-radius: 10px;
   background: #081419;
   box-shadow: 20px 20px 60px #071115, -20px -20px 60px #09171d;
   justify-content: left;
@@ -846,7 +790,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-mediano-text {
   /*border: solid orange;*/
-  margin: 1em;
+  margin: 3em;
 }
 .ctn-principal .ctn-main-page-target-mediano .target-text-tittle {
   font-size: 22px;
@@ -856,7 +800,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-mediano span {
   margin: 0.4rem;
-  font-size: 13px;
+  font-size: 1.4rem;
   color: #9a9797;
   display: inline-block;
   vertical-align: top;
@@ -871,7 +815,7 @@ h5 {
   margin-bottom: 3em;
   margin-left: 1em;
   margin-right: 5em;
-  border-radius: 20px;
+  border-radius: 10px;
   background: #081419;
   box-shadow: 20px 20px 60px #071115, -20px -20px 60px #09171d;
   justify-content: left;
@@ -886,7 +830,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-pequeno-text {
   /*border: solid orange;*/
-  margin: 1em;
+  margin: 3em;
 }
 .ctn-principal .ctn-main-page-target-pequeno .target-text-tittle {
   font-size: 22px;
@@ -896,7 +840,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-target-pequeno span {
   margin: 0.4rem;
-  font-size: 13px;
+  font-size: 1.4rem;
   color: #9a9797;
   display: inline-block;
   vertical-align: top;
@@ -935,7 +879,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-abouti-items-1-perfil span {
   margin: 0.3rem;
-  font-size: 13px;
+  font-size: 1.4rem;
   color: #a7a7a7;
   display: inline-block;
   vertical-align: top;
@@ -962,7 +906,7 @@ h5 {
 }
 .ctn-principal .ctn-main-page-abouti-items-2-perspectivas span {
   margin: 0.3rem;
-  font-size: 13px;
+  font-size: 1.4rem;
   color: #a7a7a7;
   display: inline-block;
   vertical-align: top;
@@ -1044,12 +988,6 @@ fil .ctn-principal .ctn-main-page-linea-content .titulo_img:hover {
   color: #ffffff;
   font-size: 100;
 }
-.ctn-principal .ctn-main-page-linea-content-items:hover {
-  transition: 0.5s;
-  color: #aea6e6;
-  border-radius: 20px;
-  opacity: 10;
-}
 
 @media (max-width: 1000px) {
   .ctn-principal {
@@ -1057,25 +995,38 @@ fil .ctn-principal .ctn-main-page-linea-content .titulo_img:hover {
     grid-template-rows: 100%;
   }
   .ctn-principal .ctn-main {
-    grid-template-rows: 100% auto auto auto auto 50%;
+    grid-template-rows: 100% 100% auto auto auto 50%;
+  }
+  .ctn-principal .ctn-main-page-information-text-text {
+    margin-left: 3em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+  .ctn-principal .ctn-main-page-information-text-text .information-bienvenido {
+    margin-left: 0.6em;
+    padding-right: 0.6em;
+    font-size: 3em;
+    letter-spacing: 4px;
+    font-weight: 100;
+  }
+  .ctn-principal .ctn-main-page-information-text-text .cambia1 {
+    margin-left: 3em;
+    padding-right: 3.5em;
   }
   .ctn-principal .ctn-main-page-welcome {
     grid-template-columns: 100% 0%;
   }
   .ctn-principal .ctn-main-page-welcome-text-title {
-    margin-bottom: 2em;
-    margin-left: 1em;
-  }
-  .ctn-principal .ctn-main-page-welcome-text-title .text-link {
-    font-size: 9px;
+    margin-bottom: 6em;
+    margin-left: 2em;
   }
   .ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll-solid {
     padding-bottom: 3px;
     border-bottom: 1px solid #3f3fff;
     color: #3f3fff;
     text-decoration: none;
-    font-size: 14px;
     text-transform: capitalize;
+    font-size: 1.5rem;
   }
   .ctn-principal .ctn-main-page-welcome-text-title .text-link .style-linkAll {
     text-decoration: none;
@@ -1209,13 +1160,6 @@ fil .ctn-principal .ctn-main-page-linea-content .titulo_img:hover {
   .ctn-principal .ctn-main-page-linea-content-items .items-text {
     font-size: 12px;
     color: #bebaba;
-  }
-  .ctn-principal .ctn-main-page-linea-content-items:hover {
-    transition: 0.5s;
-    background: #0b1519;
-    color: #7568da;
-    border-radius: 0px;
-    opacity: 10;
   }
 }
 

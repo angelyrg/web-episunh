@@ -39,6 +39,10 @@
   margin: 0;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   background: #0e1519;
 }
@@ -65,7 +69,7 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   margin-right: 40px;
-  font-size: 14px;
+  font-size: 1.5rem;
   /*border:solid green;*/
 }
 
@@ -109,8 +113,8 @@ h6 {
   border-bottom: 1px solid #dbdada;
   color: #dbdada;
   text-decoration: none;
-  font-size: 14px;
   text-transform: capitalize;
+  font-size: 1.5rem;
 }
 
 .style-linkAll {
@@ -337,24 +341,13 @@ h6 {
     font-size: 19px;
   }
 }
-.panel-black {
-  /*border: solid red;*/
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #051015;
-  z-index: 19;
-  margin-top: -1000%;
-  /*filter: blur(20px);*/
+html {
+  font-size: 10px;
 }
 
-.panel-black2 {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #051015;
-  z-index: 19;
-  margin-top: 0%;
+.ctn-main {
+  filter: blur(12px);
+  transition: 0.7s;
 }
 
 .ctn-principal {
@@ -541,8 +534,8 @@ h6 {
   border-bottom: 1px solid #6767c4;
   color: #6767c4;
   text-decoration: none;
-  font-size: 14px;
   text-transform: capitalize;
+  font-size: 1.5rem;
 }
 .text-link .style-linkAll {
   text-decoration: none;

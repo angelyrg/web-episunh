@@ -5,7 +5,7 @@
 @use 'textE';
 
 
-$fontstan:14px;
+$fontstan:2.4rem;
 $fontstanres:11.5px;
 $colorpage1:transparent;
 $colorpage2: linear-gradient(90deg,#020506,#0b1215);
@@ -89,33 +89,17 @@ li{
             display: grid;
             grid-template-columns: 60% 40%;
             &-text{
-                // border: solid red ;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
                 justify-content: flex-end;
                 align-content: flex-start;
                 &-title{
-                    /*border: solid;*/
                     margin-left: 5em;
                     margin-bottom: 5em;
-
-                    .text-link{
-
-                        font-size: 12px;
-                        color: #d5d5d5;
-                        @include navbar3.StyleLink(#3f3fff,#937cdf);
-                        .arrow{
-                            font-size: 10px;
-                            color: #937cdf;
-                        }
-                        .arrow:hover{
-                            color: #3f3fff; 
-                        }
-                    }
                     .title{
                         color: #bfc7d2;  
-                        font-size: 39px;
+                        font-size: 4.3rem;
                         .blure1{
                             opacity: 0.5;
                             filter: blur(5px);
@@ -126,13 +110,13 @@ li{
                         }
                     }
                     .letter2{
-                        font-size: 15px;
-                        color: #cbddf6; 
+                        font-size: 1.6rem;
+                        color: #326ec1; 
                         letter-spacing: 3px; 
                     }
                     .text-description{
                         display: inline-block;
-                        font-size: ($fontstan - 1);
+                        font-size: ($fontstan - 0.9);
                         color: #808c9c;
                         margin-bottom: 20px;
                         margin-top: -15px;
@@ -140,7 +124,8 @@ li{
                     }
 
                     .text-button{
-                        text-decoration: none;   
+                        text-decoration: none;
+                        font-size: ($fontstan - 1.1);   
                     }
                     .text-button:hover{
                         color: black;
@@ -161,50 +146,51 @@ li{
             z-index: 99;
             height: 100%;
             width: 100%;
-            background:$colorpage2;
             display: grid;
-            grid-template-columns: 100%;
+            grid-template-columns: 50% 50%;
+            background:#0f1e24;
+            display: inline-flex;
             &-text{
-                
-                /*border:solid;*/
-                /*background:#0f1e24;*/
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                align-content:center;
                 &-text{
-                    /*border:solid salmon;*/
+                    background: #13141b;
+                    width: 100%;
                     color: #cfcfcf;
-                    margin-top: 3em;
-                    margin-bottom: 3em;
-                    margin-right: 4em;
-                    margin-left: 4em;
-                    text-align: center;
+                    margin-left: 5em;
+                    margin-top: 5em;
+                    margin-bottom: 5em;
+                
+                    border-radius:20px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-content:center;
+                    flex-direction: column;
                     .cambia1{
-                        text-align: center;
+                        
+                        margin-left: 5em;
+                        padding-right: 5em;
+                        text-align: left;
                         font-family: 'VT323', monospace, sans-serif;
-                        color: #3f3;
-                        /*.ctn_message{
-                            border: solid beige;
-                        }*/
+                        color: rgb(213, 222, 213);
                     }
-                    
-                    .information-bienvenido{
+                    .information-bienvenido{  
+                        margin-left: 1em;
+                        padding-right: 1em;
                         color: white;
-                        font-size: 40px;
+                        font-size: 3.5em;
                         font-weight: 100;
                     }
-                    span{
-                        font-size: $fontstan - 1;
+                    span{ 
                         h1{
                             font-weight: 100;
-                            font-size: 14px;
+                            font-size: $fontstan - 0.8;
                         }
                     }
-
-                    
                     .span-encuentranos{
-                        color: #dbc3c3;
-                        font-size: 14px;
+                        color: #6173a7;
+                        font-size: $fontstan - 1.1;
+                        letter-spacing: 2px;
                     }
                     @include navbar3.Button2();
                     .Faccebok{
@@ -246,14 +232,14 @@ li{
                 margin-bottom: 3em;
                 margin-left: 5em;
                 margin-right: 1em;
-                border-radius: 20px;
+                border-radius: 10px;
                 background: #081419;
                 box-shadow:  20px 20px 60px #071115,
                 -20px -20px 60px #09171d;
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                @include card-page3(1rem);
+                @include card-page3(4em);
                 &:active{
                     opacity: 0.5;
                 }
@@ -268,7 +254,7 @@ li{
                 margin-bottom: 1em;
                 margin-left: 1em;
                 margin-right: 5em;
-                border-radius: 20px;
+                border-radius: 10px;
                 background: #081419;
                 box-shadow:  20px 20px 60px #071115,
                 -20px -20px 60px #09171d;
@@ -276,7 +262,7 @@ li{
                 align-items: center;
                 display: flex;
                 
-                @include card-page3(1em);
+                @include card-page3(3em);
                 &:active{
                     opacity: 0.5;
                 }
@@ -288,7 +274,7 @@ li{
                 margin-bottom: 3em;
                 margin-left: 1em;
                 margin-right: 5em;
-                border-radius: 20px;
+                border-radius: 10px;
                 background: #081419;
                 box-shadow:  20px 20px 60px #071115,
                 -20px -20px 60px #09171d;
@@ -298,7 +284,7 @@ li{
                 display: flex;
                 flex-wrap: wrap;
 
-                @include card-page3(1em);
+                @include card-page3(3em);
                 &:active{
                     opacity: 0.5;
                 }
@@ -443,12 +429,6 @@ li{
                         color: #ffffff;
                         font-size: 100;
                     }
-                    &:hover{
-                        transition: 0.5s;
-                        color: #aea6e6;
-                        border-radius: 20px;
-                        opacity: 10;
-                    }
                 
                     
                 }
@@ -467,16 +447,38 @@ li{
             display: grid;
             grid-template-rows: 100%;
             .ctn-main{
-                grid-template-rows: 100% auto auto auto auto 50%;
-            &-page-welcome{
-    
-            grid-template-columns: 100% 0%;
+                grid-template-rows: 100% 100% auto auto auto 50%;
+                &-page-information{
+                   
+                    &-text{
+                        &-text{
+                            margin-left: 3em;
+                            margin-top: 5em;
+                            margin-bottom: 5em;
+                            
+                            .information-bienvenido{
+                                margin-left: .60em;
+                                padding-right: .6em;
+                                font-size: 3em;
+                                letter-spacing: 4px;
+                                font-weight: 100;
+                            }
+                            .cambia1{
+                                margin-left: 3em;
+                                padding-right: 3.5em;
+                               
+                            }
+
+                        }
+                    }       
+                }
+                &-page-welcome{
+                grid-template-columns: 100% 0%;
                 &-text-title{
-                    margin-bottom: 2em;
-                    margin-left: 1em;
+                    margin-bottom: 6em;
+                    margin-left: 2.0em;
                     
                 .text-link{
-                    font-size: 9px;
                     @include navbar3.StyleLink(#3f3fff,#937cdf);
                 }
     
@@ -502,6 +504,7 @@ li{
                 }
                 }
             }
+
             &-page-target{
                 /*border: solid red;*/
                 grid-template-columns: repeat(1,1fr);
@@ -596,15 +599,6 @@ li{
                             font-size: 12px;
                             color: #bebaba;
                         }
-                        &:hover{
-                            transition: 0.5s;
-                            background: #0b1519;
-                            color: #7568da;
-                            border-radius: 0px;
-                            opacity: 10;
-                        }
-                    
-                        
                     }
                 }
             }

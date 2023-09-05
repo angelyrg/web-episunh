@@ -83,21 +83,19 @@
         edith.style.filter= "blur(0px)";
         edith.style.transition="0.75s";
     },100)
-
+    
+    
     setTimeout(()=>{
-        $("panel_black").style.marginTop="-100%"
-        $("panel_black").style.transition="0.5s"
-    },300)
-
+        $("movi").style.filter= "blur(0px)";
+        $("movi").style.transition="0.75s";
+        
+    },600)
     function documentos(e) {
-        //alert("krvb")
-        // href="./page/documentos.html"
-        $("panel_black").style.marginTop = "0%"
-        $("panel_black").style.transition = "0.5s"
+        $("movi").style.filter= "blur(12px)";
+        $("movi").style.transition="0.5s";
         setTimeout(() => {
             location.href = e;
-    
-        }, 1000)
+        }, 400)
     }
     
 function ir(e){

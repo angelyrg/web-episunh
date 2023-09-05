@@ -1,25 +1,14 @@
 $colorFoter:linear-gradient(180deg,#051015);
 
-.panel-black{
-    /*border: solid red;*/
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background:#051015;
-    z-index: 19;
-    margin-top: -1000%;
-    
-    /*filter: blur(20px);*/
-}
-.panel-black2{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background:#051015;
-    z-index: 19;
-    margin-top: 0%;
+html{
+    font-size:10px;
 }
 
+
+.ctn-main{
+    filter: blur(12px);
+    transition: 0.7s;
+}
 .ctn-principal{
     
     background:#0e1519;
