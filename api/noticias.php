@@ -23,8 +23,9 @@ foreach ($all_data as $value) {
     $temp = [
         'id' => $value['id'],
         'nombre' => $value['name'],
-        'link' => $value['link'],
-        'url_foto' => $_SERVER['HTTP_HOST']."/upload/images/".$value['picture'],
+        'link_noticia' => $value['link'],
+        'imagen' => $value['picture'],
+        'url_imagen' => $_SERVER['HTTP_HOST']."/dev_v1/upload/images/".$value['picture'],
     ];
     array_push($data_response, $temp);
 }

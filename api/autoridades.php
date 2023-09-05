@@ -25,7 +25,8 @@ foreach ($all_data as $value) {
         'grado' => $value['degree'],
         'nombre_completo' => $value['degree']." ".$value['name']." ".$value['lastname'],
         'cargo' => $value['position'],
-        'url_foto' => $_SERVER['HTTP_HOST']."/upload/images/".$value['photo'],
+        'foto' => $value['photo'],
+        'url_foto' => $_SERVER['HTTP_HOST']."/dev_v1/upload/images/".$value['photo'],
     ];
     array_push($data_response, $temp);
 }

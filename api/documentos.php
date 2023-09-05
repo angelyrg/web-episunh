@@ -23,9 +23,10 @@ foreach ($all_data as $value) {
     $temp = [
         'id' => $value['id'],
         'nombre' => $value['name_doc'],
-        'tategoria' => $value['cat_id'],
-        'descripcion'=>$value['description'],
-        'archivo'=>$_SERVER['HTTP_HOST']."/upload/docs/".$value['file'],
+        'categoria' => $value['cat_id'],
+        'descripcion'=> $value['description'],
+        'archivo'=> $value['file'],
+        'url_archivo'=> $_SERVER['HTTP_HOST']."/dev_v1/upload/docs/".$value['file'],
     ];
     array_push($data_response, $temp);
 }

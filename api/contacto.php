@@ -20,8 +20,8 @@ $data_response = [];
 foreach ($all_data as $value) {
     $temp = [
         'id' => $value['id'],
-        'address' => $value['address'],
-        'phone' => $value['phone'],
+        'direccion' => $value['address'],
+        'celular' => $value['phone'],
         'email' => $value['email']
     ];
     array_push($data_response, $temp);

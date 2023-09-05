@@ -20,7 +20,7 @@ $data_response = [];
 foreach ($all_data as $value) {
     $temp = [
         'id' => $value['id'],
-        'welcome' => $value['welcome'],
+        'bienvenida' => $value['welcome'],
         'mision' => $value['mision'],
         'vision' => $value['vision']
     ];
