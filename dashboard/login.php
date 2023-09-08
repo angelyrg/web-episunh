@@ -42,11 +42,9 @@ if (isset($_SESSION['login'])){
 							</div>
 							<div class="form-group mb-4">
 								<input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
-							</div>							
+							</div>
 							<button class="btn btn-block btn-primary mb-4" type="submit">Iniciar sesión</button>
-
 							<p id="message" class="text-danger"></p>
-							
 						</form>
 					</div>
 				</div>

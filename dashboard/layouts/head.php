@@ -24,7 +24,7 @@ if (!isset($_SESSION['login'])){
     <!-- vendor css -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -58,12 +58,18 @@ if (!isset($_SESSION['login'])){
                         </span><span class="pcoded-mtext">Noticias</span>
                         </a>
 					</li>
-                    <li class="nav-item">
-					    <a href="document.php" class="nav-link ">
-                            <span class="pcoded-micon"><i class="feather icon-file-text"></i>
-                        </span><span class="pcoded-mtext">Documentos</span>
+
+                    <li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link ">
+                            <span class="pcoded-micon"><i class="feather icon-file-text"></i></span>
+                            <span class="pcoded-mtext">Documentos</span>
                         </a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="document.php" >Lista documentos</a></li>
+					        <li><a href="document_category.php">Categorías</a></li>
+					    </ul>
 					</li>
+
 
                     <li class="nav-item">
 					    <a href="authority.php" class="nav-link ">
@@ -71,8 +77,7 @@ if (!isset($_SESSION['login'])){
                         </span><span class="pcoded-mtext">Autoridades</span>
                         </a>
 					</li>
-
-
+                    
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Dependencias</span></a>
 					    <ul class="pcoded-submenu">
