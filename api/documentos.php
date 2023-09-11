@@ -2,8 +2,10 @@
 try {
 
     require("../model/Document.php");
-    $proyecto = new Document();
-    $all_data = $proyecto->get_all();
+    require("../model/DocumentCategory.php");
+    $category = new DocumentCategory();
+    $document = new Document();
+    $all_categories= $category->get_all();
 
 } catch (Exception $e) {
     $response = [
@@ -19,15 +21,17 @@ try {
 
 $data_response = [];
 
-foreach ($all_data as $value) {    
+foreach ($all_categories as $value) {
+
+    $docs_by_category = $document->get_by_category($value['id']);
     $temp = [
         'id' => $value['id'],
-        'nombre' => $value['name_doc'],
-        'categoria' => $value['cat_id'],
-        'descripcion'=> $value['description'],
-        'archivo'=> $value['file'],
-        'url_archivo'=> $_SERVER['HTTP_HOST']."/dev_v1/upload/docs/".$value['file'],
+        'categoria_nombre' => $value['category_name'],
+        'categorria_descripcion'=> $value['cat_description'],
+        'total_docs' => count($docs_by_category),
+        'documentos' => $docs_by_category,
     ];
+
     array_push($data_response, $temp);
 }
 
@@ -35,7 +39,7 @@ foreach ($all_data as $value) {
 $response = array(
     'code' => '200',
     'message' => 'Ok',
-    'total_items' => count($all_data),
+    'total_items' => count($all_categories),
     'data' => $data_response,
 );
 

@@ -31,6 +31,12 @@ class Document extends Conexion
         return $result->fetch_all(MYSQLI_ASSOC)[0];
     }
 
+    public function get_by_category($id)
+    {
+        $result = $this->conexion_db->query("SELECT * FROM document WHERE cat_id='$id' AND disabled=0");
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     // DISABLE
     public function disable($id){
         return $this->conexion_db->query("UPDATE document SET disabled=1, disabled_at=NOW() WHERE id='$id'");
