@@ -11,7 +11,7 @@ date_default_timezone_set('America/Lima');
 
 $document_name = $_POST['document_name'];
 $description = $_POST['description'];
-$id_doc_category = $_POST['type_document'];
+$id_doc_category = (int)$_POST['type_document'];
 
 // ARCHIVOS
 $temp_inform_file = $_FILES['document_file']['tmp_name'];
@@ -33,7 +33,7 @@ if (move_uploaded_file($temp_inform_file, $upload_docs_path . $document_inform_f
     try {
         $doc = new Document();
         $insert = $doc->create($document_name, $id_doc_category, $description,  $document_inform_filename);
-        // echo $insert ? "1" : "0";
+        echo $insert ? "1" : "0";
     
     }catch(Exception $e) {
         echo 'Error al guardar en la base de datos: ' .$e->getMessage();
@@ -44,4 +44,4 @@ if (move_uploaded_file($temp_inform_file, $upload_docs_path . $document_inform_f
 }
 
 
-?>
+?>  

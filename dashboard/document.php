@@ -87,8 +87,8 @@ include_once("layouts/head.php");
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn  btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="btn_guardar">Guardar</button>
                     </div>
             </form>
         </div>
@@ -114,7 +114,13 @@ include_once("layouts/head.php");
             cache: false,
             contentType: false,
             processData: false,
+            beforeSend: function(){
+                console.log("Saving...");
+                $("#btn_guardar").attr("disabled", true);
+                $("#btn_guardar").text("Guardando...");                
+            },
             success: function(resp) {
+                console.log("Success...");
                 console.log(resp);
                 let result = parseInt(resp)
 
@@ -130,8 +136,12 @@ include_once("layouts/head.php");
                     console.log("Ocurrió otro error");
                     console.log(resp);
                 }
-
+            },
+            complete: function(){
+                $("#btn_guardar").removeAttr("disabled");
+                $("#btn_guardar").text("Guardar");
             }
+            
         });
     });
 
@@ -177,7 +187,7 @@ include_once("layouts/head.php");
                         "<td>" + data[i].name_doc + "</td>" +
                         "<td>" + data[i].description + "</td>" +
                         "<td>" + data[i].cat_id + "</td>" +
-                        "<td>" + data[i].file + "</td>" +
+                        "<td><a href='../upload/docs/" + data[i].file + "' target='_blank' >Ver documento</a></td>" +
                         "<td>" +
                         '<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].name_doc + '\')" data-toggle="modal" data-target="#modal_delete_authority" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
                     "</td>" +

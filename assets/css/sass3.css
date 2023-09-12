@@ -163,7 +163,7 @@ h6 {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
-  background-color: #182931;
+  /* background-color: #182931; */
   /*border:solid green;*/
   opacity: 0;
   filter: blur(4px);

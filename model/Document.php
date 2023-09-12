@@ -13,9 +13,9 @@ class Document extends Conexion
     // Create Read(get_all) Update Delete
 
     // CREATE
-    public function create($name_doc, $category_id, $description,  $file){
-        return $this->conexion_db->query("INSERT INTO document (name_doc, cat_id, description, file) VALUES 
-        ('$name_doc', '$category_id', '$description', '$file')");
+    public function create($name_doc, int $category_id, $description,  $file){
+        return $this->conexion_db->query("INSERT INTO document (name_doc, cat_id, description, file)
+                                            VALUES ('$name_doc', $category_id, '$description', '$file')");
     }
 
     // READ
