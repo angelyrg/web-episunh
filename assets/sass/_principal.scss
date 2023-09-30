@@ -1,30 +1,29 @@
 $colorFoter:linear-gradient(180deg,#051015);
 
-html{
-    font-size:10px;
-}
-
-
 .ctn-main{
     filter: blur(12px);
     transition: 0.7s;
 }
 .ctn-principal{
-    
+    position: absolute;
     background:#0e1519;
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    height: 100%;
+/*
+    background:#0e1519;
+    width: 100%;
     height: auto;
     display: grid;
-    grid-template-rows: 100% 100%;
+    grid-template-rows: 100% 100%;*/
     .ctn-main{
         height: 100%;
         width: 100%;
         position: absolute;
         /*border: solid red;*/
         display: grid;
-        z-index: 12;
+        z-index: -1;
+
+        
     }
     .ctn-footer{
         font-family: 'Courier New', Courier, monospace;

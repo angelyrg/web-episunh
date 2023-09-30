@@ -39,7 +39,7 @@ document.addEventListener("scroll", function () {
 
     // Verificamos si el scroll está en la tercera parte de la sección
     if (scrollPosition1 > sectionThird1 - windowHeight1 && scrollPosition1 < sectionThird1){
-        console.log("tagert");
+      
        
         $("an1").classList.add("animate__animated", "animate__rotateInUpLeft")
         $("an2").classList.add("animate__animated", "animate__rotateInDownLeft")
@@ -58,7 +58,7 @@ document.addEventListener("scroll", function () {
 
     // Verificamos si el scroll está en la tercera parte de la sección
     if (scrollPosition2 > sectionThird2 - windowHeight2 && scrollPosition2 < sectionThird2){
-        console.log("tagert");
+ 
        
         $("line_img1").classList.add("animate__animated", "animate__flipInX")
         $("line_img2").classList.add("animate__animated", "animate__flipInX")

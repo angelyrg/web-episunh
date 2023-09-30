@@ -1,22 +1,15 @@
-
 @use 'variables';
+
     $colornavbar2:red;
     $colornavbar: -webkit-gradient(linear,left bottom,left top,from(rgba(5, 16, 21, 0.775)),color-stop(80%,#051015dc));
     $letra:white;
     $paddindDefect:40px;
     $fontall: 1.5rem;
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    html{
-        font-size: 10px;
-    }
     body{
         background: #0e1519;
     }
-
     header{
+        /*border:solid red;*/
         padding-top: 20px;
         padding-bottom: 20px;
         position: fixed;
@@ -39,9 +32,10 @@
         justify-content: space-evenly;
         margin-right: $paddindDefect;
         font-size: $fontall;
-        /*border:solid green;*/
     }
-    
+    span{
+        cursor: pointer;
+    }
 
     .button{
         background: black;
@@ -192,14 +186,19 @@
         margin-left:$paddindDefect;
         display: flex;
         align-items:center;
+        /*border:solid red;*/
         &-item-1{
-            height: 70%;
+            height: 100%;
+            width: 100px;
             font-size: 25px;
             padding-left: 10px;
             padding-right: 10px;
             border-radius: 5px;
-            background-color: #182931;
             /*border:solid green;*/
+            background-image: url("../img/episunh_logo.png");
+            background-repeat:no-repeat;
+            background-position:left;
+            background-size:contain;
             opacity: 0;
             filter: blur(4px);
             align-items:center;
@@ -216,10 +215,12 @@
         display: none;
     }
     .content_hello{
-        /*border: solid white;*/
+        /*border: solid blue;*/
+        height: 100%;
+        margin-right: 14px;
         .centreado{
             /*border: solid red;*/
-            height: 90%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items:center;
@@ -231,10 +232,9 @@
             text-align: center;
             justify-content: center;
             display: flex;
-            /*border:solid red;*/
+            /*border:solid green;*/
             width: 90px;
             padding-top: 10px;
-            padding-bottom: 10px;
             padding-right: 10px;
 
         }
@@ -243,14 +243,17 @@
         }
         &-items{
             display: none;
+            flex-direction: column;
             border:1px solid #1e1e26;
             background: #161515;
+            position: absolute;
             border-radius:15px;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding: 0rem;
+            padding-bottom: 4px;
+            padding-top: 4px;
         }
         &-items1{
-            padding:0.6em;            
+            padding:0.6em;   
             /*border: 1px solid #ff0202;*/
             text-align: left;
             margin-left: 4px;
@@ -258,6 +261,7 @@
             border-radius:10px;
             &:hover{
                 background: #241c39;
+                cursor:pointer;
                 transition: 0.75s;
                 color:white;
             }
@@ -280,6 +284,9 @@
             /*color: #aaa9a9;*/
             text-decoration: none;
             cursor: none;
+        }
+        header{
+            height: 80px;
         }
         .panel-menu-items{
             /*border: solid red;*/
@@ -305,9 +312,6 @@
                     
                         display: flex;
                         flex-direction: column;
-                        /*a{
-                            color: #6f6a6a;
-                        }*/
                         .menu-option-span{
                             /*border: solid;*/
                             color: #6f6a6a;
@@ -364,6 +368,8 @@
 
         }
         .content_menu{
+            height: 100%;
+            /*border:solid red;*/
             margin-right: 1.5em;
             display: flex;
             justify-content: center;
@@ -379,9 +385,7 @@
                 background-position:center;
                 width: 50px;
                 height:  100%;
-                /*border:solid red;*/
-               
-                
+                /*border:solid red;*/ 
             }
             .close{
                 background:url("../svg/close_white_18dp.svg");
@@ -394,6 +398,7 @@
             }
         }
         .ctn-header-logo{
+            /*border:solid green;*/
             margin-left: 1.5em;
             &-item-1{
                 height: 100%;

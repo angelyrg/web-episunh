@@ -367,7 +367,6 @@ li{
                     background-image:url("../img/titulo2.jpg");
                     background-position:center;
                     background-size:cover;
-                    fil
                     &:hover{
                         transition: 1s;  
                     }
@@ -429,6 +428,11 @@ li{
                         color: #ffffff;
                         font-size: 100;
                     }
+                    &:hover{
+                        border:solid #ffffff;
+                        margin-bottom: 8em;
+                        transition: 0.5s;
+                    }
                 
                     
                 }
@@ -448,48 +452,64 @@ li{
             grid-template-rows: 100%;
             .ctn-main{
                 grid-template-rows: 100% 100% auto auto auto 50%;
-                &-page-information{
-                   
-                    &-text{
-                        &-text{
-                            margin-left: 3em;
-                            margin-top: 5em;
-                            margin-bottom: 5em;
-                            
-                            .information-bienvenido{
-                                margin-left: .60em;
-                                padding-right: .6em;
-                                font-size: 3em;
-                                letter-spacing: 4px;
-                                font-weight: 100;
-                            }
-                            .cambia1{
-                                margin-left: 3em;
-                                padding-right: 3.5em;
-                               
-                            }
-
+            
+        &-page-information{
+            z-index: 99;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            background:#0f1e24;
+            display: inline-flex;
+            &-text{
+                width: 100%;
+                height: 100%;
+                &-text{
+                    margin: 0em;
+                    border-radius:0px;
+                    .cambia1{
+                        
+                        margin-left: 2em;
+                        padding-right: 1em;
+                    }
+                    .information-bienvenido{  
+                        margin-left: 0.5em;
+                        padding-right: 1em;
+                        color: white;
+                        font-size: 2em;
+                        font-weight: 100;
+                    }
+                    span{ 
+                        h1{
+                            font-weight: 100;
+                            font-size: 1.2em;
                         }
-                    }       
+                    }
+                    .span-encuentranos{
+                        font-size: 1.5em;
+                        letter-spacing: 1px;
+                    } 
                 }
-                &-page-welcome{
+            }       
+        }
+            &-page-welcome{
                 grid-template-columns: 100% 0%;
                 &-text-title{
-                    margin-bottom: 6em;
+                    margin-bottom: 4em;
                     margin-left: 2.0em;
                     
                 .text-link{
                     @include navbar3.StyleLink(#3f3fff,#937cdf);
                 }
     
-                .title{
-                    color: #bfc7d2;  
-                    font-size: 29px;
+                .title{ 
+                    font-size: 2.7rem;
+                    /*border:solid red;*/
                 }
                 .letter2{
-                    font-size: 12px;
-                    color: #cbddf6; 
-                    letter-spacing: 2px; 
+                    font-size:1.1rem;
+                    letter-spacing: 1.5px; 
+                    /*border:solid green;*/
                 }
 
                 .text-description{

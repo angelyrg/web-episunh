@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/particles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <meta name="theme-color" content="black">
     <title>Sistemas UNH</title>
 </head>
@@ -75,10 +75,9 @@
     <header id="body" class="header">
         <div class="ctn-header-logo">
             <div class="ctn-header-logo-item-1" id="aparece">
-                <img src="assets/img/episunh_logo.png" class="img-fluid" width="50px" alt="Logo sistemas unh" >
-                <!-- <span class="span-epis">EPIS
-                    <span class="span-unh">UNH</span>
-                </span> -->
+                <span class="span-epis">
+                    <span class="span-unh"></span>
+                </span>
             </div>
         </div>
         <nav>
@@ -469,11 +468,12 @@
                     <h1>EPIS UNH</h1>
                     <br>
                     <span>
-                        Email: <a href="mailto:ep.sistemas@unh.edu.pe" class=" style-linkAll">ep.sistemas@unh.edu.pe</a> - Teléfono: 
-                        <a  href="https://api.whatsapp.com/send?phone=+51952850467&text=Hola, Nececito mas informacion!" class=" style-linkAll">+51 952 850 467</a> 
+                        Email: <a class=" style-linkAll" id="api_email"></a> - Teléfono: 
+                        <a class=" style-linkAll" id="api_celular"></a> 
                         
                         <br>
-                        Av. Perú S/N - Daniel Hernández
+                        <span id="api_direccion">
+                        </span>
                     </span>
 
                     <div class="ctn-footer-content-social">
@@ -497,4 +497,5 @@
 <script src="./assets/js/index.js"></script>
 <script src="./assets/js/scroll.js"></script>
 <script src="./assets/js/particles.js"></script>
+<script src="./assets/js/api/Api_contacto.js"></script>
 </html>
