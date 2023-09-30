@@ -1,0 +1,66 @@
+<!-- TODO: Include only one code for all pages (DRY) -->
+<footer class="ctn-footer">
+    <div class="ctn_bg2">
+        <div class="bg"></div>
+    </div>
+    <div class="ctn-footer-content">
+        <div class="ctn-footer-content-items">
+            <h1>EPIS UNH</h1>
+            <br>
+            <span>
+                Email: <a href="" class="style-linkAll" id="footer_email_id" target="_blank">ep.sistemas@unh.edu.pe</a>
+                - Teléfono: <a  href="" class="style-linkAll" id="footer_phone_id" target="_blank">+51 952850467</a> 
+                <br>
+                <span id="footer_address_id">Av. Perú S/N</span>
+            </span>
+
+            <div class="ctn-footer-content-social gap-3">
+                <i class="fa-brands fa-facebook effect" onclick="ir('https://www.facebook.com/SistemasUNH/')" ></i>
+                <i class="fa-brands fa-twitter effect" onclick="ir('https://www.twitter.com/UNH_Sistemas/')" ></i>
+                <i class="fa-brands fa-youtube effect" onclick="ir('https://www.youtube.com/SistemasUNH/')" ></i>
+                <i class="fa-brands fa-instagram effect" onclick="ir('https://www.instagram.com/SistemasUNH/')" ></i>
+                <i class="fa-brands fa-linkedin effect" onclick="ir('https://www.linkedin.com/company/sistemasunh/')" ></i>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<div class="ctn-copyright">
+    <span>Copyright ©<script>document.write(new Date().getFullYear())</script>, EPIS UNH - Todos los derechos reservados</span>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+
+        //Temporal link
+        const url_api = "http://localhost/web-episunh/api/contacto.php";
+
+        fetch(url_api)
+            .then(res => res.json())
+            .then(res => {
+                if(res.code == '200'){
+                    
+                    const direccion = res.data[0].direccion;
+                    const nro_celular = res.data[0].celular;
+                    const email = res.data[0].email;
+
+                    document.getElementById("footer_address_id").textContent = direccion;
+                    
+                    const emailElement = document.getElementById("footer_email_id");
+                    emailElement.textContent = email;
+                    emailElement.setAttribute('href', `mailto:${email}`);
+                    
+                    const phoneElement = document.getElementById("footer_phone_id");
+                    emailElement.textContent = `+51 ${nro_celular}`;
+                    emailElement.setAttribute('href', `https://api.whatsapp.com/send?phone=+51${nro_celular}&text=Hola, Necesito más información!`);
+
+
+                }else{
+                    console.log('No se pudo obtener los datos :(');
+                }
+            })
+            .catch( err => console.error(err));
+    });
+
+
+</script>
