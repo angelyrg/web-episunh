@@ -188,8 +188,7 @@
                                 <br>
                                 <span class="animate__animated animate__fadeInUp animate__fadeIn">
                                     <h5 class="text-description animate__animated animate__fadeInUp animate__fadeIn">
-                                        "Forjando innovadores en el mundo digital: Tu futuro comienza aquí, en nuestra Universidad
-                                        de Sistemas."
+                                        "Forjando innovadores en el mundo digital.<br>¡Tu futuro comienza aquí!"
                                     </h5>
                                 </span>
                                 <br>
@@ -199,16 +198,19 @@
 
                                 <br>
 
-                                <a href="https://www.unh.edu.pe/" target="_blank">
-                                    <button class="text-button">IR A UNH
-                                        <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
-                                    </button>
-                                </a>
-                                <a href="http://fies.unh.edu.pe/" target="_blank">
-                                    <button class="text-button">IR A FACULTAD
-                                        <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
-                                    </button>
-                                </a>
+                                TODO: Los links deben ser clickeables :)
+                                <div class="hero_external_links">
+                                    <a href="https://www.unh.edu.pe/" target="_blank">
+                                        <button class="text-button">IR A UNH
+                                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
+                                        </button>
+                                    </a>
+                                    <a href="http://fies.unh.edu.pe/" target="_blank">
+                                        <button class="text-button">IR A FACULTAD
+                                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -514,5 +516,6 @@
 <script src="./assets/js/index.js"></script>
 <script src="./assets/js/scroll.js"></script>
 <script src="./assets/js/particles.js"></script>
+<script src="./assets/js/efectoEscritura.js"></script>
 
 </html>
