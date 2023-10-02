@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/autoridades2.css">
+    <link rel="stylesheet" href="../assets/css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
     <title>Autoridades</title>
 </head>
@@ -13,10 +15,10 @@
         <navbar class="nav-menu">
             <ul class="ul-menu">
                 <li class="menu-option">
-                    <a href="../index.html" class="menu-option-span">Inicio</a> 
+                    <a href="../" class="menu-option-span">Inicio</a> 
                 </li>
                 <li class="menu-option">
-                    <a href="./documentos.html" class="menu-option-span">Documentos</a> 
+                    <a href="./documentos.php" class="menu-option-span">Documentos</a> 
                 </li>
                 <li class="menu-option">
                     <span class="menu-option-span"id="menu_option">
@@ -76,14 +78,14 @@
         <nav>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a href="../index.html">
+                    <a href="../">
                         <span class="style-linkAll">Inicio</span> 
                     </a>
                 </li>
             </ul>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a href="./documentos.html">
+                    <a href="./documentos.php">
                         <span class="style-linkAll">Documentos</span>  
                     </a>
                 </li>
@@ -153,12 +155,14 @@
             </span>
         </div>
     </header>
-    <main class="ctn-main"  id="movi">
-        <div class="img" id="api_img"> 
-        </div>    
+    <main class="ctn-main" id="movi">
+        <!-- TODO: Rediseñar vista de autoridades -->
+        <div class="img border border-solid" id="api_img"></div>
+        <!-- Footer -->
+        <?php include("./../includes/footer.html"); ?>
     </main>
 </body>
 <script src="../assets/js/script.js"></script>
 <script src="../assets/js/api/Api_autoridades.js"></script>
-<script src="../assets/js/api/Api_Footer.js"></script>
+<!-- <script src="../assets/js/api/Api_Footer.js"></script> -->
 </html>

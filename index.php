@@ -25,7 +25,7 @@
                     <a href="#" class="menu-option-span menu-option-span-solid ">Inicio</a>
                 </li>
                 <li class="menu-option">
-                    <a href="./page/documentos.html" class="menu-option-span"> Documentos</a>
+                    <a href="./page/documentos.php" class="menu-option-span"> Documentos</a>
                 </li>
                 <li class="menu-option">
                     <span class="menu-option-span" id="menu_option">
@@ -222,55 +222,6 @@
 
         </section>
 
-
-        <!-- <section class="ctn-main-page-welcome" id="page_welcome">
-            <div class="ctn_bg">
-                <div class="bg"></div>
-            </div>
-            <div class="ctn-main-page-welcome-text">
-                <div class="ctn-main-page-welcome-text-title">
-                    <span>
-                        <h1 id="letter2" class="letter2 animate__animated animate__fadeInUp">
-                            UNIVERSIDAD NACIONAL DE HUANCAVELICA
-                        </h1>
-                        <h1 class="title animate__animated animate__fadeInUp">
-                            <span id="blure1" class="blure1">ESCUELA&nbsp;</span><span class="blure2"
-                                id="blure2">PROFESIONAL</span>
-                        </h1>
-                        <h1 class=" title animate__animated animate__fadeInUp">
-                            <span id="blure4" class="blure2">INGENIERIA&nbsp;</span><span class="blure1"
-                                id="blure3">DE</span>
-                        </h1>
-                        <h1 class=" title animate__animated animate__fadeInUp">
-                            <span id="blure5" class="blure1">SISTEMAS</span>
-                        </h1>
-                    </span>
-
-                    <br>
-                    <span class="animate__animated animate__fadeInUp animate__fadeIn">
-                        <h5 class="text-description animate__animated animate__fadeInUp animate__fadeIn">
-                            "Forjando innovadores en el mundo digital: Tu futuro comienza aquí, en nuestra Universidad
-                            de Sistemas."
-                        </h5>
-                    </span>
-                    <br>
-                    <a href="https://www.unh.edu.pe/" target="_blank">
-                        <button class="text-button">IR A UNH
-                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
-                        </button>
-                    </a>
-                    <a href="http://fies.unh.edu.pe/" target="_blank">
-                        <button class="text-button">IR A FACULTAD
-                            <img width="9" height="9" src="assets/svg/north_east_white_18dp.svg">
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="ctn-main-page-welcome-image">
-
-            </div>
-        </section> -->
-
         <section class="ctn-main-page-information" id="page_information">
             <div class="container my-auto">
                 <div class="row">
@@ -333,21 +284,21 @@
                                             &nbsp;Encuéntranos en nuestras redes sociales: </span>
                                         <br>
                                         <br>
-                                        <button class="styleB Faccebok ">
-                                            <i class="fa-brands fa-facebook effect" onclick="ir('https://www.facebook.com/SistemasUNH/')" ></i>
-                                        </button>
-                                        <button class="styleB Twitter">                        
-                                            <i class="fa-brands fa-x-twitter effect" onclick="ir('https://www.twitter.com/UNH_Sistemas/')" ></i>
-                                        </button>
-                                        <button class="styleB Instagram">
-                                            <i class="fa-brands fa-instagram effect" onclick="ir('https://www.instagram.com/SistemasUNH/')" ></i>
-                                        </button>
-                                        <button class="styleB Youtube">
-                                            <i class="fa-brands fa-youtube effect" onclick="ir('https://www.youtube.com/SistemasUNH/')" ></i>
-                                        </button>
-                                        <button class="Faccebok styleB Linkedin ">                        
-                                            <i class="fa-brands fa-linkedin effect" onclick="ir('https://www.linkedin.com/company/sistemasunh/')" ></i>
-                                        </button>
+                                        <a type="button" href="https://www.facebook.com/SistemasUNH/" class="styleB Faccebok" target="_blank">
+                                            <i class="fa-brands fa-facebook effect"></i>
+                                        </a>
+                                        <a type="button" href="https://twitter.com/UNH_Sistemas" class="styleB Twitter" target="_blank">
+                                        <i class="fa-brands fa-x-twitter effect"></i>
+                                        </a>
+                                        <a type="button" href="https://www.instagram.com/SistemasUNH/" class="styleB Instagram" target="_blank">
+                                            <i class="fa-brands fa-instagram effect"></i>
+                                        </a>
+                                        <a type="button" href="https://www.youtube.com/@escuelaprofesionaldeingeni4998" class="styleB Youtube" target="_blank">
+                                            <i class="fa-brands fa-youtube effect"></i>
+                                        </a>
+                                        <a type="button" href="https://www.linkedin.com/company/sistemasunh/" class="styleB Linkedin" target="_blank">
+                                            <i class="fa-brands fa-linkedin effect"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </span>

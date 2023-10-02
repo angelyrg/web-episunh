@@ -12,7 +12,7 @@ include_once("layouts/head.php");
 						<h5 class="m-b-10">Bienvenido 🤗</h5>
 					</div>
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+						<li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
 						<li class="breadcrumb-item"><a href="#!">Welcome Page</a></li>
 					</ul>
 				</div>

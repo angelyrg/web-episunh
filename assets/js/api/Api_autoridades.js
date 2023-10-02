@@ -23,5 +23,5 @@ fetch("https://sistemas.unh.edu.pe/dev_v1/api/autoridades.php")
             </div>
         </div>`
     }
-    Apifooter(api_img);
+    // Apifooter(api_img);
 })

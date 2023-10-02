@@ -15,11 +15,11 @@
             </span>
 
             <div class="ctn-footer-content-social gap-3">
-                <i class="fa-brands fa-facebook effect" onclick="ir('https://www.facebook.com/SistemasUNH/')" ></i>
-                <i class="fa-brands fa-twitter effect" onclick="ir('https://www.twitter.com/UNH_Sistemas/')" ></i>
-                <i class="fa-brands fa-youtube effect" onclick="ir('https://www.youtube.com/SistemasUNH/')" ></i>
-                <i class="fa-brands fa-instagram effect" onclick="ir('https://www.instagram.com/SistemasUNH/')" ></i>
-                <i class="fa-brands fa-linkedin effect" onclick="ir('https://www.linkedin.com/company/sistemasunh/')" ></i>
+                <a href="https://www.facebook.com/SistemasUNH/" target="_blank"><i class="fa-brands fa-facebook effect"></i></a>
+                <a href="https://www.instagram.com/SistemasUNH/" target="_blank"><i class="fa-brands fa-twitter effect"></i></a>
+                <a href="https://www.youtube.com/@escuelaprofesionaldeingeni4998" target="_blank"><i class="fa-brands fa-youtube effect"></i></a>
+                <a href="https://www.instagram.com/SistemasUNH/" target="_blank"><i class="fa-brands fa-instagram effect"></i></a>
+                <a href="https://www.linkedin.com/company/sistemasunh/" target="_blank"><i class="fa-brands fa-linkedin effect"></i></a>
             </div>
         </div>
     </div>
@@ -33,33 +33,36 @@
     document.addEventListener("DOMContentLoaded", function(event) { 
 
         //Temporal link
-        const url_api = "http://localhost/web-episunh/api/contacto.php";
-
-        fetch(url_api)
+        const url_api = "https://sistemas.unh.edu.pe/dev_v1/api/contacto.php";
+        actualizarFooter(url_api);
+        
+        async function actualizarFooter(url) {
+            const result = await fetch(url)
             .then(res => res.json())
             .then(res => {
-                if(res.code == '200'){
-                    
-                    const direccion = res.data[0].direccion;
-                    const nro_celular = res.data[0].celular;
-                    const email = res.data[0].email;
+                    console.log(res);
+                    if (res.code == '200') {
+                        const email = res.data[0].email;
+                        const nro_celular = res.data[0].celular;
+                        const direccion = res.data[0].direccion;
 
-                    document.getElementById("footer_address_id").textContent = direccion;
-                    
-                    const emailElement = document.getElementById("footer_email_id");
-                    emailElement.textContent = email;
-                    emailElement.setAttribute('href', `mailto:${email}`);
-                    
-                    const phoneElement = document.getElementById("footer_phone_id");
-                    emailElement.textContent = `+51 ${nro_celular}`;
-                    emailElement.setAttribute('href', `https://api.whatsapp.com/send?phone=+51${nro_celular}&text=Hola, Necesito más información!`);
+                        const emailElement = document.getElementById("footer_email_id");
+                        emailElement.textContent = email;
+                        emailElement.setAttribute('href', `mailto:${email}`);
 
+                        const direccionElement = document.getElementById("footer_address_id");
+                        direccionElement.textContent = direccion;
 
-                }else{
-                    console.log('No se pudo obtener los datos :(');
-                }
-            })
-            .catch( err => console.error(err));
+                        const phoneElement = document.getElementById("footer_phone_id");
+                        phoneElement.textContent = `+51 ${nro_celular}`;
+                        phoneElement.setAttribute('href', `https://api.whatsapp.com/send?phone=+51${nro_celular}&text=Hola, Necesito más información!`);
+                    } else {
+                        console.log('No se pudo obtener los datos :(');
+                    }
+                })
+                .catch(err => console.error(err));
+        }
+        
     });
 
 

@@ -10,6 +10,14 @@
     height: 100%;
 }
 
+.ctn-main-page-information-text-text{
+    margin: 0 !important;
+    height: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 13px !important;
+}
+
 #efecto_escritura{
     height: 2rem;
 }
@@ -34,3 +42,46 @@
         opacity: 1;
     }
 }
+
+/* -- Social media links */
+.Faccebok:hover{
+    background-color: #3b5998 !important;
+    box-shadow: 0px 5px 10px #3b5998 !important; 
+}
+.Twitter:hover{
+    background-color: #000 !important;
+    box-shadow: 0 5px 10px #ffffffa2 !important;
+}
+.Youtube:hover {
+    background: #FF0000 !important;
+    box-shadow: 0px 5px 10px #ff0000a4 !important;
+}
+.Instagram:hover {
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%) !important;
+    box-shadow: 0px 5px 10px #fec664b9 !important;
+}
+.Linkedin:hover{
+    background-color: #0077B5 !important;
+    box-shadow: 0px 5px 10px #0076b5b9 !important; 
+}
+/* End Social media links */
+
+
+.ctn-main-page-linea-content-items > span{
+    border-radius: 5px;
+    padding: 0 7px;
+    margin: 2px 0;
+}
+
+/* Footer */
+.ctn-footer-content-social > a{
+    color: white;
+}
+
+.ctn-footer-content-social .effect{
+    transition-duration: 200ms !important;
+}
+
+
+
+/* AUTORIDADES => page/autoridades.php */
