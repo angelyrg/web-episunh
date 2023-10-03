@@ -2,6 +2,9 @@
 nav{
     margin-right: 0;
 }
+.ctn-principal{
+    position: initial;
+}
 .menu_navbar{
     z-index: 20;
 }

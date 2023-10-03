@@ -16,7 +16,7 @@
 </head>
 
 <body class="ctn-principal" id="body_ctn">
-    <div id="particles-container"></div>
+    
     <div class="panel-black" id="panel_black"></div>
     <div class="panel-menu-items" id="panel_menu_items">
         <navbar class="nav-menu">
@@ -162,6 +162,8 @@
     </header>
     <main class="ctn-main" id="movi">
 
+        <div id="particles-container"></div>
+
         <section id="section-welcome-container">
             <div class="container d-flex hero_container">
                 <div class="row my-auto"  style="width: 100%;">
@@ -198,7 +200,6 @@
 
                                 <br>
 
-                                TODO: Los links deben ser clickeables :)
                                 <div class="hero_external_links">
                                     <a href="https://www.unh.edu.pe/" target="_blank">
                                         <button class="text-button">IR A UNH
