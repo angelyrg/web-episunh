@@ -40,7 +40,6 @@
             const result = await fetch(url)
             .then(res => res.json())
             .then(res => {
-                    console.log(res);
                     if (res.code == '200') {
                         const email = res.data[0].email;
                         const nro_celular = res.data[0].celular;

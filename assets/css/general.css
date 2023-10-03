@@ -1,3 +1,75 @@
+/* MENÚ NAVBAR */
+nav{
+    margin-right: 0;
+}
+.menu_navbar{
+    z-index: 20;
+}
+.nav-item{
+    margin: 0 13px;
+}
+.active{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.nav-link:hover{
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+}
+.navbar-brand:hover{
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+}
+.dropdown-menu{
+    color: white;
+    background-color: #182931;
+    font-size: .9em;
+}
+.dropdown-item{
+    color: var(--bs-nav-link-color);
+}
+.dropdown-item:hover{
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+    background-color: rgb(0,0,0,0);
+}
+.dropdown-item.active{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #182931;
+        transition: left 0.2s ease-in-out;
+    }
+
+    .navbar-collapse.show {
+        left: 0;
+    }
+
+    .navbar-toggler-icon {
+        color: #fff;
+    }
+
+    .close-menu-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+/* END MENÚ NAVBAR */
+
+/* HEADER */
 .ctn-header-logo-item-1{
     background-image: none;
 }
