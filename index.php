@@ -56,7 +56,7 @@
                             <a href="./page/visionymision.html">Vision y Mision</a>
                         </li>
                         <li class="menu-option-n1">
-                            <a href="./page/autoridades.html">Autoridades</a>
+                            <a href="./page/autoridades.php">Autoridades</a>
                         </li>
                         <li class="menu-option-n1">
                             <a href="./page/historia.html">Historia</a>
@@ -135,7 +135,7 @@
                             Visión y Misión
                         </li>
                     </a>
-                    <a onclick="documentos('./page/autoridades.html')">
+                    <a onclick="documentos('./page/autoridades.php')">
                         <li class="content_hello-items1">
                             Autoridades
                         </li>

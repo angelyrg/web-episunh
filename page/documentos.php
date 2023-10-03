@@ -50,7 +50,7 @@
                             <a href="./visionymision.html">Vision y Mision</a>
                         </li>
                         <li class="menu-option-n1">
-                            <a href="./autoridades.html">Autoridades</a>
+                            <a href="./autoridades.php">Autoridades</a>
                         </li>
                         <li class="menu-option-n1">
                             <a href="./historia.html">Historia</a>
@@ -123,7 +123,7 @@
                             Visión y Misión
                         </li>
                     </a>
-                    <a onclick="documentos('./autoridades.html')">
+                    <a onclick="documentos('./autoridades.php')">
                         <li class="content_hello-items1">
                             Autoridades
                         </li>

@@ -85,3 +85,31 @@
 
 
 /* AUTORIDADES => page/autoridades.php */
+#autoridades_lista{
+    font-size: 1.2rem !important;
+}
+
+.custom-card {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.custom-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.info-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #070513;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 0 0 10px 0;
+    transform: translateY(50%);
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}

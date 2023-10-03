@@ -155,9 +155,17 @@
             </span>
         </div>
     </header>
-    <main class="ctn-main" id="movi">
+    <main class="ctn-main" id="movi" style="margin-top:140px">
+        <div class="container text-white" >
+            <div class="row py-4">
+                <div class="col text-center ">
+                    <h1>Nuestras autoridades</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2" id="autoridades_lista"></div>
+        </div>
         <!-- TODO: Rediseñar vista de autoridades -->
-        <div class="img border border-solid" id="api_img"></div>
+        <!-- <div class="img border border-solid" id="api_img"></div> -->
         <!-- Footer -->
         <?php include("./../includes/footer.html"); ?>
     </main>
