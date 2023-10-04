@@ -1,4 +1,4 @@
-fetch("https://sistemas.unh.edu.pe/dev_v1/api/proyectos.php")
+fetch("https://sistemas.unh.edu.pe/api/proyectos.php")
 .then(res=>res.json())
 .then(data=>{
     var Api_proyectos = $("Api_proyectos")

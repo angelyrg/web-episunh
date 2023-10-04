@@ -1,4 +1,4 @@
-fetch("https://sistemas.unh.edu.pe/dev_v1/api/autoridades.php")
+fetch("https://sistemas.unh.edu.pe/api/autoridades.php")
 .then(res=>res.json())
 .then(data=>{
     let autoridesContainer = document.getElementById("autoridades_lista");
