@@ -99,5 +99,7 @@
     }
     
 function ir(e){
-    location.href=e;
+    // location.href=e;
+
+    window.open(e, '_blank');
 }

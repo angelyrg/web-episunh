@@ -93,7 +93,7 @@
             </ul>
             <ul class="content_hello">
                 <li class="content_hello-titulo">
-                    <a onclick="documentos('./page/documentos.html')">
+                    <a onclick="documentos('./page/documentos.php')">
                         <span class="style-linkAll">Documentos</span>
                     </a>
                 </li>
@@ -195,10 +195,10 @@
                                 </span>
                                 <br>
 
-
                                 <h4 class="text-white" ><span id="efecto_escritura"></span><span class="blinking-pipe">|</span></h4>
 
                                 <br>
+
 
                                 <div class="hero_external_links">
                                     <a href="https://www.unh.edu.pe/" target="_blank">

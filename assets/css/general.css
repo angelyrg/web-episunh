@@ -149,6 +149,11 @@ nav{
 }
 
 /* Footer */
+
+.ctn-footer{
+    min-height: 200px;
+}
+
 .ctn-footer-content-social > a{
     color: white;
 }

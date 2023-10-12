@@ -1,5 +1,5 @@
-    // https://sistemas.unh.edu.pe/dev_v1/api/contacto.php
-    fetch("https://sistemas.unh.edu.pe/dev_v1/api/contacto.php")
+    // https://sistemas.unh.edu.pe/api/contacto.php
+    fetch("https://sistemas.unh.edu.pe/api/contacto.php")
     .then(res=>res.json())
     .then(data=>{
         //console.log(data.data[0])

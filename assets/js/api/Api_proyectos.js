@@ -1,17 +1,16 @@
-fetch("https://sistemas.unh.edu.pe/dev_v1/api/proyectos.php")
+fetch("https://sistemas.unh.edu.pe/api/proyectos.php")
 .then(res=>res.json())
 .then(data=>{
     var Api_proyectos = $("Api_proyectos")
     for(i=0;i<data.data.length;i++){
-        console.log(data.data[i]) 
         Api_proyectos.innerHTML+= `
         <div class="proyecto">
                 <div class="ctn-main-proyectos-part1">
                     <div class="ctn-main-proyectos-part1-img">
-                        <img src="https://${data.data[i].url_foto1}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
-                        <img src="https://${data.data[i].url_foto2}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
-                        <img src="https://${data.data[i].url_foto3}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
-                        <img src="https://${data.data[i].url_foto4}" loading="lazy" alt="Imagen-sobre-invg"  title="no se expande">
+                        <img src="${data.data[i].url_foto1}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
+                        <img src="${data.data[i].url_foto2}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
+                        <img src="${data.data[i].url_foto3}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
+                        <img src="${data.data[i].url_foto4}" loading="lazy" alt="Imagen-sobre-invg" title="no se expande">
                     </div>
                 </div>
                 <div class="ctn-main-proyectos-part2 animate__animated animate__slideInLeft">
@@ -24,13 +23,13 @@ fetch("https://sistemas.unh.edu.pe/dev_v1/api/proyectos.php")
                             </span>
                             <span>
                                 Ver aqui la resolucion: &nbsp;
-                                <a href="http://${data.data[i].url_resolucion}">
+                                <a href="${data.data[i].url_resolucion}" target="_blank">
                                     <button class="button-ver" >VER PROYECTO</button>
                                 </a>
                             </span>
                             <span>
                                 Ver aqui el Informe: &nbsp;
-                                <a href="http://${data.data[i].url_informe}">
+                                <a href="${data.data[i].url_informe}" target="_blank">
                                     <button class="button-ver" >LEER INFORME</button>
                                 </a>
                             </span>
@@ -41,6 +40,6 @@ fetch("https://sistemas.unh.edu.pe/dev_v1/api/proyectos.php")
                 </div>
             </div>
         `
-        Apifooter(Api_proyectos);
     }
+    Apifooter(Api_proyectos);
 })

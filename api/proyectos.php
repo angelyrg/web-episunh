@@ -19,8 +19,8 @@ try {
 
 $data_response = [];
 
-$ruta_raiz_images = $_SERVER['HTTP_HOST']."/dev_v1/upload/images/";
-$ruta_raiz_docs = $_SERVER['HTTP_HOST']."/dev_v1/upload/docs/";
+$ruta_raiz_images = 'https://sistemas.unh.edu.pe/v2/upload/images/';
+$ruta_raiz_docs = 'https://sistemas.unh.edu.pe/v2/upload/docs/';
 
 foreach ($all_data as $value) {    
     $temp = [

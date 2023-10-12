@@ -1,5 +1,5 @@
 function Apifooter(ev){
-    fetch("https://sistemas.unh.edu.pe/dev_v1/api/contacto.php")
+    fetch("https://sistemas.unh.edu.pe/api/contacto.php")
     .then(res=>res.json())
     .then(data=>{
     ev.innerHTML+=`
@@ -21,11 +21,11 @@ function Apifooter(ev){
                 </span>
 
                 <div class="ctn-footer-content-social">
-                    <i class="fa-brands fa-facebook effect" onclick="ir('https://www.facebook.com/SistemasUNH/')" ></i>
-                    <i class="fa-brands fa-twitter effect" onclick="ir('https://www.twitter.com/UNH_Sistemas/')" ></i>
-                    <i class="fa-brands fa-youtube effect" onclick="ir('https://www.youtube.com/SistemasUNH/')" ></i>
-                    <i class="fa-brands fa-instagram effect" onclick="ir('https://www.instagram.com/SistemasUNH/')" ></i>
-                    <i class="fa-brands fa-linkedin effect" onclick="ir('https://www.linkedin.com/company/sistemasunh/')" ></i>
+                    <i class="fa-brands fa-facebook effect" onclick="ir('https://facebook.com/SistemasUNH/')" ></i>
+                    <i class="fa-brands fa-twitter effect" onclick="ir('https://twitter.com/UNH_Sistemas?t=XMl2llxy58d9kC58XDhjBg&s=08')" ></i>
+                    <i class="fa-brands fa-youtube effect" onclick="ir('https://youtube.com/@escuelaprofesionaldeingeni4998')" ></i>
+                    <i class="fa-brands fa-instagram effect" onclick="ir('https://instagram.com/SistemasUNH/')" ></i>
+                    <i class="fa-brands fa-linkedin effect" onclick="ir('https://linkedin.com/company/sistemasunh/')" ></i>
                 </div>
             </div>
         </div>
