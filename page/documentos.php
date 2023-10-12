@@ -96,7 +96,7 @@
                             Bienestar
                         </li>
                     </a>
-                    <a onclick="documentos('./calidad.html')">
+                    <a onclick="documentos('#')">
                         <li class="content_hello-items1">
                             Calidad
                         </li>
