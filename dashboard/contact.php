@@ -64,17 +64,50 @@ include_once("layouts/head.php");
 			</div>
 			<form  method="POST" id="form_create_contact" enctype="multipart/form-data">
 				<div class="modal-body">
-					<div class="form-group">
                     <div class="form-group">
 						<label for="news_image" class="col-form-label">Nueva ubicación</label>
 						<input type="text" class="form-control" name="address_name" id="news_name" placeholder="Nombre la nueva ubicación" required>
 					</div>
+					<div class="form-group">
 						<label for="news_name" class="col-form-label"> Teléfono / N° Celular</label>
-						<input type="text" class="form-control" name="phone_name" id="news_name" maxlength="12" placeholder="Escriba el Teléfono  / N° Celular" required>
+						<input type="text" class="form-control" name="phone_name" id="news_name" maxlength="9" placeholder="N° de Celular" required>
 					</div>
 					<div class="form-group">
 						<label for="news_image" class="col-form-label">Correo</label>
 						<input type="text" class="form-control" name="email_name" id="news_name" placeholder="Escriba el Correo" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn  btn-primary">Guardar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL: EDIT CONTACTO -->
+<div class="modal fade" id="modal_edit_contact" tabindex="-1" role="dialog" aria-labelledby="editModal" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">x</span></button>
+			</div>
+			<form  method="POST" id="form_edit_contact" enctype="multipart/form-data">
+				<div class="modal-body">
+					<input type="hidden" class="form-control" name="contact_id-edit" id="contact_id-edit" required>
+                    <div class="form-group">
+						<label for="address_name_edit" class="col-form-label">Ubicación</label>
+						<input type="text" class="form-control" name="address_name_edit" id="address_name_edit" placeholder="Dirección" required>
+					</div>
+					<div class="form-group">
+						<label for="phone_name_edit" class="col-form-label"> Teléfono / N° Celular</label>
+						<input type="text" class="form-control" name="phone_name_edit" id="phone_name_edit" maxlength="9" placeholder="N° de Celular" required>
+					</div>
+					<div class="form-group">
+						<label for="email_name_edit" class="col-form-label">Correo</label>
+						<input type="text" class="form-control" name="email_name_edit" id="email_name_edit" placeholder="Escriba el Correo" required>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -110,6 +143,7 @@ include_once("layouts/head.php");
 		</div>
 	</div>
 </div>
+
 <script>
 	//Carga la lista de registros al cargar la página
 	$( document ).ready(function() {
@@ -148,6 +182,38 @@ include_once("layouts/head.php");
 			}
 		});
 	});
+	
+	//Guardar registro de nuevo anuncio (CREATE)
+	$("#form_edit_contact").submit(function(e) {
+		e.preventDefault();    
+		
+		const formData = new FormData(this);
+
+		$.ajax({
+			url: "app/contact.update.php",
+			type: 'POST',
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success: function (resp) {
+				let result = parseInt(resp)
+
+				if (result=1){
+					$("#form_edit_contact")[0].reset();
+					$('#modal_edit_contact').modal('hide');
+					getAllData();
+
+				}else if(result = 0){
+					console.log("No se pudo guardar");
+
+				}else{
+					console.error("Ocurrió un error :( ", resp);
+				}
+
+			}
+		});
+	});
 
 	//Eliminar registro (DELETE)
 	$("#form_delete_contact").submit(function(e) {
@@ -175,7 +241,7 @@ include_once("layouts/head.php");
 
 	// ====FUNCIONES==== //
 
-	// Obtener todos los registros de los anuncios (READ)
+	// Obtener todos los registros (READ)
 	function getAllData(){
 		$.ajax({
 			url: "app/contact.get_all.php",
@@ -192,6 +258,7 @@ include_once("layouts/head.php");
 								"<td>" + data[i].email + "</td>" +
 								"<td>" + data[i].created_at + "</td>" +
 								"<td>" + 
+									'<button type="button" class="btn btn-sm btn-warning" onclick="updateEditModal(' + data[i].id + ', \'' + data[i].address + '\', \'' + data[i].phone + '\', \'' + data[i].email + '\')" data-toggle="modal" data-target="#modal_edit_contact" data-whatever="@getbootstrap"><i class="feather icon-edit-2"></i></button> ' +
 									'<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].phone + '\', \'' + data[i].email + '\')" data-toggle="modal" data-target="#modal_delete_contact" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
 								"</td>" + 
 						"</tr>";
@@ -199,6 +266,14 @@ include_once("layouts/head.php");
 				}
 			}
 		});
+	}
+
+	//Actualiza la info para editar
+	function updateEditModal(id, address, phone, email){
+		$("#contact_id-edit").val(id);
+		$("#address_name_edit").val(address);
+		$("#phone_name_edit").val(phone);
+		$("#email_name_edit").val(email);
 	}
 
 	//Actualiza la info del registro en el modal para eliminar

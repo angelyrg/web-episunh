@@ -29,9 +29,11 @@ class Contact extends Conexion
     }
 
     //UPDATE
-    // public function disable($id, $address, $phone, $email){
-    //     return $this->conexion_db->query("UPDATE contact SET address='$address', phone='$phone', email='$email' WHERE id='$id'");
-    // }
+    public function update($id, $address, $phone, $email){
+        return $this->conexion_db->query("UPDATE contact SET address='$address', phone='$phone', email='$email' WHERE id='$id'");
+    }
+
+    //DISABLE
     public function disable($id){
         return $this->conexion_db->query("UPDATE contact SET disabled=1, disabled_at=NOW() WHERE id='$id'");
     }
