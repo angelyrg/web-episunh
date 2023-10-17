@@ -38,13 +38,17 @@ if (!file_exists("../../upload/docs")) {
     mkdir("../../upload/docs", 0777, true);
 }
 
-
+// TODO: Max zise of $new_fotos_filenames should be 4
 $new_fotos_filenames = [];
-foreach ( $_FILES['fotos']['name'] as $item ){
-    $t = explode(".", $item);
-    $new_temp_filename = "foto_".$t[0].date('YmdHis').".".end($t);
-    array_push($new_fotos_filenames, $new_temp_filename);
+
+if (isset($_FILES['fotos'])){
+    foreach ( $_FILES['fotos']['name'] as $item ){
+        $t = explode(".", $item);
+        $new_temp_filename = "foto_".$t[0].date('YmdHis').".".end($t);
+        array_push($new_fotos_filenames, $new_temp_filename);
+    }
 }
+
 
 for ($i=0; $i < count($new_fotos_filenames); $i++){
     move_uploaded_file($_FILES['fotos']['tmp_name'][$i] , '../../upload/images/'.$new_fotos_filenames[$i]);
@@ -58,7 +62,13 @@ if (move_uploaded_file($temp_inform_file, '../../upload/docs/'.$new_inform_filen
 
     try {
         $project = new Project();
-        $insert = $project->create($project_name, $group_name, $new_resolution_filename, $new_inform_filename, $descripcion, $new_cover_picture_filename, $new_fotos_filenames[0], $new_fotos_filenames[1], $new_fotos_filenames[2], $new_fotos_filenames[3]);
+
+        $foto1 = isset($new_fotos_filenames[0]) ? $new_fotos_filenames[0] : '';
+        $foto2 = isset($new_fotos_filenames[1]) ? $new_fotos_filenames[1] : '';
+        $foto3 = isset($new_fotos_filenames[2]) ? $new_fotos_filenames[2] : '';
+        $foto4 = isset($new_fotos_filenames[3]) ? $new_fotos_filenames[3] : '';
+
+        $insert = $project->create($project_name, $group_name, $new_resolution_filename, $new_inform_filename, $descripcion, $new_cover_picture_filename, $foto1, $foto2, $foto3, $foto4);
         echo $insert ? "1" : "0";
     
     }catch(Exception $e) {

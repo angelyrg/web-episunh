@@ -20,7 +20,7 @@ class Project extends Conexion
     // READ
     public function get_all()
     {
-        $result = $this->conexion_db->query("SELECT * FROM project");
+        $result = $this->conexion_db->query("SELECT * FROM project WHERE disabled=0");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -31,12 +31,32 @@ class Project extends Conexion
     }
 
     //UPDATE
-    public function update($id, $project_name, $group_name, $resolution_file, $inform_file, $description, $cover_picture, $picture1, $picture2, $picture3, $picture4){
-        return $this->conexion_db->query("UPDATE project 
-        SET project_name='$project_name', group_name='$group_name', resolution_file='$resolution_file', inform_file='$inform_file', description='$description', cover_picture='$cover_picture', picture1='$picture1', picture2='$picture2', picture3='$picture3', picture4='$picture4' 
-        WHERE id='$id'");
+    public function update($id, $project_name, $group_name, $description, $inform_file=NULL, $resolution_file=NULL, $cover_picture=NULL, $picture1=NULL, $picture2=NULL, $picture3=NULL, $picture4=NULL){
+        $sql = "UPDATE project SET project_name='$project_name', group_name='$group_name', description='$description'";
+
+        if ($resolution_file != NULL){
+            $sql .= ", resolution_file='$resolution_file'";
+        }
+        if ($inform_file != NULL){
+            $sql .= ", inform_file='$inform_file'";
+        }
+        if ($cover_picture != NULL){
+            $sql .= ", cover_picture='$cover_picture'";
+        }
+        $sql .= $picture1 === NULL ? "" : ", picture1='$picture1'";
+        $sql .= $picture2 === NULL ? "" : ", picture2='$picture2'";
+        $sql .= $picture3 === NULL ? "" : ", picture3='$picture3'";
+        $sql .= $picture4 === NULL ? "" : ", picture4='$picture4'";
+        
+        $sql .= " WHERE id='$id'";
+        
+        return $this->conexion_db->query($sql);
     }
 
+    //DISABLE
+    public function disable($id){
+        return $this->conexion_db->query("UPDATE project SET disabled=1 WHERE id='$id'");
+    }
 
     // DELETE
     public function delete($id){

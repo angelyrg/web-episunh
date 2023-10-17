@@ -78,28 +78,28 @@ include_once("layouts/head.php");
 					</div>
 					<div class="form-group">
 						<label for="descripcion" class="col-form-label">Descripción:</label>
-						<textarea name="descripcion" id="descripcion" cols="30" rows="6" class="form-control"></textarea>
+						<textarea name="descripcion" id="descripcion" cols="30" rows="6" class="form-control" required></textarea>
 					</div>
 
 					<div class="row">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="inform_file" class="col-form-label">Informe del grupo (.pdf):</label>
-								<input type="file" name="inform_file" id="inform_file" class="form-control" accept="application/pdf">
+								<label for="inform_file" class="col-form-label">Informe del grupo (.pdf): <span class="text-danger">*</span></label>
+								<input type="file" name="inform_file" id="inform_file" class="form-control" accept="application/pdf" required>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="resolution_file" class="col-form-label">Resolución de aprobación (.pdf):</label>
-								<input type="file" name="resolution_file" id="resolution_file" class="form-control" accept="application/pdf">
+								<label for="resolution_file" class="col-form-label">Resolución de aprobación (.pdf): <span class="text-danger">*</span></label>
+								<input type="file" name="resolution_file" id="resolution_file" class="form-control" accept="application/pdf" required>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cover_picture" class="col-form-label">Carátula:</label>
-								<input type="file" name="cover_picture" id="cover_picture" class="form-control" accept="image/png, image/gif, image/jpeg">
+								<label for="cover_picture" class="col-form-label">Carátula: <span class="text-danger">*</span></label>
+								<input type="file" name="cover_picture" id="cover_picture" class="form-control" accept="image/png, image/gif, image/jpeg" required>
 							</div>
 						</div>
 						<div class="col-6">
@@ -121,19 +121,83 @@ include_once("layouts/head.php");
 	</div>
 </div>
 
-<!-- MODAL: ELIMINAR AUTORIDAD -->
-<div class="modal fade" id="modal_delete_authority" tabindex="-1" role="dialog" aria-labelledby="deleteModal" style="display: none;" aria-hidden="true">
+<!-- MODAL: EDITAR PROYECTO -->
+<div class="modal fade" id="modal_edit_project" tabindex="-1" role="dialog" aria-labelledby="editModal" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Nuevo proyecto</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+			</div>
+			<form method="POST" id="form_edit_project" enctype="multipart/form-data">
+				<div class="modal-body">
+					<input type="hidden" name="project_id_edit" id="project_id_edit" required>
+					<div class="form-group">
+						<label for="project_name_edit" class="col-form-label">Nombre del proyecto:</label>
+						<input type="text" class="form-control" name="project_name_edit" id="project_name_edit" placeholder="Nombre del proyecto" required>
+					</div>
+					<div class="form-group">
+						<label for="group_name_edit" class="col-form-label">Nombre del grupo:</label>
+						<input type="text" class="form-control" name="group_name_edit" id="group_name_edit" placeholder="Nombre del grupo" required>
+					</div>
+					<div class="form-group">
+						<label for="descripcion_edit" class="col-form-label">Descripción:</label>
+						<textarea name="descripcion_edit" id="descripcion_edit" cols="30" rows="6" class="form-control" required></textarea>
+					</div>
+
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="inform_file_edit" class="col-form-label">Informe del grupo (.pdf): </label>
+								<input type="file" name="inform_file_edit" id="inform_file_edit" class="form-control" accept="application/pdf">
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="resolution_file_edit" class="col-form-label">Resolución de aprobación (.pdf): </label>
+								<input type="file" name="resolution_file_edit" id="resolution_file_edit" class="form-control" accept="application/pdf">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="cover_picture_edit" class="col-form-label">Carátula: </label>
+								<input type="file" name="cover_picture_edit" id="cover_picture_edit" class="form-control" accept="image/png, image/gif, image/jpeg">
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="fotos_edit" class="col-form-label">Fotos (4):</label>
+								<input type="file" name="fotos_edit[]" id="fotos_edit" class="form-control" multiple accept="image/png, image/jpg, image/jpeg">
+							</div>
+							<div class="upload__img-wrap"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-primary">Guardar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL: ELIMINAR PROYECTO--> 
+<div class="modal fade" id="modal_delete_project" tabindex="-1" role="dialog" aria-labelledby="deleteModal" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Eliminar autoridad</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
 			</div>
-			<form method="POST" id="form_delete_authority">
+			<form method="POST" id="form_delete_project">
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="">¿Estás seguro de eliminar la autoridad <span id="authority_name-delete" class="text-info"></span>?</label>
-						<input type="hidden" class="form-control" name="authority_id-delete" id="authority_id-delete" required>
+						<label for="">¿Estás seguro de eliminar el proyecto <span id="project_name-delete" class="text-info"></span>?</label>
+						<input type="hidden" class="form-control" name="project_id-delete" id="project_id-delete" required>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -159,15 +223,21 @@ include_once("layouts/head.php");
 				</div>
 				<br>
 				<b id="project_groupname_show"></b>
-				<br>
-				<a href="" target="_blank" id="link_show_resolucion" rel="noopener noreferrer">Ver Resolución</a>
-				<br>
-				<a href="" target="_blank" id="link_show_informe" rel="noopener noreferrer">Ver Informe</a>
+				<br><br>
+				<a href="" class="btn btn-sm btn-outline-secondary" target="_blank" id="link_show_informe" rel="noopener noreferrer">Ver Informe</a>
+				<a href="" class="btn btn-sm btn-outline-secondary" target="_blank" id="link_show_resolucion" rel="noopener noreferrer">Ver Resolución</a>
 				<br>
 
 				<label for=""><b>Descripción:</b></label>
 				<p id="project_description_show">description</p>
 
+				<br>
+				<label for="">Carátula</label>
+				<div class="row">
+					<div class="col-12 col-lg-3 col-md-6">
+						<img class="img-fluid" id="project_cover_show" src="" alt="">
+					</div>
+				</div>
 
 				<br>
 				<label for="">Fotos:</label>
@@ -186,13 +256,7 @@ include_once("layouts/head.php");
 						<img class="img-fluid" id="project_photo4_show" src="" alt="">
 					</div>
 				</div>
-				<br>
-				<label for="">Carátula</label>
-				<div class="row">
-					<div class="col-12 col-lg-3 col-md-6">
-						<img class="img-fluid" id="project_cover_show" src="" alt="">
-					</div>
-				</div>
+				
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn  btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -222,8 +286,8 @@ include_once("layouts/head.php");
 			processData: false,
 			success: function(resp) {
 				console.log(resp);
-				let result = parseInt(resp)
 
+				let result = parseInt(resp)
 				if (result = 1) {
 					$("#form_create_project")[0].reset();
 					$('#modal_create_project').modal('hide');
@@ -233,8 +297,40 @@ include_once("layouts/head.php");
 					console.log("No se pudo guardar el registro");
 
 				} else {
-					console.log("Ocurrió otro error");
-					console.log(resp);
+					console.error("Error :(". resp);
+				}
+
+			}
+		});
+	});
+
+	//Actualizar proyecto (UPDATE)
+	$("#form_edit_project").submit(function(e) {
+		e.preventDefault();
+
+		const formData = new FormData(this);
+
+		$.ajax({
+			url: "app/projects.update.php",
+			type: 'POST',
+			data: formData,
+			// cache: false,
+			contentType: false,
+			processData: false,
+			success: function(resp) {
+				console.log(resp);
+
+				let result = parseInt(resp)
+				if (result = 1) {
+					$("#form_edit_project")[0].reset();
+					$('#modal_edit_project').modal('hide');
+					getAllData();
+
+				} else if (result = 0) {
+					console.log("No se pudo actualizar el registro");
+
+				} else {
+					console.error("Error :(". resp);
 				}
 
 			}
@@ -242,20 +338,20 @@ include_once("layouts/head.php");
 	});
 
 	//Eliminar registro (DELETE)
-	$("#form_delete_authority").submit(function(e) {
+	$("#modal_delete_project").submit(function(e) {
 		e.preventDefault();
 
 		$.ajax({
-			url: "app/authority.disable.php",
+			url: "app/projects.disable.php",
 			type: 'POST',
-			data: $("#form_delete_authority").serialize(),
+			data: $("#form_delete_project").serialize(),
 
 			success: function(resp) {
 				console.log(resp);
 
 				let result = parseInt(resp)
 				if (result = 1) {
-					$('#modal_delete_authority').modal('hide');
+					$('#modal_delete_project').modal('hide');
 					getAllData();
 				} else if (result = 0) {
 					console.log("No se pudo eliminar la noticia");
@@ -286,7 +382,8 @@ include_once("layouts/head.php");
 						"<td>" + data[i].created_at + "</td>" +
 						"<td>" +
 						'<button type="button" class="btn btn-sm btn-primary mx-1" onclick="updateShowModal(' + data[i].id + ')" ><i class="feather icon-eye"></i></button>' +
-						'<button type="button" class="btn btn-sm btn-danger mx-1" data-toggle="modal" data-target="#modal_delete_projects" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
+						'<button type="button" class="btn btn-sm btn-warning mx-1" onclick="updateEditModal(' + data[i].id + ')" ><i class="feather icon-edit"></i></button>' +
+						'<button type="button" class="btn btn-sm btn-danger mx-1" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].project_name + '\')" data-toggle="modal" data-target="#modal_delete_project" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
 					"</td>" +
 					"</tr>";
 					$("#projects_table_body").append(tr);
@@ -295,6 +392,7 @@ include_once("layouts/head.php");
 		});
 	}
 
+	//(show)Actualiza info para previsualizar información del proyecto
 	function updateShowModal(id){
 		$.ajax({
 			method: "POST",
@@ -302,8 +400,6 @@ include_once("layouts/head.php");
 			data: {project_id: id},
 			dataType: 'json',
 			success: function(resp) {
-				console.log(resp);
-
 				$("#project_name_show").text(resp.project_name);
 				$("#project_groupname_show").text(resp.group_name);
 				$("#project_description_show").text(resp.description);				
@@ -323,11 +419,28 @@ include_once("layouts/head.php");
 			}
 		});
 	}
+	
+	//(edit)Actualiza modal para editar
+	function updateEditModal(id){
+		$.ajax({
+			method: "POST",
+			url: "app/projects.get_one.php",
+			data: {project_id: id},
+			dataType: 'json',
+			success: function(resp) {
+				$("#project_id_edit").val(resp.id);
+				$("#project_name_edit").val(resp.project_name);
+				$("#group_name_edit").val(resp.group_name);
+				$("#descripcion_edit").text(resp.description);
+				$('#modal_edit_project').modal('show');
+			}
+		});
+	}
 
 	//Actualiza la info del registro en el modal para eliminar
-	function updateDeleteModal(id, new_name) {
-		$("#authority_id-delete").val(id);
-		$("#authority_name-delete").html(new_name);
+	function updateDeleteModal(id, project_name) {
+		$("#project_id-delete").val(id);
+		$("#project_name-delete").html(project_name);
 	}
 </script>
 
