@@ -30,8 +30,15 @@ class Authority extends Conexion
     }
 
     //UPDATE
-    public function update($id, $name, $lastname, $degree, $position, $photo){
-        return $this->conexion_db->query("UPDATE authority SET name='$name', lastname='$lastname', degree='$degree', position='$position', photo='$photo' WHERE id='$id'");
+    public function update($id, $name, $lastname, $degree, $position, $photo=NULL){
+        $query = "UPDATE authority SET name='$name', lastname='$lastname', degree='$degree', position='$position'";
+
+        if ($photo !== NULL){
+            $query .= ", photo='$photo'";
+        }
+        
+        $query .= " WHERE id='$id'";
+        return $this->conexion_db->query($query);
     }
 
 

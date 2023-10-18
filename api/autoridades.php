@@ -17,6 +17,7 @@ try {
 }
 
 $data_response = [];
+$ruta_raiz_images = 'https://sistemas.unh.edu.pe/v2/upload/images/';
 foreach ($all_data as $value) {
     $temp = [
         'id' => $value['id'],
@@ -26,7 +27,7 @@ foreach ($all_data as $value) {
         'nombre_completo' => $value['degree']." ".$value['name']." ".$value['lastname'],
         'cargo' => $value['position'],
         'foto' => $value['photo'],
-        'url_foto' => 'https://'.$_SERVER['HTTP_HOST']."/v2/upload/images/".$value['photo'],
+        'url_foto' => $ruta_raiz_images.$value['photo'],
     ];
     array_push($data_response, $temp);
 }
