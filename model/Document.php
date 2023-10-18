@@ -10,8 +10,6 @@ class Document extends Conexion
         parent::__construct();
     }
 
-    // Create Read(get_all) Update Delete
-
     // CREATE
     public function create($name_doc, int $category_id, $description,  $file){
         return $this->conexion_db->query("INSERT INTO document (name_doc, cat_id, description, file)
@@ -35,6 +33,18 @@ class Document extends Conexion
     {
         $result = $this->conexion_db->query("SELECT * FROM document WHERE cat_id='$id' AND disabled=0");
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    //UPDATE
+    public function update($id, $name_doc, $category_id, $description,  $file=NULL){
+        $query = "UPDATE document SET name_doc='$name_doc', cat_id='$category_id', description='$description'";
+
+        if ($file !== NULL){
+            $query .= ", file='$file'";
+        }
+        
+        $query .= " WHERE id='$id'";
+        return $this->conexion_db->query($query);
     }
 
     // DISABLE
