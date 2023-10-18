@@ -29,9 +29,10 @@ class DocumentCategory extends Conexion
     }
 
     //UPDATE
-    // public function disable($id, $address, $phone, $email){
-    //     return $this->conexion_db->query("UPDATE document_categories SET address='$address', phone='$phone', email='$email' WHERE id='$id'");
-    // }
+    public function update($id, $category_name, $description){
+        return $this->conexion_db->query("UPDATE document_categories SET category_name='$category_name', cat_description='$description' WHERE id='$id'");
+    }
+
     public function disable($id){
         return $this->conexion_db->query("UPDATE document_categories SET disabled=1 WHERE id='$id'");
     }

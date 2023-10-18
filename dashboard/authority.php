@@ -219,7 +219,7 @@ include_once("layouts/head.php");
 			contentType: false,
 			processData: false,
 			success: function (resp) {
-				console.log(resp);
+				// console.log(resp);
 				let result = parseInt(resp)
 
 				if (result == 1){

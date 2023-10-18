@@ -53,32 +53,87 @@ include_once("layouts/head.php");
     <!-- [ Main Content ] end -->
 </div>
 
-<!-- MODAL: NUEVO DOCUMENTO -->
+<!-- MODAL: NUEVO CATEGORY -->
 <div class="modal fade" id="modal_create_categories" tabindex="-1" role="dialog" aria-labelledby="createModal" style="display: none;" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Documento</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Categoría</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
             </div>
-            <form method="POST" id="form_create_categories" enctype="multipart/form-data">
+            <form method="POST" id="form_create_categories">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="document_name" class="col-form-label">Nombre del Documento:</label>
-                        <input type="text" class="form-control" name="document_name" id="document_name" placeholder="Reglamento Académico" required>
+                        <label for="category_name" class="col-form-label">Nombre del Documento:</label>
+                        <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Ej. Documentos de Gestión" required>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-form-label">Descripción:</label>
-                        <input type="text" class="form-control" name="description" id="description" placeholder="Resolución N° 088-2019-R-UNH">
+                        <label for="category_description" class="col-form-label">Descripción:</label>
+                        <input type="text" class="form-control" name="category_description" id="category_description">
                     </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn  btn-primary">Guardar</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn  btn-primary">Guardar</button>
+                </div>
             </form>
         </div>
     </div>
+</div>
+
+<!-- MODAL: EDIT CATEGORY -->
+<div class="modal fade" id="modal_edit_categories" tabindex="-1" role="dialog" aria-labelledby="editModal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Categoría</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+            </div>
+            <form method="POST" id="form_edit_categories" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" name="category_id" id="category_id">
+                    <div class="form-group">
+                        <label for="category_name_edit" class="col-form-label">Categoría:</label>
+                        <input type="text" class="form-control" name="category_name_edit" id="category_name_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description_edit" class="col-form-label">Descripción:</label>
+                        <input type="text" class="form-control" name="description_edit" id="description_edit" placeholder="Ej. Resolución N° 088-2019-R-UNH">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn  btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: ELIMINAR CATEGORÍA -->
+<div class="modal fade" id="modal_delete_category" tabindex="-1" role="dialog" aria-labelledby="deleteModal" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Eliminar Categoría</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">×</span></button>
+			</div>
+			<form method="POST" id="form_delete_category" >
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="">¿Estás seguro de eliminar la categoría <span id="category_name_delete" class="text-info"></span>?</label>
+                        <br>
+                        <small>Esta acción también quitará a los documentos que pertenezcan a esta categoría.</small>
+						<input type="hidden" class="form-control" name="category_id_delete" id="category_id_delete" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-danger" id="btn_eliminar">Eliminar</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
 <script>
@@ -87,19 +142,14 @@ include_once("layouts/head.php");
         getAllCategories();
     });
 
-    //Guardar registro (CREATE)
+    //Guardar registro de Categoría (CREATE)
     $("#form_create_categories").submit(function(e) {
         e.preventDefault();
 
-        const formData = new FormData(this);
-
         $.ajax({
-            url: "app/document.create.php",
+            url: "app/doc_category.create.php",
             type: 'POST',
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
+            data: $("#form_create_categories").serialize(),
             success: function(resp) {
                 console.log(resp);
                 let result = parseInt(resp)
@@ -113,34 +163,57 @@ include_once("layouts/head.php");
                     console.log("No se pudo guardar el registro");
 
                 } else {
-                    console.log("Ocurrió otro error");
-                    console.log(resp);
+                    console.log("Ocurrió otro error :(", resp);
                 }
+            }
+        });
+    });
 
+    //Editar  Categoría (UPDATE)
+    $("#form_edit_categories").submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: "app/doc_category.update.php",
+            type: 'POST',
+            data: $("#form_edit_categories").serialize(),
+            success: function(resp) {
+                let result = parseInt(resp)
+
+                if (result == 1) {
+                    $("#form_edit_categories")[0].reset();
+                    $('#modal_edit_categories').modal('hide');
+                    getAllCategories();
+
+                } else if (result == 0) {
+                    console.log("No se pudo guardar el registro");
+
+                } else {
+                    console.log("Ocurrió otro error :(", resp);
+                }
             }
         });
     });
 
     //Eliminar registro (DELETE)
-    $("#form_delete_authority").submit(function(e) {
+    $("#modal_delete_category").submit(function(e) {
         e.preventDefault();
 
         $.ajax({
-            url: "app/authority.disable.php",
+            url: "app/doc_category.disable.php",
             type: 'POST',
-            data: $("#form_delete_authority").serialize(),
+            data: $("#form_delete_category").serialize(),
 
             success: function(resp) {
                 console.log(resp);
-
                 let result = parseInt(resp)
-                if (result = 1) {
-                    $('#modal_delete_authority').modal('hide');
+                if (result == 1) {
+                    $('#modal_delete_category').modal('hide');
                     getAllCategories();
-                } else if (result = 0) {
-                    console.log("No se pudo eliminar la noticia");
+                } else if (result == 0) {
+                    console.log("No se pudo eliminar la categoría");
                 } else {
-                    console.log(resp);
+                    console.error("Ocurrió un error :(", resp);
                 }
             }
         });
@@ -163,7 +236,8 @@ include_once("layouts/head.php");
                         "<td>" + data[i].category_name + "</td>" +
                         "<td>" + data[i].cat_description + "</td>" +
                         "<td>" +
-                            '<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].category_name + '\')" data-toggle="modal" data-target="#modal_delete_authority" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
+                            '<button type="button" class="btn btn-sm btn-warning" onclick="updateEditModal(' + data[i].id + ', \'' + data[i].category_name + '\', \'' + data[i].cat_description + '\' )" ><i class="feather icon-edit-2"></i></button> ' +
+                            '<button type="button" class="btn btn-sm btn-danger" onclick="updateDeleteModal(' + data[i].id + ', \'' + data[i].category_name + '\')" data-toggle="modal" data-target="#modal_delete_category" data-whatever="@getbootstrap"><i class="feather icon-trash-2"></i></button>'
                         "</td>" +
                     "</tr>";
                     $("#categories_table_body").append(tr);
@@ -173,12 +247,19 @@ include_once("layouts/head.php");
     }
 
     //Actualiza la info del registro en el modal para eliminar
-    function updateDeleteModal(id, new_name) {
-        $("#authority_id-delete").val(id);
-        $("#authority_name-delete").html(new_name);
+    function updateDeleteModal(id, category_name) {
+        $("#category_id_delete").val(id);
+        $("#category_name_delete").html(category_name);
+    }
+
+    //Actualiza la info del registro en el modal para eliminar
+    function updateEditModal(id, name, description) {
+        $("#category_id").val(id);
+        $("#category_name_edit").val(name);
+        $("#description_edit").val(description);
+        $('#modal_edit_categories').modal('show');
     }
 </script>
-
 
 <?php
 include_once("layouts/footer.php");
